@@ -25,7 +25,7 @@ button:disabled{opacity:.6;cursor:wait}
 <body>
 <div class="wrap">
 <form id="f" autocomplete="on">
-<p class="eyebrow">Preavia Labs</p>
+<p class="eyebrow">Lumen</p>
 <h1>Lumen inspo</h1>
 <p>Internes Moodboard. Bitte einloggen.</p>
 <label for="u">User</label>
@@ -40,7 +40,6 @@ button:disabled{opacity:.6;cursor:wait}
 const USER = "lumen";
 const enc = new TextEncoder();
 const dec = new TextDecoder();
-function b64(bytes){let s="";bytes.forEach(b=>s+=String.fromCharCode(b));return btoa(s)}
 async function deriveKey(password, salt){
   const base = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
   return crypto.subtle.deriveKey(
