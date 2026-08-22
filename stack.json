@@ -1,0 +1,6006 @@
+[
+  {
+    "slug": "linear",
+    "name": "Linear",
+    "url": "https://linear.app/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "posthog"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudflare; cms:sanity; analytics:ga4; analytics:posthog; payments:stripe; chat:zendesk"
+  },
+  {
+    "slug": "bevel",
+    "name": "Bevel",
+    "url": "https://www.bevel.health/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "linkedin"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; pixels:meta; pixels:tiktok; pixels:linkedin; app_links:ios"
+  },
+  {
+    "slug": "ultrahuman",
+    "name": "Ultrahuman",
+    "url": "https://www.ultrahuman.com/us/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "adobe"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:contentful; analytics:ga4; analytics:gtm; pixels:google-ads; fonts:adobe; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "oura",
+    "name": "Oura",
+    "url": "https://ouraring.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "segment",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; analytics:ga4; analytics:segment; analytics:amplitude; chat:zendesk; consent:onetrust"
+  },
+  {
+    "slug": "whoop",
+    "name": "Whoop",
+    "url": "https://www.whoop.com/us/en/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "segment",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok",
+      "linkedin",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google",
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "intercom"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; builder:shopify; frontend:react; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; analytics:segment; analytics:amplitude; pixels:tiktok; pixels:linkedin; pixels:twitter; pixels:google-ads; chat:intercom; consent:onetrust; fonts:google; fonts:adobe"
+  },
+  {
+    "slug": "lykon",
+    "name": "Lykon",
+    "url": "https://www.lykon.de/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "contentful",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude"
+    ],
+    "payments": [
+      "paypal"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cms:contentful; analytics:ga4; analytics:gtm; analytics:amplitude; pixels:google-ads; payments:paypal; chat:zendesk; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "function-health",
+    "name": "Function Health",
+    "url": "https://www.functionhealth.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "svelte",
+    "cms": "sanity",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "mixpanel"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "intercom"
+    ],
+    "confidence": "high",
+    "evidence": "builder:astro; builder:webflow; frontend:svelte; hosting:vercel; cdn:cloudflare; cms:sanity; analytics:ga4; analytics:mixpanel; pixels:google-ads; chat:intercom; fonts:google; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "superpower",
+    "name": "Superpower",
+    "url": "https://superpower.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "segment",
+      "mixpanel",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:segment; analytics:mixpanel; analytics:posthog; pixels:meta; fonts:adobe"
+  },
+  {
+    "slug": "siphox",
+    "name": "SiPhox Health",
+    "url": "https://siphoxhealth.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:sanity; analytics:ga4; chat:zendesk"
+  },
+  {
+    "slug": "levels",
+    "name": "Levels",
+    "url": "https://www.levelshealth.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudflare; analytics:ga4; analytics:gtm; analytics:posthog"
+  },
+  {
+    "slug": "eight-sleep",
+    "name": "Eight Sleep",
+    "url": "https://www.eightsleep.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "mixpanel"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; analytics:ga4; analytics:mixpanel"
+  },
+  {
+    "slug": "framer",
+    "name": "Framer",
+    "url": "https://www.framer.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "framer",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:framer; builder:shopify; analytics:ga4; analytics:gtm; fonts:google"
+  },
+  {
+    "slug": "cerascreen",
+    "name": "cerascreen",
+    "url": "https://www.cerascreen.de/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "insidetracker",
+    "name": "InsideTracker",
+    "url": "https://www.insidetracker.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "mixpanel",
+      "amplitude",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "twitter"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; builder:shopify; frontend:react; analytics:ga4; analytics:mixpanel; analytics:amplitude; analytics:hotjar; pixels:meta; pixels:twitter; chat:hubspot; fonts:google"
+  },
+  {
+    "slug": "zoe",
+    "name": "ZOE",
+    "url": "https://zoe.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "dato",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; builder:framer; frontend:react; hosting:vercel; cms:dato; analytics:ga4; analytics:gtm; app_links:ios; app_links:android; final=https://zoe.com/en-us"
+  },
+  {
+    "slug": "numan",
+    "name": "Numan",
+    "url": "https://www.numan.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "mixpanel",
+      "amplitude",
+      "hotjar",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "intercom"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudflare; analytics:ga4; analytics:gtm; analytics:mixpanel; analytics:amplitude; analytics:hotjar; analytics:clarity; pixels:meta; pixels:tiktok; pixels:google-ads; chat:intercom; fonts:google; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "medichecks",
+    "name": "Medichecks",
+    "url": "https://www.medichecks.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "cookiebot",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:hotjar; chat:zendesk; consent:cookiebot"
+  },
+  {
+    "slug": "future",
+    "name": "Future",
+    "url": "https://www.future.co/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "osano",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:amplitude; payments:stripe; consent:osano; final=https://future.co/"
+  },
+  {
+    "slug": "clay-health",
+    "name": "Clay Health",
+    "url": "https://www.joinclay.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; analytics:ga4"
+  },
+  {
+    "slug": "hims",
+    "name": "Hims",
+    "url": "https://www.hims.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "auth0"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:amplitude; analytics:hotjar; pixels:google-ads; chat:zendesk; auth_visible:auth0"
+  },
+  {
+    "slug": "ro",
+    "name": "Ro",
+    "url": "https://ro.co/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "remix",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "mixpanel"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "akamai"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:remix; frontend:react; cdn:cloudflare; cdn:akamai; cms:contentful; analytics:ga4; analytics:mixpanel; pixels:google-ads; payments:stripe; fonts:google"
+  },
+  {
+    "slug": "thorne",
+    "name": "Thorne",
+    "url": "https://www.thorne.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "vue",
+    "cms": "none",
+    "builder": "nuxt",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:nuxt; frontend:vue; cdn:cloudfront; analytics:ga4; analytics:gtm; fonts:google; app_links:ios"
+  },
+  {
+    "slug": "neko-health",
+    "name": "Neko Health",
+    "url": "https://www.nekohealth.com/",
+    "category": "health",
+    "status": "error",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:astro; hosting:vercel; analytics:ga4"
+  },
+  {
+    "slug": "viome",
+    "name": "Viome",
+    "url": "https://www.viome.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; analytics:ga4; analytics:gtm; pixels:meta; fonts:google"
+  },
+  {
+    "slug": "fountain-life",
+    "name": "Fountain Life",
+    "url": "https://www.fountainlife.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "contentful",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; hosting:vercel; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; fonts:adobe"
+  },
+  {
+    "slug": "withings",
+    "name": "Withings",
+    "url": "https://www.withings.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; analytics:ga4; analytics:gtm; pixels:meta; final=https://www.withings.com/en-us"
+  },
+  {
+    "slug": "everlywell",
+    "name": "Everlywell",
+    "url": "https://www.everlywell.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "osano",
+    "frontend": "angular",
+    "cms": "contentful",
+    "builder": "gatsby",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "mixpanel"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:gatsby; builder:framer; frontend:angular; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; analytics:mixpanel; pixels:tiktok; consent:osano"
+  },
+  {
+    "slug": "letsgetchecked",
+    "name": "LetsGetChecked",
+    "url": "https://www.letsgetchecked.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "unknown",
+    "cms": "contentful",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:astro; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; consent:onetrust; fonts:google"
+  },
+  {
+    "slug": "natural-cycles",
+    "name": "Natural Cycles",
+    "url": "https://www.naturalcycles.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "dato",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:wordpress; frontend:react; cms:dato; analytics:ga4; analytics:hotjar"
+  },
+  {
+    "slug": "vercel",
+    "name": "Vercel",
+    "url": "https://vercel.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "linkedin"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; frontend:svelte; hosting:vercel; cms:contentful; analytics:ga4; pixels:linkedin; fonts:google"
+  },
+  {
+    "slug": "apple-fitness",
+    "name": "Apple Fitness+",
+    "url": "https://www.apple.com/apple-fitness-plus/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "akamai"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "cdn:akamai; analytics:ga4; app_links:ios"
+  },
+  {
+    "slug": "garmin",
+    "name": "Garmin",
+    "url": "https://www.garmin.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "vue",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "linkedin",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "akamai"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "frontend:vue; cdn:cloudflare; cdn:akamai; analytics:ga4; analytics:hotjar; pixels:meta; pixels:linkedin; pixels:google-ads; fonts:google; final=https://WWW.garmin.com/en-US/"
+  },
+  {
+    "slug": "mercury",
+    "name": "Mercury",
+    "url": "https://mercury.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "dato",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:dato; analytics:ga4; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "peloton",
+    "name": "Peloton",
+    "url": "https://www.onepeloton.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "amplitude"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "akamai"
+    ],
+    "fonts": [
+      "google",
+      "adobe"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:akamai; cms:contentful; analytics:ga4; analytics:amplitude; pixels:tiktok; payments:stripe; consent:onetrust; fonts:google; fonts:adobe; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "raycast",
+    "name": "Raycast",
+    "url": "https://www.raycast.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; builder:framer; frontend:react; hosting:vercel; hosting:netlify; analytics:ga4; pixels:tiktok"
+  },
+  {
+    "slug": "resend",
+    "name": "Resend",
+    "url": "https://resend.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "posthog"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google",
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudfront; analytics:ga4; analytics:posthog; payments:stripe; chat:hubspot; fonts:google; fonts:adobe"
+  },
+  {
+    "slug": "strava",
+    "name": "Strava",
+    "url": "https://www.strava.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "cookiebot",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; analytics:ga4; analytics:gtm; chat:zendesk; consent:cookiebot; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "cal",
+    "name": "Cal.com",
+    "url": "https://cal.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "framer",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "twitter"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:framer; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:posthog; pixels:twitter; fonts:google"
+  },
+  {
+    "slug": "lattice",
+    "name": "Lattice",
+    "url": "https://lattice.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "osano",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "segment"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:segment; consent:osano"
+  },
+  {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "url": "https://elevenlabs.io/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "cookiebot",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; analytics:ga4; analytics:gtm; consent:cookiebot"
+  },
+  {
+    "slug": "aesop",
+    "name": "Aesop",
+    "url": "https://www.aesop.com/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "cdn:cloudflare; analytics:ga4; analytics:gtm; consent:onetrust"
+  },
+  {
+    "slug": "clerk",
+    "name": "Clerk",
+    "url": "https://clerk.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "clerk"
+    ],
+    "analytics": [
+      "ga4",
+      "segment",
+      "posthog",
+      "hotjar"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "linkedin",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; analytics:ga4; analytics:segment; analytics:posthog; analytics:hotjar; pixels:linkedin; pixels:twitter; pixels:google-ads; payments:stripe; chat:hubspot; auth_visible:clerk; fonts:google"
+  },
+  {
+    "slug": "nothing",
+    "name": "Nothing",
+    "url": "https://www.nothing.tech/",
+    "category": "brand",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "hotjar",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; frontend:react; cdn:cloudflare; cdn:cloudfront; cms:sanity; analytics:ga4; analytics:gtm; analytics:hotjar; analytics:clarity; pixels:meta; pixels:tiktok; pixels:google-ads; chat:zendesk; fonts:google; final=https://nothing.tech/"
+  },
+  {
+    "slug": "webflow",
+    "name": "Webflow",
+    "url": "https://webflow.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "contentful",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; builder:framer; builder:wordpress; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; analytics:clarity; pixels:google-ads; fonts:google"
+  },
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "url": "https://www.notion.so/",
+    "category": "saas",
+    "status": "redirect",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "amplitude",
+      "hotjar"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "linkedin",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:amplitude; analytics:hotjar; pixels:meta; pixels:tiktok; pixels:linkedin; pixels:twitter; pixels:google-ads; payments:stripe; chat:zendesk; fonts:google; final=https://www.notion.com/"
+  },
+  {
+    "slug": "figma",
+    "name": "Figma",
+    "url": "https://www.figma.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; hosting:netlify; cdn:cloudfront; cms:sanity; analytics:ga4; fonts:google"
+  },
+  {
+    "slug": "scale",
+    "name": "Scale AI",
+    "url": "https://scale.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "segment"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:sanity; analytics:ga4; analytics:segment"
+  },
+  {
+    "slug": "quo",
+    "name": "Quo (formerly OpenPhone)",
+    "url": "https://www.quo.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "angular",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google",
+      "adobe"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; builder:framer; frontend:angular; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:amplitude; chat:hubspot; fonts:google; fonts:adobe; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "posthog",
+    "name": "PostHog",
+    "url": "https://posthog.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "gatsby",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google",
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:gatsby; builder:shopify; frontend:react; hosting:vercel; cdn:cloudfront; analytics:ga4; analytics:posthog; pixels:tiktok; fonts:google; fonts:adobe"
+  },
+  {
+    "slug": "teenage-engineering",
+    "name": "Teenage Engineering",
+    "url": "https://teenage.engineering/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "frontend:react; cdn:cloudfront; analytics:ga4"
+  },
+  {
+    "slug": "granola",
+    "name": "Granola",
+    "url": "https://www.granola.ai/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "amplitude",
+      "posthog",
+      "plausible"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; analytics:ga4; analytics:amplitude; analytics:posthog; analytics:plausible"
+  },
+  {
+    "slug": "cursor",
+    "name": "Cursor",
+    "url": "https://cursor.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "linkedin",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; pixels:meta; pixels:linkedin; pixels:google-ads; fonts:google"
+  },
+  {
+    "slug": "aware",
+    "name": "Aware",
+    "url": "https://www.aware.app/",
+    "category": "health",
+    "status": "error",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:astro; hosting:vercel; analytics:ga4"
+  },
+  {
+    "slug": "aescolab",
+    "name": "aescolab",
+    "url": "https://www.aescolab.de/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google",
+      "fontshare"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "intercom"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; chat:intercom; fonts:google; fonts:fontshare"
+  },
+  {
+    "slug": "attio",
+    "name": "Attio",
+    "url": "https://attio.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "mixpanel",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "linkedin",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "intercom",
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:mixpanel; analytics:clarity; pixels:meta; pixels:linkedin; pixels:twitter; pixels:google-ads; chat:intercom; chat:hubspot; fonts:google; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "thriva",
+    "name": "Thriva",
+    "url": "https://thriva.co/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "vue",
+    "cms": "prismic",
+    "builder": "nuxt",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "segment"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "tiktok",
+      "google-ads"
+    ],
+    "cdn": [
+      "akamai",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "intercom"
+    ],
+    "confidence": "high",
+    "evidence": "builder:nuxt; frontend:vue; cdn:akamai; cdn:cloudfront; cms:prismic; analytics:ga4; analytics:segment; pixels:tiktok; pixels:google-ads; payments:stripe; chat:intercom; fonts:google"
+  },
+  {
+    "slug": "spline",
+    "name": "Spline",
+    "url": "https://spline.design/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; builder:webflow; builder:framer; frontend:react; hosting:vercel; cdn:cloudfront; analytics:ga4; analytics:gtm"
+  },
+  {
+    "slug": "superage",
+    "name": "SuperAge",
+    "url": "https://www.superage.app/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:astro; cdn:cloudflare; analytics:ga4"
+  },
+  {
+    "slug": "hum2n",
+    "name": "HUM2N",
+    "url": "https://www.hum2n.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; pixels:meta; fonts:google"
+  },
+  {
+    "slug": "pika",
+    "name": "Pika",
+    "url": "https://pika.art/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; analytics:ga4; pixels:tiktok"
+  },
+  {
+    "slug": "wispr-flow",
+    "name": "Wispr Flow",
+    "url": "https://wisprflow.ai/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:posthog"
+  },
+  {
+    "slug": "mito-health",
+    "name": "Mito Health",
+    "url": "https://mitohealth.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "fastly"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:astro; hosting:vercel; cdn:fastly; analytics:ga4; analytics:posthog; fonts:google"
+  },
+  {
+    "slug": "empirical",
+    "name": "Empirical Health",
+    "url": "https://www.empirical.health/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:astro; hosting:vercel; analytics:ga4; analytics:gtm; analytics:posthog; pixels:meta; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "lovable",
+    "name": "Lovable",
+    "url": "https://lovable.dev/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "medium",
+    "evidence": "frontend:react; cdn:cloudflare; analytics:ga4; chat:zendesk"
+  },
+  {
+    "slug": "onetwenty",
+    "name": "OneTwenty",
+    "url": "https://onetwenty.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "framer",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "fathom"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:framer; analytics:ga4; analytics:fathom; pixels:meta; fonts:google"
+  },
+  {
+    "slug": "cosmos",
+    "name": "Cosmos",
+    "url": "https://www.cosmos.so/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "mixpanel"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; cms:sanity; analytics:ga4; analytics:mixpanel; app_links:ios"
+  },
+  {
+    "slug": "waabi",
+    "name": "Waabi",
+    "url": "https://waabi.ai/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "dato",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; cms:dato; analytics:ga4"
+  },
+  {
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "url": "https://www.perplexity.ai/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "frontend:react; cdn:cloudflare; analytics:ga4"
+  },
+  {
+    "slug": "endon",
+    "name": "Endon",
+    "url": "https://www.endon-blutbild.de/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; analytics:ga4; analytics:gtm"
+  },
+  {
+    "slug": "mavie-work",
+    "name": "Mavie Work",
+    "url": "https://www.mavie.care/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:next; frontend:react; cms:contentful; analytics:ga4; final=https://www.mavie.care/de-AT"
+  },
+  {
+    "slug": "immortals",
+    "name": "Immortals",
+    "url": "https://immortals.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:shopify; cdn:cloudflare; analytics:ga4; analytics:clarity"
+  },
+  {
+    "slug": "tennr",
+    "name": "Tennr",
+    "url": "https://www.tennr.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; cms:sanity; analytics:ga4; analytics:gtm; chat:hubspot"
+  },
+  {
+    "slug": "lifeforce",
+    "name": "Lifeforce",
+    "url": "https://www.mylifeforce.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "mixpanel"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; analytics:ga4; analytics:mixpanel; chat:zendesk"
+  },
+  {
+    "slug": "krea",
+    "name": "Krea",
+    "url": "https://www.krea.ai/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "svelte",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "frontend:svelte; cdn:cloudflare; analytics:ga4; analytics:gtm; analytics:posthog"
+  },
+  {
+    "slug": "anthropic",
+    "name": "Anthropic",
+    "url": "https://www.anthropic.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "sanity",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; cms:sanity; analytics:ga4; pixels:meta; chat:hubspot; fonts:google"
+  },
+  {
+    "slug": "superhuman",
+    "name": "Superhuman",
+    "url": "https://www.superhuman.com/",
+    "category": "saas",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; pixels:tiktok; final=https://superhuman.com/"
+  },
+  {
+    "slug": "the-outsiders",
+    "name": "The Outsiders",
+    "url": "https://gentlerstories.com/theoutsiders",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "framer",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:framer; frontend:react; analytics:ga4; app_links:ios"
+  },
+  {
+    "slug": "gentler-streak",
+    "name": "Gentler Streak",
+    "url": "https://gentler.app/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "framer",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:framer; frontend:react; analytics:ga4; app_links:ios; final=https://gentlerstories.com/gentlerstreak"
+  },
+  {
+    "slug": "opal",
+    "name": "Opal",
+    "url": "https://www.opal.so/",
+    "category": "saas",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:amplitude; analytics:hotjar; pixels:meta; app_links:ios; app_links:android; final=https://opalapp.com/"
+  },
+  {
+    "slug": "veri",
+    "name": "Veri",
+    "url": "https://www.veri.co/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "prismic",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "chargebee"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:prismic; analytics:ga4; payments:chargebee"
+  },
+  {
+    "slug": "polar",
+    "name": "Polar",
+    "url": "https://www.polar.com/en",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "cookiebot",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "cdn:cloudfront; analytics:ga4; analytics:gtm; consent:cookiebot; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "fitbit",
+    "name": "Fitbit",
+    "url": "https://store.google.com/us/category/watches_trackers",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "analytics:ga4; analytics:gtm; fonts:google; final=https://store.google.com/us/category/watches_trackers?hl=en-US"
+  },
+  {
+    "slug": "amazfit",
+    "name": "Amazfit",
+    "url": "https://www.amazfit.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; fonts:google; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "coros",
+    "name": "COROS",
+    "url": "https://www.coros.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; pixels:meta"
+  },
+  {
+    "slug": "suunto",
+    "name": "Suunto",
+    "url": "https://www.suunto.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "cdn:cloudflare; analytics:ga4; analytics:gtm; consent:onetrust"
+  },
+  {
+    "slug": "tonal",
+    "name": "Tonal",
+    "url": "https://www.tonal.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "vue",
+    "cms": "contentful",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; frontend:vue; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; pixels:google-ads; final=https://tonal.com/"
+  },
+  {
+    "slug": "rise-science",
+    "name": "Rise Science",
+    "url": "https://www.risescience.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "runna",
+    "name": "Runna",
+    "url": "https://www.runna.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "contentful",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "paddle"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; payments:paddle; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "hydrow",
+    "name": "Hydrow",
+    "url": "https://hydrow.com/",
+    "category": "health",
+    "status": "error",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:astro; hosting:vercel; analytics:ga4"
+  },
+  {
+    "slug": "bioniq",
+    "name": "Bioniq",
+    "url": "https://bioniq.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; fonts:google; app_links:ios; app_links:android; final=https://www.bioniq.com/"
+  },
+  {
+    "slug": "rootine",
+    "name": "Rootine",
+    "url": "https://www.rootine.co/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; analytics:ga4; analytics:gtm; analytics:posthog; pixels:google-ads; final=https://rootine.co/"
+  },
+  {
+    "slug": "january-ai",
+    "name": "January AI",
+    "url": "https://january.ai/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "cdn:cloudflare; analytics:ga4"
+  },
+  {
+    "slug": "tally-health",
+    "name": "Tally Health",
+    "url": "https://tallyhealth.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:clarity; pixels:google-ads"
+  },
+  {
+    "slug": "human-longevity",
+    "name": "Human Longevity",
+    "url": "https://www.humanlongevity.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "cookiebot",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "meta",
+      "linkedin",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; pixels:meta; pixels:linkedin; pixels:twitter; pixels:google-ads; payments:stripe; consent:cookiebot; fonts:google"
+  },
+  {
+    "slug": "biograph",
+    "name": "Biograph",
+    "url": "https://www.biograph.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "framer",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:framer; analytics:ga4; analytics:gtm; analytics:posthog; pixels:tiktok; fonts:google"
+  },
+  {
+    "slug": "agelessrx",
+    "name": "AgelessRx",
+    "url": "https://agelessrx.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:wordpress; cdn:cloudflare; analytics:ga4"
+  },
+  {
+    "slug": "optispan",
+    "name": "Optispan",
+    "url": "https://www.optispan.life/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "squarespace",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:squarespace; analytics:ga4; analytics:amplitude; fonts:adobe"
+  },
+  {
+    "slug": "novos",
+    "name": "NOVOS",
+    "url": "https://novoslabs.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:wordpress; cdn:cloudflare; analytics:ga4; analytics:gtm; pixels:meta; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "prenuvo",
+    "name": "Prenuvo",
+    "url": "https://www.prenuvo.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:posthog; consent:onetrust; fonts:google"
+  },
+  {
+    "slug": "elysium",
+    "name": "Elysium Health",
+    "url": "https://elysiumhealth.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "posthog"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:posthog; pixels:google-ads; fonts:google; final=https://www.elysiumhealth.com/"
+  },
+  {
+    "slug": "timeline",
+    "name": "Timeline",
+    "url": "https://www.timelinenutrition.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:contentful; cms:sanity; analytics:ga4; final=https://www.timeline.com/"
+  },
+  {
+    "slug": "clinique-la-prairie",
+    "name": "Clinique La Prairie",
+    "url": "https://www.cliniquelaprairie.com/",
+    "category": "brand",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "vue",
+    "cms": "contentful",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:wordpress; frontend:vue; cms:contentful; analytics:ga4; analytics:gtm; fonts:google; final=https://cliniquelaprairie.com/"
+  },
+  {
+    "slug": "seed",
+    "name": "Seed",
+    "url": "https://seed.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "segment",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; builder:shopify; frontend:react; cdn:cloudflare; analytics:ga4; analytics:segment; analytics:amplitude; consent:onetrust"
+  },
+  {
+    "slug": "quest-health",
+    "name": "Quest Health",
+    "url": "https://questhealth.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "cdn:cloudflare; analytics:ga4; payments:stripe; final=https://www.questhealth.com/"
+  },
+  {
+    "slug": "vivoo",
+    "name": "Vivoo",
+    "url": "https://vivoo.io/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; frontend:react; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; pixels:google-ads; chat:zendesk; fonts:google; app_links:ios; app_links:android; final=https://www.vivoo.io/"
+  },
+  {
+    "slug": "glycanage",
+    "name": "GlycanAge",
+    "url": "https://glycanage.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "svelte",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "firebase"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "frontend:svelte; analytics:ga4; analytics:gtm; auth_visible:firebase; fonts:google"
+  },
+  {
+    "slug": "lumen-me",
+    "name": "Lumen (lumen.me)",
+    "url": "https://www.lumen.me/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "cdn:cloudfront; analytics:ga4; analytics:gtm; fonts:google"
+  },
+  {
+    "slug": "dexcom",
+    "name": "Dexcom",
+    "url": "https://www.dexcom.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "netlify",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "firebase"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:netlify; cdn:cloudflare; cms:contentful; analytics:ga4; analytics:gtm; consent:onetrust; auth_visible:firebase"
+  },
+  {
+    "slug": "noom",
+    "name": "Noom",
+    "url": "https://www.noom.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "mixpanel"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:wordpress; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:mixpanel; pixels:tiktok; consent:onetrust"
+  },
+  {
+    "slug": "macrofactor",
+    "name": "MacroFactor",
+    "url": "https://macrofactorapp.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "complianz",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:wordpress; cdn:cloudflare; analytics:ga4; consent:complianz; final=https://macrofactor.com/"
+  },
+  {
+    "slug": "lifesum",
+    "name": "Lifesum",
+    "url": "https://lifesum.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "unknown"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "low",
+    "evidence": "cdn:cloudfront"
+  },
+  {
+    "slug": "openevidence",
+    "name": "OpenEvidence",
+    "url": "https://www.openevidence.com/",
+    "category": "saas",
+    "status": "blocked",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "unknown"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "low",
+    "evidence": "hosting:vercel"
+  },
+  {
+    "slug": "myfitnesspal",
+    "name": "MyFitnessPal",
+    "url": "https://www.myfitnesspal.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudflare; analytics:ga4; analytics:gtm; analytics:amplitude; pixels:meta; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "higherdose",
+    "name": "HigherDose",
+    "url": "https://higherdose.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:wordpress; builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; pixels:google-ads; chat:hubspot"
+  },
+  {
+    "slug": "therabody",
+    "name": "Therabody",
+    "url": "https://www.therabody.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; analytics:ga4; analytics:gtm; analytics:hotjar; consent:onetrust; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "nutrisense",
+    "name": "Nutrisense",
+    "url": "https://www.nutrisense.io/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4"
+  },
+  {
+    "slug": "hyperice",
+    "name": "Hyperice",
+    "url": "https://hyperice.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:hotjar; pixels:meta; pixels:tiktok; pixels:twitter; pixels:google-ads; chat:zendesk"
+  },
+  {
+    "slug": "equinox",
+    "name": "Equinox",
+    "url": "https://www.equinox.com/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google",
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:clarity; pixels:meta; pixels:tiktok; pixels:google-ads; consent:onetrust; fonts:google; fonts:adobe"
+  },
+  {
+    "slug": "ritual",
+    "name": "Ritual",
+    "url": "https://ritual.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; analytics:ga4; analytics:amplitude; pixels:google-ads; fonts:adobe"
+  },
+  {
+    "slug": "headspace",
+    "name": "Headspace",
+    "url": "https://www.headspace.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; cms:contentful; analytics:ga4; analytics:gtm; analytics:amplitude; pixels:tiktok; consent:onetrust"
+  },
+  {
+    "slug": "ag1",
+    "name": "AG1",
+    "url": "https://drinkag1.com/",
+    "category": "health",
+    "status": "error",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "astro",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "builder:astro; hosting:vercel; analytics:ga4"
+  },
+  {
+    "slug": "momentous",
+    "name": "Momentous",
+    "url": "https://www.livemomentous.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; frontend:react; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity; pixels:tiktok"
+  },
+  {
+    "slug": "calm",
+    "name": "Calm",
+    "url": "https://www.calm.com/",
+    "category": "health",
+    "status": "blocked",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "squarespace",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "amplitude"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "meta",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:squarespace; cdn:cloudflare; cdn:cloudfront; analytics:amplitude; pixels:meta; pixels:twitter; pixels:google-ads; payments:stripe; fonts:google"
+  },
+  {
+    "slug": "moonbird",
+    "name": "Moonbird",
+    "url": "https://moonbird.life/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "intercom"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; frontend:react; cdn:cloudflare; analytics:ga4; analytics:clarity; pixels:meta; pixels:tiktok; pixels:google-ads; chat:intercom; fonts:google; app_links:ios; app_links:android; final=https://www.moonbird.life/"
+  },
+  {
+    "slug": "cronometer",
+    "name": "Cronometer",
+    "url": "https://cronometer.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; builder:wordpress; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:amplitude; chat:zendesk; fonts:google; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "stripe",
+    "name": "Stripe",
+    "url": "https://stripe.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cms:contentful; analytics:ga4; payments:stripe"
+  },
+  {
+    "slug": "alo-moves",
+    "name": "Alo Moves",
+    "url": "https://www.alomoves.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "osano",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "heap"
+    ],
+    "payments": [
+      "stripe"
+    ],
+    "pixels": [
+      "meta",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google",
+      "adobe"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "frontend:react; frontend:angular; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:heap; pixels:meta; pixels:google-ads; payments:stripe; consent:osano; fonts:google; fonts:adobe; final=https://wellnessclub.aloyoga.com/"
+  },
+  {
+    "slug": "arc-browser",
+    "name": "Arc Browser",
+    "url": "https://thebrowser.company/",
+    "category": "saas",
+    "status": "redirect",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "sanity",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:sanity; analytics:ga4; final=https://www.thebrowser.company/"
+  },
+  {
+    "slug": "on-running",
+    "name": "On Running",
+    "url": "https://www.on-running.com/",
+    "category": "brand",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "vue",
+    "cms": "contentful",
+    "builder": "nuxt",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:nuxt; frontend:vue; cdn:cloudflare; cms:contentful; analytics:ga4; analytics:gtm; analytics:amplitude; consent:onetrust; final=https://www.on.com/en-us/"
+  },
+  {
+    "slug": "family",
+    "name": "Family",
+    "url": "https://family.co/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "plausible"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; analytics:ga4; analytics:plausible; fonts:google"
+  },
+  {
+    "slug": "spotify",
+    "name": "Spotify",
+    "url": "https://www.spotify.com/",
+    "category": "brand",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "hotjar",
+      "heap"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "tiktok",
+      "twitter",
+      "google-ads"
+    ],
+    "cdn": [
+      "fastly"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "cdn:fastly; analytics:ga4; analytics:hotjar; analytics:heap; pixels:meta; pixels:tiktok; pixels:twitter; pixels:google-ads; consent:onetrust; final=https://open.spotify.com/"
+  },
+  {
+    "slug": "typology",
+    "name": "Typology",
+    "url": "https://www.typology.com/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "vue",
+    "cms": "none",
+    "builder": "nuxt",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:nuxt; frontend:vue; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:clarity"
+  },
+  {
+    "slug": "limitless",
+    "name": "Limitless",
+    "url": "https://www.limitless.ai/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cdn:cloudflare; analytics:ga4; analytics:gtm; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "endel",
+    "name": "Endel",
+    "url": "https://endel.io/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "paddle"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; analytics:ga4; payments:paddle; chat:zendesk; app_links:ios"
+  },
+  {
+    "slug": "clay-gtm",
+    "name": "Clay",
+    "url": "https://www.clay.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "angular",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "segment"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "hubspot"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; frontend:angular; hosting:vercel; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:segment; chat:hubspot; fonts:google"
+  },
+  {
+    "slug": "revolut",
+    "name": "Revolut",
+    "url": "https://www.revolut.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudflare; analytics:ga4; pixels:google-ads; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "ladder",
+    "name": "Ladder",
+    "url": "https://www.joinladder.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; analytics:ga4; app_links:ios"
+  },
+  {
+    "slug": "zero",
+    "name": "Zero",
+    "url": "https://zerolongevity.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "osano",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "framer",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:framer; builder:wordpress; frontend:react; analytics:ga4; analytics:gtm; chat:zendesk; consent:osano; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "hevy",
+    "name": "Hevy",
+    "url": "https://www.hevyapp.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "complianz",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "wordpress",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "tiktok"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "zendesk"
+    ],
+    "confidence": "high",
+    "evidence": "builder:wordpress; cdn:cloudflare; analytics:ga4; analytics:gtm; pixels:tiktok; chat:zendesk; consent:complianz; fonts:google; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "guava",
+    "name": "Guava",
+    "url": "https://guavahealth.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "cdn:cloudflare; analytics:ga4; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "athlytic",
+    "name": "Athlytic",
+    "url": "https://www.athlyticapp.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "netlify",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "hosting:netlify; analytics:ga4; fonts:google; app_links:ios; final=https://athlyticapp.com/"
+  },
+  {
+    "slug": "playbook",
+    "name": "Playbook",
+    "url": "https://www.joinplaybook.com/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "cdn:cloudfront; analytics:ga4; analytics:gtm; app_links:ios; app_links:android; final=https://www.playbookapp.io/"
+  },
+  {
+    "slug": "finch",
+    "name": "Finch",
+    "url": "https://finchcare.com/",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; analytics:ga4; analytics:gtm; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "balance",
+    "name": "Balance",
+    "url": "https://themindcompany.com/apps/balance",
+    "category": "health",
+    "status": "ok",
+    "hosting": "vercel",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "contentful",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; hosting:vercel; cms:contentful; analytics:ga4; analytics:gtm; analytics:amplitude"
+  },
+  {
+    "slug": "fabulous",
+    "name": "Fabulous",
+    "url": "https://www.thefabulous.co/",
+    "category": "health",
+    "status": "redirect",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "none"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; cdn:cloudflare; cdn:cloudfront; analytics:ga4; fonts:google; final=https://v.thefabulous.co/home-control/"
+  },
+  {
+    "slug": "plunge",
+    "name": "Plunge",
+    "url": "https://plunge.com/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "linkedin"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; pixels:linkedin; app_links:ios"
+  },
+  {
+    "slug": "loop-earplugs",
+    "name": "Loop Earplugs",
+    "url": "https://www.loopearplugs.com/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "shopify",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "amplitude",
+      "hotjar",
+      "clarity"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta",
+      "google-ads"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:shopify; frontend:react; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:amplitude; analytics:hotjar; analytics:clarity; pixels:meta; pixels:google-ads"
+  },
+  {
+    "slug": "othership",
+    "name": "Othership",
+    "url": "https://www.othership.us/",
+    "category": "brand",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "webflow",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "linkedin"
+    ],
+    "cdn": [
+      "cloudflare",
+      "cloudfront"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "ios",
+      "android"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:webflow; builder:shopify; cdn:cloudflare; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:hotjar; pixels:linkedin; app_links:ios; app_links:android"
+  },
+  {
+    "slug": "fiture",
+    "name": "Fiture",
+    "url": "https://www.fiture.com/us",
+    "category": "health",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "onetrust",
+    "frontend": "react",
+    "cms": "none",
+    "builder": "next",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4",
+      "gtm",
+      "hotjar"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "cloudfront"
+    ],
+    "fonts": [
+      "google"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "high",
+    "evidence": "builder:next; frontend:react; cdn:cloudfront; analytics:ga4; analytics:gtm; analytics:hotjar; pixels:meta; consent:onetrust; fonts:google"
+  },
+  {
+    "slug": "friend",
+    "name": "Friend",
+    "url": "https://friend.com/",
+    "category": "saas",
+    "status": "ok",
+    "hosting": "unknown",
+    "consent": "none",
+    "frontend": "unknown",
+    "cms": "none",
+    "builder": "unknown",
+    "auth_visible": [
+      "none"
+    ],
+    "analytics": [
+      "ga4"
+    ],
+    "payments": [
+      "none"
+    ],
+    "pixels": [
+      "meta"
+    ],
+    "cdn": [
+      "none"
+    ],
+    "fonts": [
+      "unknown"
+    ],
+    "app_links": [
+      "none"
+    ],
+    "chat": [
+      "none"
+    ],
+    "confidence": "medium",
+    "evidence": "analytics:ga4; pixels:meta"
+  }
+]
