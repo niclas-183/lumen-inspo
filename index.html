@@ -91,19 +91,29 @@ function toBlobUrl(src){
 
 // Deliberately runs after the gallery is on screen: converting earlier would
 // hold the blobs and the base64 strings at the same time as the decrypt
-// buffers and raise the peak we are trying to lower. One image per tick so
-// the first scroll stays smooth.
+// buffers and raise the peak we are trying to lower.
+//
+// Sliced by time rather than one image per tick. With ~900 screenshots, a tick
+// each hits the nested-setTimeout clamp and stretches this to ~8 s on a phone,
+// which is precisely the window where both representations are alive. Short
+// slices keep the first scroll smooth without paying that.
 async function shrinkScreenshots(){
-  for (const img of document.querySelectorAll("img[data-full]")) {
-    const full = img.dataset.full;
-    if (full && full.slice(0, 5) === "data:") {
-      try {
-        const url = toBlobUrl(full);
-        if (url) {
-          img.dataset.full = url;
-          if (img.getAttribute("src") === full) img.src = url;
-        }
-      } catch (e) {}
+  const imgs = [...document.querySelectorAll("img[data-full]")];
+  let i = 0;
+  while (i < imgs.length) {
+    const until = performance.now() + 8;
+    while (i < imgs.length && performance.now() < until) {
+      const img = imgs[i++];
+      const full = img.dataset.full;
+      if (full && full.slice(0, 5) === "data:") {
+        try {
+          const url = toBlobUrl(full);
+          if (url) {
+            img.dataset.full = url;
+            if (img.getAttribute("src") === full) img.src = url;
+          }
+        } catch (e) {}
+      }
     }
     await new Promise(r => setTimeout(r, 0));
   }
