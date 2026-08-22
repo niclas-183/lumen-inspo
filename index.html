@@ -49,8 +49,42 @@ async function deriveKey(password, salt){
     base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
 }
 
-function adopt(html){
-  const parsed = new DOMParser().parseFromString(html, "text/html");
+// Turn a "data:<mime>;base64,..." string into a blob: URL. data-full is only
+// ever assigned to img.src, so the two are interchangeable there — but a blob
+// keeps the screenshot out of the renderer's string heap, where the base64
+// version stayed resident for the lifetime of the page.
+function toBlobUrl(src){
+  const comma = src.indexOf(",");
+  if (comma < 0) return null;
+  const meta = src.slice(5, comma);
+  if (!/;base64$/.test(meta)) return null;
+  const bin = atob(src.slice(comma + 1));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return URL.createObjectURL(new Blob([bytes], {type: meta.slice(0, -7) || "application/octet-stream"}));
+}
+
+// Deliberately runs after the gallery is on screen: converting earlier would
+// hold the blobs and the base64 strings at the same time as the decrypt
+// buffers and raise the peak we are trying to lower. One image per tick so
+// the first scroll stays smooth.
+async function shrinkScreenshots(){
+  for (const img of document.querySelectorAll("img[data-full]")) {
+    const full = img.dataset.full;
+    if (full && full.slice(0, 5) === "data:") {
+      try {
+        const url = toBlobUrl(full);
+        if (url) {
+          img.dataset.full = url;
+          if (img.getAttribute("src") === full) img.src = url;
+        }
+      } catch (e) {}
+    }
+    await new Promise(r => setTimeout(r, 0));
+  }
+}
+
+function adopt(parsed){
   parsed.querySelectorAll("img").forEach(img => {
     const src = img.getAttribute("src");
     if (src) {
@@ -72,21 +106,33 @@ function adopt(html){
     s.textContent = old.textContent;
     document.body.appendChild(s);
   });
+  shrinkScreenshots();
 }
 
-async function unlock(user, pass, btn){
+async function unlock(user, pass){
   if (user !== USER) throw new Error("auth");
   const res = await fetch("payload.bin", {cache: "force-cache"});
   if (!res.ok) throw new Error("payload");
-  const buf = new Uint8Array(await res.arrayBuffer());
-  if (dec.decode(buf.slice(0,4)) !== "LIN1") throw new Error("format");
+  let buf = new Uint8Array(await res.arrayBuffer());
+  if (dec.decode(buf.subarray(0,4)) !== "LIN1") throw new Error("format");
   const salt = buf.slice(4,20);
   const nonce = buf.slice(20,32);
-  const ct = buf.slice(32);
+  // subarray, not slice: slice would copy the whole 25 MB ciphertext.
+  let ct = buf.subarray(32);
   const key = await deriveKey(pass, salt);
-  const pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
+  let pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
+  // ct is a view into buf, so both have to go before the source buffer is freed.
+  buf = null;
+  ct = null;
   sessionStorage.setItem(SKEY, JSON.stringify({user, pass}));
-  adopt(dec.decode(pt));
+  let html = dec.decode(pt);
+  pt = null;
+  // Parsed here rather than inside adopt() so the 25 MB string can be dropped
+  // before the DOM work starts, instead of living until adopt() returns.
+  let parsed = new DOMParser().parseFromString(html, "text/html");
+  html = null;
+  adopt(parsed);
+  parsed = null;
 }
 
 const form = document.getElementById("f");
