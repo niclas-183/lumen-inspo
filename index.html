@@ -49,8 +49,77 @@ async function deriveKey(password, salt){
     base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
 }
 
-function adopt(html){
-  const parsed = new DOMParser().parseFromString(html, "text/html");
+// A share link carries the payload's AES key in the URL fragment:
+// index.html#k=<base64url>. The fragment is never sent to the server and is
+// not included in the Referer header, so the key stays out of access logs and
+// out of whatever the link is forwarded through.
+function tokenFromUrl(){
+  const m = /(?:^|[#&])k=([A-Za-z0-9_-]{43,})/.exec(location.hash || "");
+  return m ? m[1] : null;
+}
+
+function b64urlBytes(s){
+  const pad = s.length % 4;
+  const bin = atob(s.replace(/-/g, "+").replace(/_/g, "/") + (pad ? "=".repeat(4 - pad) : ""));
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+
+// The token IS the AES key, so there is no PBKDF2 to run and the salt is
+// ignored. It is derived from the password but does not reveal it.
+async function keyFromToken(token){
+  const raw = b64urlBytes(token);
+  if (raw.length !== 32) throw new Error("token");
+  return crypto.subtle.importKey("raw", raw, {name:"AES-GCM"}, false, ["decrypt"]);
+}
+
+// Turn a "data:<mime>;base64,..." string into a blob: URL. data-full is only
+// ever assigned to img.src, so the two are interchangeable there — but a blob
+// keeps the screenshot out of the renderer's string heap, where the base64
+// version stayed resident for the lifetime of the page.
+function toBlobUrl(src){
+  const comma = src.indexOf(",");
+  if (comma < 0) return null;
+  const meta = src.slice(5, comma);
+  if (!/;base64$/.test(meta)) return null;
+  const bin = atob(src.slice(comma + 1));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return URL.createObjectURL(new Blob([bytes], {type: meta.slice(0, -7) || "application/octet-stream"}));
+}
+
+// Deliberately runs after the gallery is on screen: converting earlier would
+// hold the blobs and the base64 strings at the same time as the decrypt
+// buffers and raise the peak we are trying to lower.
+//
+// Sliced by time rather than one image per tick. With ~900 screenshots, a tick
+// each hits the nested-setTimeout clamp and stretches this to ~8 s on a phone,
+// which is precisely the window where both representations are alive. Short
+// slices keep the first scroll smooth without paying that.
+async function shrinkScreenshots(){
+  const imgs = [...document.querySelectorAll("img[data-full]")];
+  let i = 0;
+  while (i < imgs.length) {
+    const until = performance.now() + 8;
+    while (i < imgs.length && performance.now() < until) {
+      const img = imgs[i++];
+      const full = img.dataset.full;
+      if (full && full.slice(0, 5) === "data:") {
+        try {
+          const url = toBlobUrl(full);
+          if (url) {
+            img.dataset.full = url;
+            if (img.getAttribute("src") === full) img.src = url;
+          }
+        } catch (e) {}
+      }
+    }
+    await new Promise(r => setTimeout(r, 0));
+  }
+}
+
+function adopt(parsed){
   parsed.querySelectorAll("img").forEach(img => {
     const src = img.getAttribute("src");
     if (src) {
@@ -72,55 +141,83 @@ function adopt(html){
     s.textContent = old.textContent;
     document.body.appendChild(s);
   });
+  shrinkScreenshots();
 }
 
-async function unlock(user, pass, btn){
-  if (user !== USER) throw new Error("auth");
+async function unlock(makeKey, session){
   const res = await fetch("payload.bin", {cache: "force-cache"});
   if (!res.ok) throw new Error("payload");
-  const buf = new Uint8Array(await res.arrayBuffer());
-  if (dec.decode(buf.slice(0,4)) !== "LIN1") throw new Error("format");
+  let buf = new Uint8Array(await res.arrayBuffer());
+  if (dec.decode(buf.subarray(0,4)) !== "LIN1") throw new Error("format");
   const salt = buf.slice(4,20);
   const nonce = buf.slice(20,32);
-  const ct = buf.slice(32);
-  const key = await deriveKey(pass, salt);
-  const pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
-  sessionStorage.setItem(SKEY, JSON.stringify({user, pass}));
-  adopt(dec.decode(pt));
+  // subarray, not slice: slice would copy the whole 25 MB ciphertext.
+  let ct = buf.subarray(32);
+  const key = await makeKey(salt);
+  let pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
+  // ct is a view into buf, so both have to go before the source buffer is freed.
+  buf = null;
+  ct = null;
+  if (session) sessionStorage.setItem(SKEY, JSON.stringify(session));
+  let html = dec.decode(pt);
+  pt = null;
+  // Parsed here rather than inside adopt() so the 25 MB string can be dropped
+  // before the DOM work starts, instead of living until adopt() returns.
+  let parsed = new DOMParser().parseFromString(html, "text/html");
+  html = null;
+  adopt(parsed);
+  parsed = null;
 }
 
 const form = document.getElementById("f");
 const err = document.getElementById("e");
 const btn = document.getElementById("b");
 
+function busy(on){
+  btn.disabled = on;
+  btn.textContent = on ? "Öffne…" : "Enter";
+}
+
 form.addEventListener("submit", async (ev) => {
   ev.preventDefault();
   err.textContent = "";
-  btn.disabled = true;
-  btn.textContent = "Öffne…";
   const user = document.getElementById("u").value.trim();
   const pass = document.getElementById("p").value;
+  if (user !== USER) { err.textContent = "Login stimmt nicht."; return; }
+  busy(true);
   try {
-    await unlock(user, pass);
+    await unlock(salt => deriveKey(pass, salt), {user, pass});
   } catch (e) {
     sessionStorage.removeItem(SKEY);
     err.textContent = "Login stimmt nicht.";
-    btn.disabled = false;
-    btn.textContent = "Enter";
+    busy(false);
   }
 });
 
-try {
-  const saved = JSON.parse(sessionStorage.getItem(SKEY) || "null");
-  if (saved && saved.user && saved.pass) {
-    btn.disabled = true;
-    btn.textContent = "Öffne…";
-    unlock(saved.user, saved.pass).catch(() => {
+function boot(){
+  let saved = null;
+  try { saved = JSON.parse(sessionStorage.getItem(SKEY) || "null"); } catch (e) {}
+  // The fragment survives the reload that follows a mobile tab eviction, and
+  // the session copy covers the case where it does not.
+  const token = tokenFromUrl() || (saved && saved.token);
+  if (token) {
+    busy(true);
+    unlock(() => keyFromToken(token), {token}).catch(() => {
       sessionStorage.removeItem(SKEY);
-      btn.disabled = false;
-      btn.textContent = "Enter";
+      err.textContent = "Dieser Link funktioniert nicht mehr.";
+      busy(false);
+    });
+    return;
+  }
+  if (saved && saved.user && saved.pass) {
+    busy(true);
+    unlock(salt => deriveKey(saved.pass, salt), null).catch(() => {
+      sessionStorage.removeItem(SKEY);
+      busy(false);
     });
   }
-} catch (e) {}
+}
+
+boot();
 </script>
 </body></html>
