@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Lumen · Share-Link</title>
+<style>
+:root { --bg:#0c0d0b; --ink:#f3f0e8; --muted:#9a9689; --line:#2a2b26; --accent:#d8c7a1; }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 ui-sans-serif,system-ui,sans-serif}
+.wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:32px}
+form{width:100%;max-width:420px}
+.eyebrow{color:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-size:11px;margin:0 0 10px}
+h1{font-family:ui-serif,Georgia,serif;font-weight:500;font-size:32px;margin:0 0 8px;letter-spacing:-.02em}
+p{color:var(--muted);margin:0 0 28px;font-size:14px}
+label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+input{width:100%;background:#141512;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:12px 14px;font-size:15px;margin-bottom:14px}
+input:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+button{width:100%;appearance:none;border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:12px 14px;font-size:14px;cursor:pointer;margin-top:6px}
+button:disabled{opacity:.6;cursor:wait}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+.err{color:#e07a6a;font-size:13px;min-height:1.2em;margin:8px 0 0}
+.out{display:none;margin-top:22px}
+.out.on{display:block}
+code{display:block;background:#141512;border:1px solid var(--line);border-radius:8px;padding:12px 14px;
+     font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all;color:var(--ink)}
+.note{font-size:12px;color:var(--muted);margin:14px 0 0}
+.note b{color:var(--ink);font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+<form id="f" autocomplete="off">
+<p class="eyebrow">Lumen</p>
+<h1>Share-Link erzeugen</h1>
+<p>Erzeugt aus dem Passwort einen Link, mit dem sich das Moodboard ohne Login öffnen lässt. Läuft komplett im Browser — es wird nichts hochgeladen.</p>
+<label for="p">Passwort</label>
+<input id="p" type="password" autocomplete="current-password" autofocus>
+<button type="submit" id="b">Link erzeugen</button>
+<p class="err" id="e"></p>
+
+<div class="out" id="o">
+  <label for="l">Link</label>
+  <code id="l"></code>
+  <button type="button" class="ghost" id="c">Kopieren</button>
+  <p class="note">
+    <b>Der Link ist der Schlüssel.</b> Wer ihn hat, kommt rein — dauerhaft, und ohne
+    dass sich das nachvollziehen lässt. Zurücknehmen lässt er sich nur, indem
+    <code style="display:inline;padding:2px 5px">payload.bin</code> mit einem neuen
+    Passwort neu verschlüsselt wird; dann werden alle bisherigen Links ungültig.
+    Das Passwort selbst verrät der Link nicht.
+  </p>
+</div>
+</form>
+</div>
+<script>
+const enc = new TextEncoder();
+const dec = new TextDecoder();
+const form = document.getElementById("f");
+const err  = document.getElementById("e");
+const btn  = document.getElementById("b");
+const out  = document.getElementById("o");
+const link = document.getElementById("l");
+
+function b64url(bytes){
+  let bin = "";
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+async function makeLink(pass){
+  const res = await fetch("payload.bin", {cache: "force-cache"});
+  if (!res.ok) throw new Error("payload");
+  const buf = new Uint8Array(await res.arrayBuffer());
+  if (dec.decode(buf.subarray(0, 4)) !== "LIN1") throw new Error("format");
+  const salt = buf.slice(4, 20);
+  const nonce = buf.slice(20, 32);
+  const base = await crypto.subtle.importKey("raw", enc.encode(pass), "PBKDF2", false, ["deriveKey"]);
+  // extractable: true here, unlike index.html — exporting the raw key is the point.
+  const key = await crypto.subtle.deriveKey(
+    {name:"PBKDF2", salt, iterations:200000, hash:"SHA-256"},
+    base, {name:"AES-GCM", length:256}, true, ["decrypt"]);
+  // AES-GCM only reveals a wrong password by failing its tag check, and that
+  // needs the whole ciphertext. Better to spend it here than to hand someone
+  // a link that silently does not work. The plaintext is dropped immediately.
+  await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, buf.subarray(32));
+  const raw = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+  return new URL("index.html#k=" + b64url(raw), location.href).href;
+}
+
+form.addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  err.textContent = "";
+  out.classList.remove("on");
+  btn.disabled = true;
+  btn.textContent = "Prüfe…";
+  try {
+    link.textContent = await makeLink(document.getElementById("p").value);
+    out.classList.add("on");
+    btn.textContent = "Link erzeugen";
+    btn.disabled = false;
+  } catch (e) {
+    err.textContent = e.message === "payload"
+      ? "payload.bin nicht gefunden."
+      : "Passwort stimmt nicht.";
+    btn.textContent = "Link erzeugen";
+    btn.disabled = false;
+  }
+});
+
+document.getElementById("c").addEventListener("click", async () => {
+  const c = document.getElementById("c");
+  try {
+    await navigator.clipboard.writeText(link.textContent);
+    c.textContent = "Kopiert";
+  } catch (e) {
+    c.textContent = "Bitte manuell kopieren";
+  }
+  setTimeout(() => { c.textContent = "Kopieren"; }, 2000);
+});
+</script>
+</body></html>

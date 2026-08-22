@@ -49,6 +49,31 @@ async function deriveKey(password, salt){
     base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
 }
 
+// A share link carries the payload's AES key in the URL fragment:
+// index.html#k=<base64url>. The fragment is never sent to the server and is
+// not included in the Referer header, so the key stays out of access logs and
+// out of whatever the link is forwarded through.
+function tokenFromUrl(){
+  const m = /(?:^|[#&])k=([A-Za-z0-9_-]{43,})/.exec(location.hash || "");
+  return m ? m[1] : null;
+}
+
+function b64urlBytes(s){
+  const pad = s.length % 4;
+  const bin = atob(s.replace(/-/g, "+").replace(/_/g, "/") + (pad ? "=".repeat(4 - pad) : ""));
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+
+// The token IS the AES key, so there is no PBKDF2 to run and the salt is
+// ignored. It is derived from the password but does not reveal it.
+async function keyFromToken(token){
+  const raw = b64urlBytes(token);
+  if (raw.length !== 32) throw new Error("token");
+  return crypto.subtle.importKey("raw", raw, {name:"AES-GCM"}, false, ["decrypt"]);
+}
+
 // Turn a "data:<mime>;base64,..." string into a blob: URL. data-full is only
 // ever assigned to img.src, so the two are interchangeable there — but a blob
 // keeps the screenshot out of the renderer's string heap, where the base64
@@ -109,8 +134,7 @@ function adopt(parsed){
   shrinkScreenshots();
 }
 
-async function unlock(user, pass){
-  if (user !== USER) throw new Error("auth");
+async function unlock(makeKey, session){
   const res = await fetch("payload.bin", {cache: "force-cache"});
   if (!res.ok) throw new Error("payload");
   let buf = new Uint8Array(await res.arrayBuffer());
@@ -119,12 +143,12 @@ async function unlock(user, pass){
   const nonce = buf.slice(20,32);
   // subarray, not slice: slice would copy the whole 25 MB ciphertext.
   let ct = buf.subarray(32);
-  const key = await deriveKey(pass, salt);
+  const key = await makeKey(salt);
   let pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
   // ct is a view into buf, so both have to go before the source buffer is freed.
   buf = null;
   ct = null;
-  sessionStorage.setItem(SKEY, JSON.stringify({user, pass}));
+  if (session) sessionStorage.setItem(SKEY, JSON.stringify(session));
   let html = dec.decode(pt);
   pt = null;
   // Parsed here rather than inside adopt() so the 25 MB string can be dropped
@@ -139,34 +163,51 @@ const form = document.getElementById("f");
 const err = document.getElementById("e");
 const btn = document.getElementById("b");
 
+function busy(on){
+  btn.disabled = on;
+  btn.textContent = on ? "Öffne…" : "Enter";
+}
+
 form.addEventListener("submit", async (ev) => {
   ev.preventDefault();
   err.textContent = "";
-  btn.disabled = true;
-  btn.textContent = "Öffne…";
   const user = document.getElementById("u").value.trim();
   const pass = document.getElementById("p").value;
+  if (user !== USER) { err.textContent = "Login stimmt nicht."; return; }
+  busy(true);
   try {
-    await unlock(user, pass);
+    await unlock(salt => deriveKey(pass, salt), {user, pass});
   } catch (e) {
     sessionStorage.removeItem(SKEY);
     err.textContent = "Login stimmt nicht.";
-    btn.disabled = false;
-    btn.textContent = "Enter";
+    busy(false);
   }
 });
 
-try {
-  const saved = JSON.parse(sessionStorage.getItem(SKEY) || "null");
-  if (saved && saved.user && saved.pass) {
-    btn.disabled = true;
-    btn.textContent = "Öffne…";
-    unlock(saved.user, saved.pass).catch(() => {
+function boot(){
+  let saved = null;
+  try { saved = JSON.parse(sessionStorage.getItem(SKEY) || "null"); } catch (e) {}
+  // The fragment survives the reload that follows a mobile tab eviction, and
+  // the session copy covers the case where it does not.
+  const token = tokenFromUrl() || (saved && saved.token);
+  if (token) {
+    busy(true);
+    unlock(() => keyFromToken(token), {token}).catch(() => {
       sessionStorage.removeItem(SKEY);
-      btn.disabled = false;
-      btn.textContent = "Enter";
+      err.textContent = "Dieser Link funktioniert nicht mehr.";
+      busy(false);
+    });
+    return;
+  }
+  if (saved && saved.user && saved.pass) {
+    busy(true);
+    unlock(salt => deriveKey(saved.pass, salt), null).catch(() => {
+      sessionStorage.removeItem(SKEY);
+      busy(false);
     });
   }
-} catch (e) {}
+}
+
+boot();
 </script>
 </body></html>
