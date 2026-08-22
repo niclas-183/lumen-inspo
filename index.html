@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Lumen · Inspo</title>
+<style>
+:root { --bg:#0c0d0b; --ink:#f3f0e8; --muted:#9a9689; --line:#2a2b26; --accent:#d8c7a1; }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 ui-sans-serif,system-ui,sans-serif}
+.wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:32px}
+form{width:100%;max-width:340px}
+.eyebrow{color:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-size:11px;margin:0 0 10px}
+h1{font-family:ui-serif,Georgia,serif;font-weight:500;font-size:32px;margin:0 0 8px;letter-spacing:-.02em}
+p{color:var(--muted);margin:0 0 28px;font-size:14px}
+label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+input{width:100%;background:#141512;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:12px 14px;font-size:15px;margin-bottom:14px}
+input:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+button{width:100%;appearance:none;border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:12px 14px;font-size:14px;cursor:pointer;margin-top:6px}
+button:disabled{opacity:.6;cursor:wait}
+.err{color:#e07a6a;font-size:13px;min-height:1.2em;margin:8px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<form id="f" autocomplete="on">
+<p class="eyebrow">Preavia Labs</p>
+<h1>Lumen inspo</h1>
+<p>Internes Moodboard. Bitte einloggen.</p>
+<label for="u">User</label>
+<input id="u" name="username" autocomplete="username" autofocus>
+<label for="p">Passwort</label>
+<input id="p" name="password" type="password" autocomplete="current-password">
+<button type="submit" id="b">Enter</button>
+<p class="err" id="e"></p>
+</form>
+</div>
+<script>
+const USER = "lumen";
+const enc = new TextEncoder();
+const dec = new TextDecoder();
+function b64(bytes){let s="";bytes.forEach(b=>s+=String.fromCharCode(b));return btoa(s)}
+async function deriveKey(password, salt){
+  const base = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    {name:"PBKDF2", salt, iterations:200000, hash:"SHA-256"},
+    base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
+}
+document.getElementById("f").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const e = document.getElementById("e");
+  const b = document.getElementById("b");
+  e.textContent = "";
+  const user = document.getElementById("u").value.trim();
+  const pass = document.getElementById("p").value;
+  if (user !== USER){ e.textContent = "Login stimmt nicht."; return; }
+  b.disabled = true; b.textContent = "Öffne…";
+  try {
+    const res = await fetch("payload.bin", {cache:"no-store"});
+    if (!res.ok) throw new Error("payload");
+    const buf = new Uint8Array(await res.arrayBuffer());
+    const magic = dec.decode(buf.slice(0,4));
+    if (magic !== "LIN1") throw new Error("format");
+    const salt = buf.slice(4,20);
+    const nonce = buf.slice(20,32);
+    const ct = buf.slice(32);
+    const key = await deriveKey(pass, salt);
+    const pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
+    const html = dec.decode(pt);
+    document.open(); document.write(html); document.close();
+  } catch (err) {
+    e.textContent = "Login stimmt nicht.";
+    b.disabled = false; b.textContent = "Enter";
+  }
+});
+</script>
+</body></html>
