@@ -1,0 +1,136 @@
+/*
+ * Lumen Moodboard — locked design tokens
+ * Status: FROZEN (design direction run, 24 Aug 2026).
+ * Implementation (Grok 4.6) must consume these variables and may not
+ * introduce new colors, sizes, radii, shadows or durations.
+ * Naming: english snake_case, prefixed by group.
+ */
+
+:root {
+  /* ------------------------------------------------------------------ */
+  /* color — fields (page backgrounds; never pure #FFFFFF / #000000)     */
+  /* ------------------------------------------------------------------ */
+  --color_clinical_white: #F6F7F5; /* Direction B base; UI panels on paper */
+  --color_editorial_paper: #F1EDE4; /* Direction C base; warmth carrier    */
+  --color_tech_black: #101412;     /* Direction A base; green-cast near-black */
+
+  /* color — ink (text) */
+  --color_ink: #1A1F1C;            /* primary text on light fields        */
+  --color_ink_secondary: #4A524D;  /* sublines, body on light             */
+  --color_ink_muted: #6A716B;      /* captions, meta on light (4.7:1 on clinical_white) */
+  --color_paper_ink: #F2F4F1;      /* primary text on tech_black          */
+  --color_paper_ink_dim: #B8BFB9;  /* secondary text on tech_black        */
+
+  /* color — accent (one accent; muted clinical green) */
+  --color_accent: #2E5E4E;         /* CTAs + links on light fields (6.9:1 on clinical_white) */
+  --color_accent_on_dark: #8FBFA9; /* kickers/links on tech_black (9.0:1)  */
+
+  /* color — lines & surfaces */
+  --color_line: #DDE1DB;           /* hairlines, card borders on light    */
+  --color_line_dark: #2A312C;      /* hairlines on tech_black             */
+  --color_surface_raised: #FCFCFB; /* dashboard cards on clinical_white   */
+
+  /* color — data (original Lumen dashboard wireframes only; never for marketing decoration) */
+  --color_data_sleep: #5B7FA6;     /* slate blue — sleep                  */
+  --color_data_activity: #4E8A70;  /* green — activity/steps              */
+  --color_data_bioage: #A87B3B;    /* ochre — biological age              */
+  --color_data_labs: #7A8B96;      /* grey-blue — lab markers in range    */
+  --color_data_alert: #B4593C;     /* burnt sienna — out-of-range marker; max 1 per module */
+
+  /* ------------------------------------------------------------------ */
+  /* type — families (Google Fonts; see spec/ASSETS.md for exact loads)  */
+  /* ------------------------------------------------------------------ */
+  --font_serif: "Newsreader", Georgia, serif;         /* display + headlines only */
+  --font_sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; /* body, UI, nav */
+  --font_mono: "IBM Plex Mono", "Courier New", monospace; /* kickers, data labels, captions-as-meta */
+
+  /* type — scale (desktop 1440; sizes in px via rem, root 16px) */
+  --type_display_xl_size: 4.5rem;   /* 72px */ --type_display_xl_line: 1.06; --type_display_xl_tracking: -0.01em;
+  --type_display_lg_size: 3.5rem;   /* 56px */ --type_display_lg_line: 1.10; --type_display_lg_tracking: -0.008em;
+  --type_heading_md_size: 2.25rem;  /* 36px */ --type_heading_md_line: 1.17;
+  --type_heading_sm_size: 1.625rem; /* 26px */ --type_heading_sm_line: 1.23;
+  --type_body_lg_size: 1.1875rem;   /* 19px */ --type_body_lg_line: 1.53;
+  --type_body_md_size: 1rem;        /* 16px */ --type_body_md_line: 1.56;
+  --type_caption_size: 0.8125rem;   /* 13px */ --type_caption_line: 1.46;
+  --type_data_label_size: 0.75rem;  /* 12px */ --type_data_label_line: 1.33; --type_data_label_tracking: 0.06em; /* uppercase, mono */
+
+  /* type — weights */
+  --weight_serif_display: 500;  /* Newsreader medium; never bolder than 600 */
+  --weight_sans_regular: 400;
+  --weight_sans_medium: 500;
+  --weight_sans_semibold: 600;  /* buttons, wordmark; 700 is banned */
+
+  /* ------------------------------------------------------------------ */
+  /* space — 8pt scale (4px only inside data-viz internals)              */
+  /* ------------------------------------------------------------------ */
+  --space_0: 0.25rem;  /*   4px */
+  --space_1: 0.5rem;   /*   8px */
+  --space_2: 0.75rem;  /*  12px */
+  --space_3: 1rem;     /*  16px */
+  --space_4: 1.5rem;   /*  24px */
+  --space_5: 2rem;     /*  32px */
+  --space_6: 3rem;     /*  48px */
+  --space_7: 4rem;     /*  64px */
+  --space_8: 6rem;     /*  96px */
+  --space_9: 8rem;     /* 128px */
+  --space_10: 12rem;   /* 192px */
+
+  /* ------------------------------------------------------------------ */
+  /* layout                                                              */
+  /* ------------------------------------------------------------------ */
+  --layout_max_width: 75rem;    /* 1200px content container               */
+  --layout_columns: 12;
+  --layout_gutter: 2rem;        /* 32px */
+  --layout_margin_desktop: 4rem;   /* 64px at >=1440 */
+  --layout_margin_laptop: 3rem;    /* 48px at >=1024 */
+  --layout_margin_tablet: 2rem;    /* 32px at >=768  */
+  --layout_margin_mobile: 1.25rem; /* 20px at >=375  */
+  /* breakpoints (for documentation; used in media queries): 1440 / 1024 / 768 / 375 */
+
+  /* ------------------------------------------------------------------ */
+  /* radius                                                              */
+  /* ------------------------------------------------------------------ */
+  --radius_xs: 2px;    /* chips, tags, range-bar ends            */
+  --radius_sm: 6px;    /* buttons, inputs, url-pill              */
+  --radius_md: 12px;   /* cards, dashboard modules, photo tiles  */
+  --radius_lg: 20px;   /* outer device/browser frame only        */
+  --radius_full: 999px;/* status dots only — never buttons       */
+
+  /* ------------------------------------------------------------------ */
+  /* elevation (one shadow; light fields only; nothing on tech_black)    */
+  /* ------------------------------------------------------------------ */
+  --shadow_card: 0 1px 2px rgba(16, 20, 18, 0.06), 0 8px 24px rgba(16, 20, 18, 0.05);
+
+  /* ------------------------------------------------------------------ */
+  /* motion (almost none)                                                */
+  /* ------------------------------------------------------------------ */
+  --motion_duration_fast: 120ms;  /* hover states                        */
+  --motion_duration_base: 200ms;  /* section fade-up, max 8px translate  */
+  --motion_easing: cubic-bezier(0.2, 0, 0, 1);
+  /* allowed properties: opacity, transform (translateY <= 8px).
+     banned: parallax, scroll-jacking, autoplaying loops, marquees,
+     animated gradients, counters that count up. */
+
+  /* ------------------------------------------------------------------ */
+  /* photography treatment                                               */
+  /* ------------------------------------------------------------------ */
+  --photo_saturate: 0.85;        /* filter: saturate(var(--photo_saturate)) on every photo */
+  --photo_overlay_dark: rgba(16, 20, 18, 0.28); /* only when text sits on a photo */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion_duration_fast: 0ms;
+    --motion_duration_base: 0ms;
+  }
+}
+
+/* Tablet/mobile type overrides (768 and below): display sizes step down one slot. */
+@media (max-width: 768px) {
+  :root {
+    --type_display_xl_size: 3rem;    /* 48px */
+    --type_display_lg_size: 2.5rem;  /* 40px */
+    --type_heading_md_size: 1.75rem; /* 28px */
+    --layout_gutter: 1.25rem;        /* 20px */
+  }
+}
