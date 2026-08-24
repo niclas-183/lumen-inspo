@@ -4,7 +4,6 @@
   var links = document.querySelectorAll(".section-index a");
 
   if (!reduce && "IntersectionObserver" in window) {
-    sections.forEach(function (el) { el.classList.add("is-waiting"); });
     var fade = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -12,7 +11,15 @@
         fade.unobserve(entry.target);
       });
     }, { threshold: 0.08, rootMargin: "0px 0px -8% 0px" });
-    sections.forEach(function (el) { fade.observe(el); });
+    sections.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add("is-in");
+      } else {
+        el.classList.add("is-waiting");
+        fade.observe(el);
+      }
+    });
   }
 
   if ("IntersectionObserver" in window && links.length) {

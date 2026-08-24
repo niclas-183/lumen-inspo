@@ -537,12 +537,33 @@ button:focus-visible {
   .mock-nav { padding-inline: var(--layout_margin_desktop); }
 }
 
+@media (max-width: 767px) {
+  .mock-nav {
+    height: auto;
+    min-height: var(--space_7);
+    flex-wrap: wrap;
+    row-gap: var(--space_1);
+    padding-block: var(--space_2);
+  }
+
+  .mock-nav-links {
+    width: 100%;
+    justify-content: flex-end;
+    gap: var(--space_2);
+    flex-wrap: wrap;
+  }
+
+  .hero-a-body { padding-top: var(--space_6); }
+  .hero-b-body { padding-top: var(--space_5); }
+}
+
 .wordmark {
   font-family: var(--font_sans);
   font-weight: var(--weight_sans_semibold);
   font-size: 0.9375rem; /* 15px — DIRECTIONS.md nav, not on type scale */
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 .mock-nav-links {
@@ -1079,7 +1100,6 @@ button:focus-visible {
   font-family: var(--font_mono);
   font-size: var(--type_data_label_size);
   letter-spacing: var(--type_data_label_tracking);
-  text-transform: uppercase;
   color: var(--color_ink_secondary);
 }
 
