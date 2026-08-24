@@ -16,6 +16,9 @@
 | `spec/IMPLEMENTATION.md` | Brief an den implementierenden Agenten (Grok 4.6): Stack, Dateibaum, Qualitätslatte, verbotene Abkürzungen. |
 | `assets/photos/` | Acht lizenzgeprüfte, bereits einvendorte Bilder (Unsplash/Pexels). |
 
-## Später ansehen
+## Ansehen
 
-Nach der Implementierung: `moodboard/index.html` direkt im Browser öffnen (kein Build, kein Server nötig). Bis dahin sind die Spezifikationen das Artefakt.
+- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard/](https://niclas-183.github.io/lumen-inspo/moodboard/) — `index.html` ist das gleiche Token-Gate wie die Galerie (User `lumen`, Session `lumen-inspo-session`). Share-Links über `moodboard/token.html` → `index.html#k=…`.
+- **Review / von Disk:** `moodboard/app.html` ist die unverschlüsselte Scroll-Seite (kein Login). Nicht der Pages-Einstieg.
+
+Die verschlüsselte Galerie, Login und `stack.csv` dieses Repos bleiben unberührt.
