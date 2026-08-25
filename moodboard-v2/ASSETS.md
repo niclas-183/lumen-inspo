@@ -23,6 +23,38 @@ jeweiligen Kontext („Gestellte Szene — keine Kundin/Patientin.",
 „Symbolbilder — Unsplash, gestellte Szenen.").
 Kein neues Stockmaterial wurde gescrapt.
 
+## App-Store-Screenshots (Rondell)
+
+**Bewusste Ausnahme von der Marken-Regel aus Issue #12 — auf Anweisung.**
+Sonst gilt weiterhin: keine fremden Produktoberflächen auf der Seite. Für den
+Abschnitt „Marktumfeld" (`#v1-umfeld` / `#v2-umfeld`) sind zehn
+App-Store-Screenshots **einer einzigen fremden App** interne Referenz fürs
+Moodboard: eine geschlossene Bevel-Serie als Dichte-Referenz — wie ein
+Anbieter Schlaf, Recovery und biologisches Alter über zehn Screens hinweg
+darstellt. Auf Wunsch bewusst eine Serie statt eines Anbieter-Querschnitts.
+Kein Lumen-Material, keine Vorlage zum Nachbauen, nichts davon geht in
+Produkt-UI. Die Herkunft steht sichtbar unter dem Rondell
+(„App-Store-Screenshots — interne Referenz, nicht Lumen.") und im Alt-Text
+jeder Karte. Marke und Screenshots gehören Starlight Tech LLC; keine
+Partnerschaft, kein Vergleich, keine Wertung wird behauptet.
+
+Quelle in allen Fällen: die `screenshotUrls` aus dem iTunes-Lookup zu
+`trackId` 6456176249 (US-Storefront, Abruf 25. Aug 2026), hi-res-Rendition
+`1284x2778bb`, danach auf 720×1560 beschnitten.
+
+| Datei (assets/rondell/) | Kategorie (`data-cat`) | App | Anbieter |
+|---|---|---|---|
+| `01-bevel-ueberblick.jpg` | Überblick | Bevel: AI Health Coach | Starlight Tech LLC |
+| `02-bevel-schlaf.jpg` | Schlaf | Bevel: AI Health Coach | Starlight Tech LLC |
+| `03-bevel-bioalter.jpg` | Biologisches Alter | Bevel: AI Health Coach | Starlight Tech LLC |
+| `04-bevel-recovery.jpg` | Recovery | Bevel: AI Health Coach | Starlight Tech LLC |
+| `05-bevel-energie.jpg` | Energie | Bevel: AI Health Coach | Starlight Tech LLC |
+| `06-bevel-ziele.jpg` | Ziele | Bevel: AI Health Coach | Starlight Tech LLC |
+| `07-bevel-datenfragen.jpg` | Datenfragen | Bevel: AI Health Coach | Starlight Tech LLC |
+| `08-bevel-ernaehrung.jpg` | Ernährung | Bevel: AI Health Coach | Starlight Tech LLC |
+| `09-bevel-wearables.jpg` | Wearables | Bevel: AI Health Coach | Starlight Tech LLC |
+| `10-bevel-zyklus.jpg` | Zyklus | Bevel: AI Health Coach | Starlight Tech LLC |
+
 ## Schrift
 
 Google Fonts, ein `<link>` mit `display=swap`:
@@ -42,5 +74,7 @@ keine selbst gezeichneten Illustrationen.
 
 App-Fenster (V1), Artefakt, Phone und Laborbericht (V2) sind originale
 Lumen-Wireframes (HTML/CSS, Beispieldaten, deutsches Zahlenformat).
-Kein Screenshot, kein Tracing von Function/Bevel/Oura/Whoop/Apple Health.
+Kein Screenshot, kein Tracing von Function/Bevel/Oura/Whoop/Apple Health —
+die fremden Screenshots im Rondell stehen ausdrücklich daneben, nie darin
+(siehe „App-Store-Screenshots (Rondell)").
 Der Einseiter in V1 ist ein HTML-Mock mit dem bestehenden Wordmark-SVG.
