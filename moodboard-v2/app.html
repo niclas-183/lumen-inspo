@@ -49,7 +49,8 @@
   </header>
 
   <section class="hero hero-field">
-    <img class="field-photo" src="assets/office_window_quiet.jpg" alt="">
+    <img class="field-photo" id="field-photo" src="assets/office_window_quiet.jpg" alt="">
+    <canvas class="field-dither" id="field-dither" aria-hidden="true"></canvas>
     <div class="field-scrim" aria-hidden="true"></div>
 
     <div class="field-content">
@@ -766,27 +767,31 @@
 
 </div>
 
-<!-- Reviewer-Chrome: Variantenwechsel -->
-<div class="switcher" role="tablist" aria-label="Variante wählen">
-  <button role="tab" aria-selected="true" data-target="variant-1">Variante 1 · Fotofeld</button>
-  <button role="tab" aria-selected="false" data-target="variant-2">Variante 2 · Editorial</button>
+<!-- Reviewer-Chrome: Variantenwechsel + Dither (nicht Produkt-UI) -->
+<aside class="mood-dock" aria-label="Moodboard-Steuerung">
+  <div class="mood-dock-card">
+    <p class="mood-dock-kicker">Variante</p>
+    <div class="switcher switcher-dock" role="tablist" aria-label="Variante wählen">
+      <button type="button" role="tab" aria-selected="true" data-target="variant-1">Fotofeld</button>
+      <button type="button" role="tab" aria-selected="false" data-target="variant-2">Editorial</button>
+    </div>
+  </div>
+  <div class="mood-dock-card" id="dither-dock">
+    <p class="mood-dock-kicker">Moodboard-Werkzeug</p>
+    <div class="switcher switcher-dock" role="tablist" aria-label="Hero-Dither">
+      <button type="button" role="tab" aria-selected="true" data-dither="original">Original</button>
+      <button type="button" role="tab" aria-selected="false" data-dither="raster">Raster</button>
+      <button type="button" role="tab" aria-selected="false" data-dither="atkinson">Atkinson</button>
+      <button type="button" role="tab" aria-selected="false" data-dither="halftone">Halftone</button>
+    </div>
+  </div>
+</aside>
+
+<div class="switcher switcher-bottom" role="tablist" aria-label="Variante wählen">
+  <button type="button" role="tab" aria-selected="true" data-target="variant-1">Variante 1 · Fotofeld</button>
+  <button type="button" role="tab" aria-selected="false" data-target="variant-2">Variante 2 · Editorial</button>
 </div>
 
-<script>
-(function () {
-  var tabs = document.querySelectorAll('.switcher [data-target]');
-  function show(id) {
-    document.querySelectorAll('.page').forEach(function (p) { p.hidden = p.id !== id; });
-    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.target === id)); });
-    window.scrollTo(0, 0);
-  }
-  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.target); }); });
-  if (location.hash === '#variant-2' || location.hash.indexOf('#v2-') === 0) show('variant-2');
-  document.addEventListener('keydown', function (e) {
-    if (e.key === '1') show('variant-1');
-    if (e.key === '2') show('variant-2');
-  });
-})();
-</script>
+<script src="hero-dither.js"></script>
 </body>
 </html>
