@@ -91,9 +91,28 @@ Variante 3 nutzt ausschließlich Hugeicons Stroke Rounded
 ## Illustration
 
 Open Doodles (https://www.opendoodles.com, CC0 1.0 — Public Domain,
-Pablo Stanley). Dateien in `assets/doodles/`, als Inline-SVG in Variante 3
-eingebettet und normalisiert (Linien `currentColor`, Füllpfad
-`.lumen-doodle__fill` in `#fcba30`, `aria-hidden`).
+Pablo Stanley). Bezogen als Original-SVG vom Zeichner selbst
+(`https://opendoodles.s3-us-west-1.amazonaws.com/<name>.svg`, verlinkt auf
+opendoodles.com), Abruf 25. Aug 2026. Dateien in `assets/doodles/`, als
+Inline-SVG in Variante 3 eingebettet.
+
+Die Originale bringen ihre Colorierung selbst mit: jede Datei besteht aus
+genau zwei Ebenen — `Accent` (im Original `#FF5678`) hinter `Ink`
+(`#000000`). Wir fassen ausschließlich die Accent-Ebene an; die Tusche
+bleibt schwarz. Wer die Ink-Ebene mitfärbt, legt nur einen Farbschleier
+über die Zeichnung und nimmt ihr den Strich.
+
+Normalisierung, sonst nichts: XML-Kopf, Sketch-Kommentar, `title`/`desc`
+und die Sketch-Layernamen (`id`) entfernt — letztere, weil fünf Doodles
+inline im selben Dokument liegen und doppelte ids ungültig wären; es gibt
+keine internen Referenzen darauf. Ebenen bekommen die Klassen
+`.lumen-doodle__accent` / `.lumen-doodle__ink`, die CSS über
+`--sys-doodle-accent` / `--sys-doodle-ink` fährt (Default: amber.600 auf
+Schwarz; auf gelbem Grund kippt der Accent nach amber.50, im Grund-Modus
+„Satter" nach amber.700). Die `viewBox` ist der per `getBBox` gemessene
+Bildinhalt plus 16px Luft — die Originale liegen in einer 1024×768-Bühne
+mit viel Rand. **Kein Pfad wurde verändert**: die Geometrie ist mit den
+Originaldateien byte-identisch.
 
 | Datei (assets/doodles/) | Verwendung |
 |---|---|

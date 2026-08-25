@@ -2157,6 +2157,11 @@ ul { list-style: none; }
   --sys-serif: "Lora", Georgia, serif;
   --sys-sans: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
 
+  /* Doodle-Ebenen — die Originale liegen zweilagig vor (Accent hinter Ink);
+     coloriert wird ausschließlich die Accent-Ebene, die Tusche bleibt schwarz */
+  --sys-doodle-ink: #000000;
+  --sys-doodle-accent: #FCBA30;
+
   /* Maß — alles läuft im Inhaltsmaß, nichts an die Viewport-Kante */
   --sys-content: 1180px;
   --sys-gutter: 48px;
@@ -2169,6 +2174,8 @@ ul { list-style: none; }
   --sys-stage: #FFD784;
   /* Tiles hell halten, sonst versinken sie im satteren Grund */
   --sys-tile: #FFF4E8;
+  /* Accent eine Stufe tiefer, sonst verschwindet die Kleidung im Grund */
+  --sys-doodle-accent: #E0A11B;
 }
 #variant-3[data-tone="cover"] { --sys-stage: #FCBA30; }
 /* Cover-Hauch: der Schein greift weiter aus, sonst bleibt der Modus unsichtbar */
@@ -2288,13 +2295,18 @@ ul { list-style: none; }
 /* V3 · Illustration (Open Doodles, CC0)                        */
 /* ---------------------------------------------------------- */
 
+/* Die Dateien kommen unverändert von opendoodles.com und behalten die
+   Ebenentrennung des Zeichners: eine Accent-Fläche hinter der Ink-Zeichnung.
+   Nur die Accent-Ebene wird umgefärbt — wer die Tusche mitfärbt, nimmt der
+   Figur den Strich und legt bloß einen Farbschleier über alles. */
 .sys-doodle {
   display: block;
   height: auto;
-  color: #7A4E00;
   flex: none;
 }
 .sys-doodle svg { display: block; width: 100%; height: auto; }
+.sys-doodle .lumen-doodle__ink { fill: var(--sys-doodle-ink); }
+.sys-doodle .lumen-doodle__accent { fill: var(--sys-doodle-accent); }
 
 .sys-doodle-hero { width: 190px; margin-top: 8px; }
 .sys-doodle-proof { width: 160px; }
@@ -2302,12 +2314,9 @@ ul { list-style: none; }
 .sys-doodle-paths { width: 150px; }
 .sys-doodle-close { width: 210px; }
 
-/* On-Brand: Linien schwarz, Fläche Creme — für die gelbe Cover-Karte */
-/* direkt am SVG setzen — das color-Präsentationsattribut der Datei
-   schlägt sonst den vererbten Wert */
-.sys-doodle-onbrand,
-.sys-doodle-onbrand .lumen-doodle { color: #000000; }
-.sys-doodle-onbrand .lumen-doodle__fill { fill: #FFF4E8; }
+/* On-Brand: auf der gelben Cover-Karte kippt die Accent-Fläche ins Creme,
+   die Tusche bleibt schwarz */
+.sys-doodle-onbrand { --sys-doodle-accent: #FFF4E8; }
 
 /* ---------------------------------------------------------- */
 /* V3 · Nav — warmes Liquid Glass                               */
