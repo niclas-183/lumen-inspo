@@ -20,6 +20,9 @@
   var tabs = document.querySelectorAll("[data-target]");
   var ditherTabs = document.querySelectorAll("[data-dither]");
   var ditherDock = document.getElementById("dither-dock");
+  var toneTabs = document.querySelectorAll("[data-tone]");
+  var toneDock = document.getElementById("tone-dock");
+  var systemPage = document.getElementById("variant-3");
   var canvas = document.getElementById("field-dither");
   var photo = document.getElementById("field-photo");
   var shaderHost = document.getElementById("field-shader");
@@ -27,6 +30,7 @@
 
   var variant = "variant-1";
   var ditherMode = "original";
+  var tone = "papier";
   var busy = false;
   var sourceImg = null;
   var fullData = null;
@@ -46,9 +50,22 @@
       t.setAttribute("aria-selected", String(t.dataset.target === id));
     });
     if (ditherDock) ditherDock.hidden = id !== "variant-1";
+    if (toneDock) toneDock.hidden = id !== "variant-3";
     if (id !== "variant-1") hideOverlays();
     else applyDither(ditherMode);
     window.scrollTo(0, 0);
+  }
+
+  /* Grund-Schalter der Variante 3 — Reviewer-Chrome, kein Produkt-UI. */
+  function applyTone(next) {
+    tone = next;
+    if (systemPage) {
+      if (next === "papier") systemPage.removeAttribute("data-tone");
+      else systemPage.setAttribute("data-tone", next);
+    }
+    toneTabs.forEach(function (t) {
+      t.setAttribute("aria-selected", String(t.dataset.tone === next));
+    });
   }
 
   function hideCanvas() {
@@ -600,15 +617,23 @@
       applyDither(t.dataset.dither);
     });
   });
+  toneTabs.forEach(function (t) {
+    t.addEventListener("click", function () { applyTone(t.dataset.tone); });
+  });
   document.addEventListener("keydown", function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     var tag = (e.target && e.target.tagName) || "";
     if (tag === "INPUT" || tag === "TEXTAREA") return;
     if (e.key === "1") showVariant("variant-1");
     if (e.key === "2") showVariant("variant-2");
+    if (e.key === "3") showVariant("variant-3");
   });
 
-  if (location.hash === "#variant-2" || location.hash.indexOf("#v2-") === 0) {
+  applyTone(tone);
+
+  if (location.hash === "#variant-3" || location.hash.indexOf("#v3-") === 0) {
+    showVariant("variant-3");
+  } else if (location.hash === "#variant-2" || location.hash.indexOf("#v2-") === 0) {
     showVariant("variant-2");
   } else {
     showVariant("variant-1");

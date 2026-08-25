@@ -2103,3 +2103,703 @@ ul { list-style: none; }
 
   .strip-cell img { aspect-ratio: 3 / 4; }
 }
+
+/* ============================================================
+   VARIANTE 3 — System
+   Streng nach dem Lumen-Designsystem: amber-Palette, Lora +
+   Nunito Sans (Variable, YTLC), 40px-Signatur-Radien, Open
+   Doodles (CC0), Hugeicons (MIT). Eigener Namensraum .sys-*;
+   keine bestehende Regel wird verändert.
+   ============================================================ */
+
+#variant-3 {
+  /* Grund / Flächen — vom Grund-Schalter gefahren */
+  --sys-ground: #FFF4E8;
+  --sys-panel: #FFE8B9;
+  --sys-stage: #FFE8B9;
+  --sys-tile: #FFE8B9;
+
+  /* amber-Palette */
+  --sys-amber-50: #FFF4E8;
+  --sys-amber-100: #FFE8B9;
+  --sys-amber-300: #FFD784;
+  --sys-amber-500: #FFC856;
+  --sys-amber-600: #FCBA30;
+  --sys-amber-700: #E0A11B;
+  --sys-amber-800: #7A4E00;
+
+  /* Text — nie Weiß auf Gelb */
+  --sys-text: #000000;
+  --sys-text-2: #625D56;
+  --sys-white: #FFFFFF;
+  --sys-bezel: #2A2118;
+
+  /* Borders — amber.800 mit Alpha */
+  --sys-border-subtle: rgba(122, 78, 0, 0.18);
+  --sys-border: rgba(122, 78, 0, 0.38);
+  --sys-border-strong: rgba(122, 78, 0, 0.72);
+
+  /* Radien */
+  --sys-r-xs: 8px;
+  --sys-r-sm: 20px;
+  --sys-r-md: 24px;
+  --sys-r-lg: 32px;
+  --sys-r-xl: 40px;
+  --sys-r-pill: 999px;
+
+  /* Schatten */
+  --sys-sh-xs: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --sys-sh-sm: 0 2px 5px rgba(0, 0, 0, 0.15);
+  --sys-sh-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --sys-sh-lg: 0 12px 28px rgba(0, 0, 0, 0.14);
+
+  /* Schrift */
+  --sys-serif: "Lora", Georgia, serif;
+  --sys-sans: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Maß — alles läuft im Inhaltsmaß, nichts an die Viewport-Kante */
+  --sys-content: 1180px;
+  --sys-gutter: 48px;
+}
+
+/* Grund-Schalter (Reviewer-Chrome) */
+#variant-3[data-tone="satter"] {
+  --sys-ground: #FFE8B9;
+  --sys-panel: #FFD784;
+  --sys-stage: #FFD784;
+  /* Tiles hell halten, sonst versinken sie im satteren Grund */
+  --sys-tile: #FFF4E8;
+}
+#variant-3[data-tone="cover"] { --sys-stage: #FCBA30; }
+/* Cover-Hauch: der Schein greift weiter aus, sonst bleibt der Modus unsichtbar */
+#variant-3[data-tone="cover"] .sys-hero-stage::before { inset: -34% -46%; }
+
+.page-system {
+  background: var(--sys-ground);
+  color: var(--sys-text);
+  font-family: var(--sys-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  font-variation-settings: "YTLC" 500, "wdth" 100;
+}
+
+/* Nav sitzt im Fluss; der Hero zieht sich dahinter (Muster V2). */
+.page-system .nav { margin-top: 20px; }
+.page-system .sys-hero { margin-top: calc(-20px - var(--nav-h)); }
+
+.sys-wrap {
+  width: min(100% - var(--sys-gutter) * 2, var(--sys-content));
+  margin-inline: auto;
+}
+
+.sys-sect { padding: 112px 0; }
+.sys-sect-tight { padding: 72px 0; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Fokus — ein Ring für alle interaktiven Elemente         */
+/* ---------------------------------------------------------- */
+
+#variant-3 a:focus-visible,
+#variant-3 button:focus-visible,
+#variant-3 [tabindex]:focus-visible {
+  outline: 3px solid var(--sys-amber-800);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------- */
+/* V3 · Typografie                                              */
+/* ---------------------------------------------------------- */
+
+.sys-overline {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sys-amber-800);
+}
+
+.sys-display {
+  font-family: var(--sys-serif);
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--sys-text);
+}
+
+.sys-title {
+  font-family: var(--sys-serif);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--sys-text);
+}
+
+.sys-subhead {
+  font-family: var(--sys-serif);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--sys-text);
+}
+
+.sys-lead { font-size: 20px; line-height: 1.5; color: var(--sys-text); }
+.sys-sub { font-size: 20px; line-height: 1.5; color: var(--sys-text-2); }
+.sys-body { font-size: 16px; line-height: 1.55; color: var(--sys-text-2); }
+.sys-note { font-size: 14px; line-height: 1.5; color: var(--sys-text-2); }
+.sys-cap,
+.sys-credit,
+.sys-phone-cap { font-size: 12px; line-height: 1.5; color: var(--sys-text-2); }
+
+.sys-head { display: flex; flex-direction: column; gap: 14px; }
+.sys-head .sys-sub { max-width: 62ch; }
+.sys-head-center { align-items: center; text-align: center; }
+.sys-head-center .sys-sub { max-width: 56ch; }
+
+.sys-head-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.sys-head-row-rev { justify-content: space-between; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Ikonografie (Hugeicons Stroke Rounded)                  */
+/* ---------------------------------------------------------- */
+
+.sys-ic { width: 24px; height: 24px; flex: none; }
+.sys-ic-sm { width: 20px; height: 20px; flex: none; }
+
+.sys-tile {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--sys-tile);
+  color: var(--sys-amber-800);
+}
+
+/* ---------------------------------------------------------- */
+/* V3 · Illustration (Open Doodles, CC0)                        */
+/* ---------------------------------------------------------- */
+
+.sys-doodle {
+  display: block;
+  height: auto;
+  color: #7A4E00;
+  flex: none;
+}
+.sys-doodle svg { display: block; width: 100%; height: auto; }
+
+.sys-doodle-hero { width: 190px; margin-top: 8px; }
+.sys-doodle-proof { width: 160px; }
+.sys-doodle-privacy { width: 150px; }
+.sys-doodle-paths { width: 150px; }
+.sys-doodle-close { width: 210px; }
+
+/* On-Brand: Linien schwarz, Fläche Creme — für die gelbe Cover-Karte */
+/* direkt am SVG setzen — das color-Präsentationsattribut der Datei
+   schlägt sonst den vererbten Wert */
+.sys-doodle-onbrand,
+.sys-doodle-onbrand .lumen-doodle { color: #000000; }
+.sys-doodle-onbrand .lumen-doodle__fill { fill: #FFF4E8; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Nav — warmes Liquid Glass                               */
+/* ---------------------------------------------------------- */
+
+.nav-system {
+  background: linear-gradient(rgba(255, 244, 232, 0.62), rgba(255, 232, 185, 0.45));
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgba(122, 78, 0, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 8px 28px rgba(122, 78, 0, 0.10);
+  color: #000000;
+}
+
+.sys-nav-links {
+  display: flex;
+  gap: 32px;
+  margin-right: auto;
+}
+.sys-nav-links a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+.sys-nav-links a:hover { color: var(--sys-amber-800); }
+
+.sys-nav-side { display: flex; align-items: center; gap: 12px; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Buttons                                                 */
+/* ---------------------------------------------------------- */
+
+.sys-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: var(--sys-r-pill);
+  font-family: var(--sys-sans);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.sys-btn-brand {
+  background: var(--sys-amber-600);
+  color: #000000;
+  box-shadow: var(--sys-sh-xs);
+}
+.sys-btn-brand:hover { background: var(--sys-amber-700); }
+
+.sys-btn-outline {
+  background: transparent;
+  color: #000000;
+  border-color: var(--sys-border-strong);
+}
+.sys-btn-outline:hover { background: rgba(122, 78, 0, 0.07); }
+
+/* Creme auf Schwarz — die eine erlaubte helle Schrift */
+.sys-btn-ink { background: #000000; color: var(--sys-amber-50); }
+.sys-btn-ink:hover { background: #241C10; }
+
+.sys-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.sys-cta-row-note { margin-top: 28px; gap: 20px; }
+.sys-cta-row-note .sys-note { max-width: 42ch; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Hero                                                    */
+/* ---------------------------------------------------------- */
+
+.sys-hero {
+  display: flex;
+  align-items: center;
+  min-height: 88vh;
+  padding: 120px 0 88px;
+}
+
+.sys-hero-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.sys-hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.sys-hero-copy .sys-lead { max-width: 46ch; }
+.sys-hero-copy .sys-cta-row { margin-top: 8px; }
+
+.sys-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sys-text-2);
+}
+.sys-trust svg { color: var(--sys-amber-800); }
+
+.sys-hero-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+}
+.sys-hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: -12% -18%;
+  background: radial-gradient(closest-side, var(--sys-stage) 0%, transparent 72%);
+  z-index: 0;
+  pointer-events: none;
+}
+.sys-hero-stage > * { position: relative; z-index: 1; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Phone-Frames (Bevel-Screenshots als Dichte-Referenz)    */
+/* ---------------------------------------------------------- */
+
+.sys-phone { margin: 0; }
+.sys-phone-frame {
+  display: block;
+  background: var(--sys-bezel);
+  padding: 10px;
+  border-radius: 36px;
+  box-shadow: var(--sys-sh-lg);
+}
+.sys-phone-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+}
+.sys-phone-cap { display: block; margin-top: 12px; }
+
+.sys-phone-pair {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* nach links versetzt, damit das fixe Reviewer-Dock rechts oben frei bleibt */
+  transform: translateX(-56px);
+}
+.sys-phone-front { width: 260px; position: relative; z-index: 2; }
+.sys-phone-back {
+  width: 225px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transform: rotate(-6deg) translate(-40%, 24px);
+  filter: brightness(0.96);
+}
+
+.sys-phone-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 28px;
+}
+.sys-phone-row .sys-phone { width: 250px; text-align: center; }
+.sys-phone-row .sys-phone:nth-child(2) { margin-top: -28px; }
+
+.sys-credit { margin-top: 24px; }
+.sys-credit-center { text-align: center; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Zahlenband                                              */
+/* ---------------------------------------------------------- */
+
+.sys-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sys-stat {
+  border-radius: var(--sys-r-xl);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--sys-sh-xs);
+}
+.sys-stat-300 { background: var(--sys-amber-300); }
+.sys-stat-500 { background: var(--sys-amber-500); }
+.sys-stat-600 { background: var(--sys-amber-600); }
+
+.sys-stat-figure {
+  font-family: var(--sys-serif);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--sys-text);
+  text-wrap: balance;
+}
+.sys-stat-cap { font-size: 16px; line-height: 1.55; color: var(--sys-text); }
+
+/* ---------------------------------------------------------- */
+/* V3 · Methode                                                 */
+/* ---------------------------------------------------------- */
+
+.sys-method {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.sys-method-media { margin: 0; }
+.sys-method-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--sys-r-sm);
+  box-shadow: var(--sys-sh-md);
+}
+.sys-method-media figcaption { margin-top: 12px; }
+
+.sys-method-copy { display: flex; flex-direction: column; gap: 40px; }
+.sys-method-list { display: flex; flex-direction: column; gap: 32px; }
+.sys-method-row { display: flex; align-items: flex-start; gap: 20px; }
+.sys-method-text { display: flex; flex-direction: column; gap: 6px; }
+.sys-method-text .sys-body { max-width: 54ch; }
+
+/* ---------------------------------------------------------- */
+/* V3 · Alltag                                                  */
+/* ---------------------------------------------------------- */
+
+.sys-daily {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 48px;
+}
+.sys-daily figure { margin: 0; }
+.sys-daily figcaption { margin-top: 12px; }
+.sys-daily img { display: block; width: 100%; object-fit: cover; }
+.sys-daily-wide img {
+  aspect-ratio: 16 / 7;
+  object-position: 50% 65%;
+  border-radius: var(--sys-r-xl);
+  box-shadow: var(--sys-sh-md);
+}
+.sys-daily-tall img {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--sys-r-sm);
+  box-shadow: var(--sys-sh-md);
+}
+
+/* ---------------------------------------------------------- */
+/* V3 · Beweisstück / FAQ                                       */
+/* ---------------------------------------------------------- */
+
+.sys-panel {
+  background: var(--sys-white);
+  border: 1px solid var(--sys-border-subtle);
+  border-radius: var(--sys-r-sm);
+  padding: 40px;
+  box-shadow: var(--sys-sh-xs);
+}
+
+.sys-faq { margin-top: 40px; }
+.sys-faq-row {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 32px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--sys-border-subtle);
+}
+.sys-faq-row:first-child { padding-top: 0; }
+.sys-faq-row:last-child { padding-bottom: 0; border-bottom: 0; }
+.sys-faq-row dt { font-size: 16px; font-weight: 600; color: var(--sys-text); }
+.sys-faq-row dd { font-size: 16px; line-height: 1.55; color: var(--sys-text-2); }
+
+/* ---------------------------------------------------------- */
+/* V3 · Datenschutz                                             */
+/* ---------------------------------------------------------- */
+
+.sys-privacy {
+  background: var(--sys-panel);
+  border-radius: var(--sys-r-xl);
+  padding: 48px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.sys-privacy-col { display: flex; flex-direction: column; gap: 18px; }
+
+.sys-ticks { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.sys-ticks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--sys-text);
+}
+.sys-ticks svg { color: var(--sys-amber-800); margin-top: 2px; }
+
+.sys-eu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 28px;
+}
+.sys-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--sys-border-strong);
+  border-radius: var(--sys-r-pill);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sys-text);
+}
+.sys-eu-note { font-size: 14px; line-height: 1.5; color: var(--sys-text-2); }
+
+/* ---------------------------------------------------------- */
+/* V3 · Zwei Pfade                                              */
+/* ---------------------------------------------------------- */
+
+.sys-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.sys-path {
+  border-radius: var(--sys-r-xl);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.sys-path .sys-body { max-width: 44ch; }
+.sys-path .sys-btn { margin-top: 12px; }
+.sys-path-employer { background: var(--sys-amber-300); box-shadow: var(--sys-sh-xs); }
+.sys-path-person { background: var(--sys-white); border: 1px solid var(--sys-border-subtle); box-shadow: var(--sys-sh-xs); }
+
+/* ---------------------------------------------------------- */
+/* V3 · Grenzen                                                 */
+/* ---------------------------------------------------------- */
+
+.sys-limits { list-style: none; margin-top: 36px; max-width: 68ch; }
+.sys-limits li {
+  position: relative;
+  padding: 14px 0 14px 40px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--sys-text);
+}
+.sys-limits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--sys-r-pill);
+  background: var(--sys-amber-600);
+}
+
+/* ---------------------------------------------------------- */
+/* V3 · Close + Footer                                          */
+/* ---------------------------------------------------------- */
+
+.sys-cover {
+  background: var(--sys-amber-600);
+  border-radius: var(--sys-r-xl);
+  padding: 72px;
+  color: var(--sys-text);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px;
+  align-items: center;
+  box-shadow: var(--sys-sh-md);
+}
+.sys-cover-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.sys-cover-copy .sys-lead { max-width: 44ch; }
+.sys-cover-copy .sys-btn { margin-top: 10px; }
+
+.sys-foot {
+  background: var(--sys-amber-50);
+  border-top: 1px solid var(--sys-border-subtle);
+  padding: 56px 0 72px;
+  color: var(--sys-text);
+}
+.sys-foot-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; }
+.sys-foot-links { display: flex; gap: 28px; margin-left: auto; }
+.sys-foot-links a {
+  color: var(--sys-text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.sys-foot-links a:hover { color: var(--sys-amber-800); }
+.sys-foot-note { flex-basis: 100%; font-size: 12px; line-height: 1.5; color: var(--sys-text-2); }
+
+/* ---------------------------------------------------------- */
+/* V3 · Degradation                                             */
+/* ---------------------------------------------------------- */
+
+@media (max-width: 1280px) {
+  #variant-3 { --sys-gutter: 40px; }
+  .sys-display { font-size: 48px; }
+  .sys-stat { padding: 40px; }
+  .sys-privacy { padding: 40px; gap: 40px; }
+  .sys-path { padding: 40px; }
+  .sys-cover { padding: 56px; }
+  .sys-phone-row { gap: 28px; }
+  .sys-phone-row .sys-phone { width: 220px; }
+}
+
+@media (max-width: 1024px) {
+  #variant-3 { --sys-gutter: 32px; }
+
+  .sys-sect { padding: 80px 0; }
+  .sys-sect-tight { padding: 56px 0; }
+
+  .sys-display { font-size: 44px; }
+  .sys-title { font-size: 32px; }
+  .sys-lead, .sys-sub { font-size: 18px; }
+
+  .sys-hero { min-height: 0; padding: 108px 0 64px; }
+  .sys-hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .sys-hero-stage { align-items: flex-start; }
+  .sys-phone-pair { justify-content: flex-start; margin-left: 96px; transform: none; }
+
+  .sys-stats { grid-template-columns: 1fr; }
+  .sys-method { grid-template-columns: 1fr; gap: 40px; }
+  .sys-daily { grid-template-columns: 1fr; }
+  .sys-privacy { grid-template-columns: 1fr; }
+  .sys-paths { grid-template-columns: 1fr; }
+  .sys-faq-row { grid-template-columns: 1fr; gap: 8px; }
+
+  .sys-phone-row { flex-wrap: wrap; gap: 32px; padding-top: 0; }
+  .sys-phone-row .sys-phone:nth-child(2) { margin-top: 0; }
+
+  .sys-cover { grid-template-columns: 1fr; }
+  .sys-doodle-close { width: 170px; }
+}
+
+@media (max-width: 720px) {
+  #variant-3 { --sys-gutter: 20px; }
+
+  .sys-sect { padding: 64px 0; }
+  .sys-sect-tight { padding: 44px 0; }
+
+  .sys-display { font-size: 34px; }
+  .sys-title { font-size: 28px; }
+  .sys-subhead { font-size: 20px; }
+  .sys-limits li { font-size: 18px; }
+
+  .sys-head-row { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .sys-head-row-rev { flex-direction: column-reverse; }
+
+  .sys-nav-links { display: none; }
+
+  .sys-hero { padding: 96px 0 48px; }
+  .sys-phone-pair { margin-left: 72px; }
+  .sys-phone-front { width: 200px; }
+  .sys-phone-back { width: 172px; }
+
+  .sys-phone-row { flex-direction: column; align-items: center; gap: 28px; }
+  .sys-phone-row .sys-phone { width: min(240px, 100%); }
+
+  .sys-stat { padding: 32px; }
+  .sys-panel { padding: 28px; }
+  .sys-privacy { padding: 32px; }
+  .sys-path { padding: 32px; }
+  .sys-cover { padding: 36px; }
+
+  .sys-doodle-hero { width: 150px; }
+  .sys-doodle-close { width: 140px; }
+
+  .sys-foot-links { margin-left: 0; }
+}
