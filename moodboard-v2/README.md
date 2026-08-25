@@ -1,8 +1,38 @@
 # Moodboard v2 — Function-density combined hero
 
-One first screen, gebaut als echte Homepage, nicht als Slide. Zwei Varianten
-derselben kombinierten Richtung, umschaltbar über das schmale Pill unten
-(oder Tasten `1` / `2`). Desktop-first, Ziel 1440×900.
+Zwei volle Landingpages, gebaut als echte Homepage, nicht als Slide. Zwei
+Varianten derselben kombinierten Richtung, umschaltbar über das schmale Pill
+unten (oder Tasten `1` / `2`). Desktop-first, Ziel 1440. Seit Issue #9 läuft
+die Design-Language jeder Variante unter die Falz weiter — Fotofeld bleibt
+dunkles Feld, Editorial bleibt Papier.
+
+## Unter der Falz (Issue #9)
+
+Beide Varianten tragen dieselben acht Blöcke, in variantengerechter Sprache
+und leicht unterschiedlicher Reihenfolge:
+
+1. **Methode** — vier benannte Messgrößen, Levels-Kürze (V1 als dunkles
+   Vier-Spalten-Raster, V2 als editoriale Hairline-Liste mit Lora-Zitat).
+2. **Programm / Produkt tiefer** — Oberfläche als Beweis: V1 ein breites
+   App-Fenster (Bio-Age-Trend, Schlaf, Aktivität, 6 Blutwerte, Privacy-
+   Schalter), V2 Phone + Laborbericht. Dazu beschriftete Dichte-Referenzen
+   aus dem Korpus (Bevel, Linear, Prenuvo) — als Referenz, nie als Lumen.
+3. **Beweisstück (Forward-Artifact, ELM)** — V1 ein Einseiter-Mock mit
+   PDF-CTA („ohne Registrierung"), V2 vier interne FAQ + derselbe CTA.
+4. **Fotostrecke** — je drei bislang ungenutzte Fotos aus der Bibliothek,
+   mit Mono-Caption und „Symbolbilder"-Credit.
+5. **Datenschutz als eigener Abschnitt (Sillence)** — „Wer was sieht":
+   Sie vs. Arbeitgeber, Trennung als Architektur, EU-Chip, DSGVO/AI-Act-
+   Zeile (Stand 08/2026).
+6. **Zwei Pfade** — Arbeitgeber (Gespräch) / Mitarbeitende (Konto
+   aktivieren, freiwillig, privates Konto).
+7. **Unparteilichkeit** — „Was wir nicht versprechen": keine Diagnosen,
+   keine Heilung, keine Knappheit.
+8. **Close** — ein CTA, knapper Footer (Impressum-artig, immer noch Lumen).
+
+Die Nav ist jetzt sticky (Glass-Pill bleibt beim Scrollen) und die
+Nav-Punkte verlinken auf die Sektionen der aktiven Variante
+(`#v1-…` / `#v2-…`); der Announce-Link springt zum Beweisstück.
 
 ## Ansehen
 
@@ -89,8 +119,9 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 - `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
 - `token.html` — Share-Link-Generator für `index.html#k=…`.
 - `styles.css` — Tokens + Layout, ein File.
-- `assets/` — Wordmark-SVG + zwei Fotos aus `../moodboard/assets/photos/`
-  (Credits: `ASSETS.md`). Fotos bleiben Dateien, keine data-URIs.
+- `assets/` — Wordmark-SVG + acht Fotos aus `../moodboard/assets/photos/`
+  sowie `assets/referenz/` mit drei beschrifteten Korpus-Screenshots
+  (Credits und Regeln: `ASSETS.md`). Fotos bleiben Dateien, keine data-URIs.
 
 Nach dem Unlock lösen relative URLs (`styles.css`, `assets/…`) wie gewohnt auf.
 Einzige externe Abhängigkeit: Google Fonts.
