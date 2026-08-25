@@ -23,7 +23,7 @@ jeweiligen Kontext („Gestellte Szene — keine Kundin/Patientin.",
 „Symbolbilder — Unsplash, gestellte Szenen.").
 Kein neues Stockmaterial wurde gescrapt.
 
-## App-Store-Screenshots (Rondell)
+## App-Store-Screenshots (Serienstreifen)
 
 **Bewusste Ausnahme von der Marken-Regel aus Issue #12 — auf Anweisung.**
 Sonst gilt weiterhin: keine fremden Produktoberflächen auf der Seite. Für den
@@ -33,7 +33,7 @@ Moodboard: eine geschlossene Bevel-Serie als Dichte-Referenz — wie ein
 Anbieter Schlaf, Recovery und biologisches Alter über zehn Screens hinweg
 darstellt. Auf Wunsch bewusst eine Serie statt eines Anbieter-Querschnitts.
 Kein Lumen-Material, keine Vorlage zum Nachbauen, nichts davon geht in
-Produkt-UI. Die Herkunft steht sichtbar unter dem Rondell
+Produkt-UI. Die Herkunft steht sichtbar unter dem Serienstreifen
 („App-Store-Screenshots — interne Referenz, nicht Lumen.") und im Alt-Text
 jeder Karte. Marke und Screenshots gehören Starlight Tech LLC; keine
 Partnerschaft, kein Vergleich, keine Wertung wird behauptet.
@@ -42,7 +42,7 @@ Quelle in allen Fällen: die `screenshotUrls` aus dem iTunes-Lookup zu
 `trackId` 6456176249 (US-Storefront, Abruf 25. Aug 2026), hi-res-Rendition
 `1284x2778bb`, danach auf 720×1560 beschnitten.
 
-| Datei (assets/rondell/) | Kategorie (`data-cat`) | App | Anbieter |
+| Datei (assets/rondell/) | Kategorie (Caption) | App | Anbieter |
 |---|---|---|---|
 | `01-bevel-ueberblick.jpg` | Überblick | Bevel: AI Health Coach | Starlight Tech LLC |
 | `02-bevel-schlaf.jpg` | Schlaf | Bevel: AI Health Coach | Starlight Tech LLC |
@@ -75,8 +75,8 @@ keine selbst gezeichneten Illustrationen.
 App-Fenster (V1), Artefakt, Phone und Laborbericht (V2) sind originale
 Lumen-Wireframes (HTML/CSS, Beispieldaten, deutsches Zahlenformat).
 Kein Screenshot, kein Tracing von Function/Bevel/Oura/Whoop/Apple Health —
-die fremden Screenshots im Rondell stehen ausdrücklich daneben, nie darin
-(siehe „App-Store-Screenshots (Rondell)").
+die fremden Screenshots im Serienstreifen stehen ausdrücklich daneben, nie
+darin (siehe „App-Store-Screenshots (Serienstreifen)").
 Der Einseiter in V1 ist ein HTML-Mock mit dem bestehenden Wordmark-SVG.
 
 ## Paper Shaders

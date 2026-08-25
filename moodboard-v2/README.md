@@ -27,24 +27,28 @@ und leicht unterschiedlicher Reihenfolge:
 2. **Programm / Produkt tiefer** — Oberfläche als Beweis: V1 ein breites
    App-Fenster (Bio-Age-Trend, Schlaf, Aktivität, 6 Blutwerte, Privacy-
    Schalter), V2 Phone + Laborbericht. Beide Sektionen zeigen ausschließlich
-   originale Lumen-Oberflächen; fremdes Material bleibt im Rondell (5.) und ist
+   originale Lumen-Oberflächen; fremdes Material bleibt im Serienstreifen (5.) und ist
    dort als solches ausgewiesen.
 3. **Beweisstück (Forward-Artifact, ELM)** — V1 ein Einseiter-Mock mit
    PDF-CTA („ohne Registrierung"), V2 vier interne FAQ + derselbe CTA.
 4. **Fotostrecke** — je drei bislang ungenutzte Fotos aus der Bibliothek,
    mit Mono-Caption und „Symbolbilder"-Credit.
-5. **Marktumfeld — Rondell** — zehn App-Store-Screenshots **einer einzigen
-   App** (Bevel: AI Health Coach) auf einem langsam drehenden 3D-Ring,
-   80 Sekunden pro Umdrehung. Auf Wunsch eine geschlossene Serie statt eines
-   Anbieter-Querschnitts: gleiche Bildsprache auf allen Karten, der Ring
-   zeigt Dichte, nicht Vielfalt. Die Karten dimmen zur Rückseite hin ab, die
-   vorderste schreibt die Mono-Caption („Bevel · Kategorie"). Der Ring
-   pausiert, sobald niemand hinsieht: Zeiger drüber, Fokus drin, Tab
-   versteckt, außerhalb des Viewports — die ausgeblendete Variante zählt als
-   offscreen. Bei `prefers-reduced-motion` und unter 720px bleibt die Klasse
-   `.no-3d` stehen: dann ist es eine scrollbare Kartenreihe, das gilt auch
-   ganz ohne JS. Das Material ist **interne Referenz, nicht Lumen** — Credit
-   steht unter dem Rondell, Herkunft und Lizenzlage in `ASSETS.md`.
+5. **Marktumfeld — Serienstreifen** — zehn App-Store-Screenshots **einer
+   einzigen App** (Bevel: AI Health Coach) als flacher, editorialer
+   Streifen: drei Karten im Blick, alle 4,2 Sekunden rückt er um eine
+   Position weiter, am Ende läuft er in einem längeren Zug zurück auf
+   Anfang. Auf Wunsch eine geschlossene Serie statt eines Anbieter-
+   Querschnitts: gleiche Bildsprache auf allen Karten, der Streifen zeigt
+   Dichte, nicht Vielfalt. Jede Karte trägt ihre Mono-Caption („Bevel ·
+   Kategorie"), rechts unten stehen Zähler und zwei Pfeile — ein Klick
+   darauf legt die Automatik für 9 Sekunden still. Der Lauf pausiert
+   ohnehin, sobald niemand hinsieht: Zeiger drüber, Fokus drin, Tab
+   versteckt, außerhalb des Viewports — die ausgeblendete Variante zählt
+   als offscreen. Bei `prefers-reduced-motion` bleiben die Pfeile, der
+   Übergang entfällt; unter 720px und ganz ohne JS ist es eine frei
+   scrollbare Kartenreihe. Das Material ist **interne Referenz, nicht
+   Lumen** — Credit steht unter dem Streifen, Herkunft und Lizenzlage in
+   `ASSETS.md`.
 6. **Datenschutz als eigener Abschnitt (Sillence)** — „Wer was sieht":
    Sie vs. Arbeitgeber, Trennung als Architektur, EU-Chip, DSGVO/AI-Act-
    Zeile (Stand 08/2026).
@@ -142,15 +146,16 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 - `app.html` — beide Varianten + Umschalter (klare Review-Kopie).
 - `hero-dither.js` — sticky Variantenwechsel + Hero-Filter (Canvas-Dither + Paper-WebGL).
 - `vendor/paper-shaders/` — Apache-2.0 Vanilla-Subset von `@paper-design/shaders` 0.0.80 (Fluted Glass, Halftone CMYK, Paper Texture).
-- `rondell.js` — 3D-Rondell „Marktumfeld" (rAF, IntersectionObserver, kein npm);
-  rührt Variantenumschaltung und Tastenkürzel nicht an.
+- `slides.js` — Serienstreifen „Marktumfeld" (setTimeout-Kette,
+  IntersectionObserver, kein npm); rührt Variantenumschaltung und
+  Tastenkürzel nicht an.
 - `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
 - `token.html` — Share-Link-Generator für `index.html#k=…`.
 - `styles.css` — Tokens + Layout, ein File.
 - `assets/` — Wordmark-SVG + acht Fotos aus `../moodboard/assets/photos/`
   (Credits und Regeln: `ASSETS.md`). Fotos bleiben Dateien, keine data-URIs.
 - `assets/rondell/` — zehn Bevel-App-Store-Screenshots (720×1560, eine Serie)
-  fürs Rondell. Interne Referenz, nicht Lumen; Herkunft und die bewusste
+  für den Serienstreifen. Interne Referenz, nicht Lumen; Herkunft und die bewusste
   Ausnahme von der Marken-Regel stehen in `ASSETS.md`.
 
 Nach dem Unlock lösen relative URLs (`styles.css`, `assets/…`) wie gewohnt auf.
