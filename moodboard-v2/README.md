@@ -10,10 +10,13 @@ in `../moodboard/` bleibt unberührt.
 Die A/B/C-Trennung aus v1 ist aufgelöst. Beide Varianten tragen alle drei Anker
 gleichzeitig — Mensch (C), Artefakt/Zahlen (B), ein Satz (A/Levels):
 
-- **Variante 1 — Fotofeld.** Function/Levels-Register: das Foto *ist* die Seite
-  (`office_window_quiet.jpg`, erwachsene Person bei der Arbeit, echtes Licht,
-  dunkles Feld). Liquid-Glass-Navigation über dem Foto, ein Satz, eine CTA
-  in warmem Creme, Privacy-Chip **im** ersten Viewport (Sillence), und eine
+- **Variante 1 — Fotofeld.** Function/Levels-Register nach den Live-Captures
+  (Aug 2026): das Foto *ist* die Seite (`office_window_quiet.jpg`, erwachsene
+  Person bei der Arbeit, echtes Licht, dunkles Feld, per CSS-Zoom nah
+  herangeholt). Schmale Ankündigungsleiste in Lumen-Grün (Forward-Artefakt:
+  Programmübersicht als PDF), schwebende Liquid-Glass-Pill-Navigation mit
+  Creme-CTA und Such-/Menü-Chrome, kursiver Serif-Satz, eine CTA in warmem
+  Creme, Privacy-Chip **im** ersten Viewport (Sillence), und eine
   Kompetenz-Leiste an der Falz: 38 Blutwerte · Schlaf & Aktivität ·
   Biologisches Alter — Zahlen statt Logos, nichts erfunden.
 - **Variante 2 — Editorial-Papier + gehobenes Artefakt.** Warmes Papierfeld,
