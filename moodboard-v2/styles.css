@@ -1296,8 +1296,9 @@ ul { list-style: none; }
 .privacy-col {
   border-radius: 22px;
   padding: 34px 38px 26px;
-  background: rgba(248, 243, 233, 0.045);
-  border: 1px solid rgba(248, 243, 233, 0.12);
+  background: linear-gradient(180deg, rgba(252, 240, 220, 0.075), rgba(252, 240, 220, 0.04));
+  border: 1px solid rgba(248, 243, 233, 0.16);
+  box-shadow: inset 0 1px 0 rgba(248, 243, 233, 0.07), 0 22px 44px rgba(10, 8, 5, 0.18);
 }
 
 .privacy-who {
@@ -1419,8 +1420,9 @@ ul { list-style: none; }
 .path-card {
   border-radius: 22px;
   padding: 40px 44px 44px;
-  background: rgba(248, 243, 233, 0.045);
-  border: 1px solid rgba(248, 243, 233, 0.12);
+  background: linear-gradient(180deg, rgba(252, 240, 220, 0.075), rgba(252, 240, 220, 0.04));
+  border: 1px solid rgba(248, 243, 233, 0.16);
+  box-shadow: inset 0 1px 0 rgba(248, 243, 233, 0.07), 0 22px 44px rgba(10, 8, 5, 0.18);
 }
 
 .path-label {
@@ -1771,6 +1773,7 @@ ul { list-style: none; }
 .privacy-col-paper {
   background: var(--surface);
   border-color: var(--line);
+  box-shadow: none;
 }
 
 .privacy-col-paper .privacy-who { color: var(--ink); }
@@ -1788,6 +1791,7 @@ ul { list-style: none; }
 .path-card-paper {
   background: var(--surface);
   border-color: var(--line);
+  box-shadow: none;
 }
 
 .path-card-paper .path-label { color: var(--ink-3); }
