@@ -923,7 +923,7 @@ ul { list-style: none; }
 
 .switcher-dock-filters {
   flex-wrap: wrap;
-  max-width: 348px;
+  max-width: 392px;
   justify-content: flex-start;
 }
 

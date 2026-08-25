@@ -167,7 +167,7 @@
           u_colorM: color("#fc4f9d"),
           u_colorY: color("#ffd900"),
           u_colorK: color("#231f20"),
-          u_size: 0.13,
+          u_size: 0.09,
           u_contrast: 1.05,
           u_softness: 0.85,
           u_grainSize: 0.45,
