@@ -302,7 +302,8 @@ ul { list-style: none; }
 .hero-field { background: #14110C; }
 
 .field-photo,
-.field-dither {
+.field-dither,
+.field-shader {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -323,6 +324,30 @@ ul { list-style: none; }
 }
 
 .field-dither.is-on { display: block; }
+
+.field-shader {
+  display: none;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.field-shader.is-on { display: block; }
+
+.field-shader-mount {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.field-shader-mount canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 .field-scrim {
   position: absolute;
@@ -896,6 +921,12 @@ ul { list-style: none; }
   padding: 0;
 }
 
+.switcher-dock-filters {
+  flex-wrap: wrap;
+  max-width: 348px;
+  justify-content: flex-start;
+}
+
 .mood-dock-card[hidden] { display: none; }
 
 @media (max-width: 720px) {
@@ -911,6 +942,7 @@ ul { list-style: none; }
   }
   .mood-dock-card { width: 100%; }
   .switcher-dock { flex-wrap: wrap; justify-content: center; }
+  .switcher-dock-filters { max-width: none; }
 }
 
 /* ============================================================
