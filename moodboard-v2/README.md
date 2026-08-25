@@ -2,9 +2,18 @@
 
 Zwei volle Landingpages, gebaut als echte Homepage, nicht als Slide. Zwei
 Varianten derselben kombinierten Richtung, umschaltbar über das schmale Pill
-unten (oder Tasten `1` / `2`). Desktop-first, Ziel 1440. Seit Issue #9 läuft
-die Design-Language jeder Variante unter die Falz weiter — Fotofeld bleibt
-dunkles Feld, Editorial bleibt Papier.
+unten **und** die sticky Glass-Karte oben rechts (Tasten `1` / `2`). Die
+sticky Steuerung bleibt beim Scrollen im Blick; beide Umschalter bleiben im
+Takt. Desktop-first, Ziel 1440. Seit Issue #9 läuft die Design-Language jeder
+Variante unter die Falz weiter — Fotofeld bleibt dunkles Feld, Editorial
+bleibt Papier.
+
+Auf Variante 1 liegt ein zweites **Moodboard-Werkzeug** (nicht Produkt-UI):
+Hero-Dither des Fotofelds, berechnet zur Laufzeit aus
+`assets/office_window_quiet.jpg` — Original, Raster (Bayer 8×8, Originalfarben),
+Atkinson (1-Bit, Tinte `#26211A` auf Papier `#F6F0E4`), Halftone (Zeitungspunkte,
+gleiche zwei Farben). Keine vorgerenderten JPEGs; Canvas nur, wenn ein Modus
+aktiv ist. Auf Variante 2 ist das Werkzeug ausgeblendet.
 
 ## Unter der Falz (Issue #9)
 
@@ -116,6 +125,7 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 
 - `index.html` — Login-Wall (AES-GCM, gleiches Session-Schema wie v1/Galerie).
 - `app.html` — beide Varianten + Umschalter (klare Review-Kopie).
+- `hero-dither.js` — sticky Variantenwechsel + Hero-Dither (Canvas, kein npm).
 - `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
 - `token.html` — Share-Link-Generator für `index.html#k=…`.
 - `styles.css` — Tokens + Layout, ein File.

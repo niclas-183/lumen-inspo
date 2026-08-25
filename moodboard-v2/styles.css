@@ -301,18 +301,28 @@ ul { list-style: none; }
 
 .hero-field { background: #14110C; }
 
-.field-photo {
+.field-photo,
+.field-dither {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 58%;
-  filter: saturate(0.85);
   /* pull the person closer — cinematic presence, not an empty atrium */
   transform: scale(1.3);
   transform-origin: 32% 66%;
 }
+
+.field-photo { filter: saturate(0.85); }
+
+.field-dither {
+  display: none;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.field-dither.is-on { display: block; }
 
 .field-scrim {
   position: absolute;
@@ -832,6 +842,73 @@ ul { list-style: none; }
 .switcher button:focus-visible {
   outline: 2px solid var(--amber);
   outline-offset: 1px;
+}
+
+.switcher button:disabled {
+  opacity: 0.45;
+  cursor: wait;
+}
+
+/* sticky reviewer chrome — always on screen, not product UI */
+.mood-dock {
+  position: fixed;
+  top: 96px;
+  right: 20px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.mood-dock-card {
+  padding: 8px;
+  border-radius: 22px;
+  background: rgba(24, 21, 16, 0.55);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(248, 243, 233, 0.16);
+  box-shadow: 0 8px 28px rgba(10, 9, 6, 0.3);
+}
+
+.mood-dock-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 243, 233, 0.5);
+  padding: 2px 12px 6px;
+}
+
+.switcher-dock {
+  position: static;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  padding: 0;
+}
+
+.mood-dock-card[hidden] { display: none; }
+
+@media (max-width: 720px) {
+  .mood-dock {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: 62px;
+    transform: translateX(-50%);
+    align-items: center;
+    width: calc(100% - 24px);
+    max-width: 520px;
+  }
+  .mood-dock-card { width: 100%; }
+  .switcher-dock { flex-wrap: wrap; justify-content: center; }
 }
 
 /* ============================================================
