@@ -1062,6 +1062,38 @@ ul { list-style: none; }
   color: var(--cream-dim);
 }
 
+/* Datenkörper je Messgröße — helles Instrument auf dem dunklen Feld.
+   Baut auf denselben Bausteinen wie das App-Fenster (.lab-row, .sleep-bars,
+   .sparkline, .bioage-row); die Serif-Messgröße darüber ist das Label. */
+.measure-card {
+  margin-top: auto;
+  padding: 12px 14px;
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid rgba(38, 33, 26, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Karten an gemeinsamer Unterkante: li wird Spalte, Karte rutscht ans Ende */
+.measure-list li {
+  display: flex;
+  flex-direction: column;
+}
+.measure-list .measure-line { margin-bottom: 18px; }
+
+/* ohne Label-Zeile darüber startet der erste Baustein bündig */
+.measure-card > :first-child { margin-top: 0; }
+
+/* Basis-Spalten (58/1fr/74) statt der breiten .appwin-Variante */
+.measure-card .lab-row { grid-template-columns: 58px 1fr 74px; }
+
+.measure-card .sparkline { height: 34px; }
+
 /* product — a wide instrument, lifted off the dark field */
 .appwin {
   margin: 72px auto 0;
@@ -1275,6 +1307,73 @@ ul { list-style: none; }
 .privacy-list .ic { position: relative; top: 2px; }
 .privacy-list .ic.ok { color: var(--cream); }
 .privacy-list .ic.no { color: var(--cream-faint); }
+
+/* Sichtbarkeit als Fenster-Artefakt (V1) — Familie .appwin.
+   Rechts fehlt der Schalter bewusst: kein Zugriff heißt abwesend,
+   nicht ausgeschaltet. */
+.privacy-win {
+  max-width: 840px;
+  margin: 64px auto 0;
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid rgba(38, 33, 26, 0.1);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 18px 44px rgba(0, 0, 0, 0.42),
+    0 56px 120px rgba(0, 0, 0, 0.5);
+}
+
+.privacy-win-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.privacy-win-col { padding: 20px 24px 8px; }
+.privacy-win-col:first-child { border-right: 1px solid var(--line); }
+
+.privacy-win-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.privacy-win-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 0;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.privacy-win-row + .privacy-win-row { border-top: 1px solid var(--line); }
+
+.privacy-win-row .ic { width: 15px; height: 15px; color: var(--ink-3); }
+.privacy-win-row-off { color: var(--ink-3); }
+
+.privacy-win-num {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.privacy-win-chip {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-2);
+  background: rgba(38, 33, 26, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.privacy-win-chip-off { color: var(--ink-3); }
 
 .privacy-foot {
   margin-top: 44px;
@@ -1515,7 +1614,7 @@ ul { list-style: none; }
 }
 
 .ptrio .strip-label { color: var(--ink); }
-.ptrio .strip-credit { padding: 10px 0 0; }
+.ptrio .strip-credit { padding: 10px 0 0; color: var(--ink-3); }
 
 /* product stage: phone + report */
 .stage {
@@ -1685,6 +1784,149 @@ ul { list-style: none; }
 .limits-list-paper li {
   color: var(--ink);
   border-top-color: var(--line);
+}
+
+/* ---------------------------------------------------------- */
+/* Rondell — Marktumfeld, beide Varianten                      */
+/* Zehn App-Store-Karten auf einem 3D-Ring. Ohne JS (und bei   */
+/* reduzierter Bewegung) bleibt .no-3d: eine scrollbare Reihe. */
+/* ---------------------------------------------------------- */
+
+/* nichts darf aus der Seite bluten — der Ring ragt seitlich hinaus */
+.sect-rondell,
+.psect-rondell { overflow: hidden; }
+
+.rondell { margin-top: 72px; }
+
+.rondell-stage {
+  position: relative;
+  height: 600px;
+  perspective: 1300px;
+  perspective-origin: 50% 40%;
+  overflow: visible;
+}
+
+.rondell-ring {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  /* Ring nur leicht zurückgesetzt: die Frontkarte steht VOR der Bühne
+     (~1,27×), hinten fällt sie auf ~0,68× — echte Tiefe statt 1:1 */
+  transform: translateZ(-100px) rotateY(var(--rot, 0deg));
+  will-change: transform;
+}
+
+.rondell-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 190px;
+  aspect-ratio: 720 / 1560;
+  margin: -206px 0 0 -95px;
+  transform: rotateY(calc(var(--i) * 36deg)) translateZ(380px);
+  border-radius: 18px;
+  overflow: hidden;
+  /* Rückseite unsichtbar: keine gespiegelten Karten auf der Ring-Rückseite */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rondell-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Kartenhaut je Feld */
+.page-dark .rondell-card {
+  background: #0E0C09;
+  border: 1px solid rgba(248, 243, 233, 0.16);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+
+.page-paper .rondell-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(38, 33, 26, 0.12);
+  box-shadow: 0 14px 40px rgba(38, 33, 26, 0.18);
+}
+
+.rondell-caption {
+  margin-top: 26px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.page-dark .rondell-caption { color: var(--cream-dim); }
+.page-paper .rondell-caption { color: var(--ink-3); }
+
+.rondell-credit {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* .photo-credit ist creme — auf Papier braucht der Credit Tinte */
+.page-paper .rondell-credit { color: var(--ink-3); }
+
+/* Fallback ohne JS / ohne Bewegung: Reihe statt Ring */
+.rondell.no-3d .rondell-stage {
+  height: auto;
+  perspective: none;
+}
+
+.rondell.no-3d .rondell-ring {
+  position: static;
+  transform: none;
+  transform-style: flat;
+  will-change: auto;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 8px 4px 20px;
+}
+
+.rondell.no-3d .rondell-card {
+  position: static;
+  margin: 0;
+  transform: none;
+  flex: 0 0 190px;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .rondell-ring { transform: translateZ(-80px) rotateY(var(--rot, 0deg)); }
+  .rondell-card {
+    width: 160px;
+    margin: -173px 0 0 -80px;
+    transform: rotateY(calc(var(--i) * 36deg)) translateZ(320px);
+  }
+  .rondell.no-3d .rondell-card { flex-basis: 160px; }
+}
+
+/* unter 720px erzwungen flach — auch wenn JS den Ring schon gelöst hat */
+@media (max-width: 720px) {
+  .rondell .rondell-stage { height: auto; perspective: none; }
+  .rondell .rondell-ring {
+    position: static;
+    transform: none;
+    transform-style: flat;
+    will-change: auto;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 8px 4px 20px;
+  }
+  .rondell .rondell-card {
+    position: static;
+    margin: 0;
+    transform: none;
+    flex: 0 0 160px;
+    /* schlägt die Inline-Opazität, falls JS den Ring vor dem Resize trieb */
+    opacity: 1 !important;
+  }
 }
 
 /* ============================================================
