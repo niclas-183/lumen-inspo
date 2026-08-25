@@ -2,8 +2,15 @@
 
 One first screen, gebaut als echte Homepage, nicht als Slide. Zwei Varianten
 derselben kombinierten Richtung, umschaltbar über das schmale Pill unten
-(oder Tasten `1` / `2`). Desktop-first, Ziel 1440×900. Kein AES-Gate — v1
-in `../moodboard/` bleibt unberührt.
+(oder Tasten `1` / `2`). Desktop-first, Ziel 1440×900.
+
+## Ansehen
+
+- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard-v2/](https://niclas-183.github.io/lumen-inspo/moodboard-v2/) — gleiches Token-Gate wie Galerie und v1 (`lumen` / Session `lumen-inspo-session`). Ein Login entsperrt alle drei.
+- **Share-Link:** `token.html` → `index.html#k=…` (Fragment, nie an den Server).
+- **Review / von Disk:** `app.html` ist die unverschlüsselte Seite (kein Login). Nicht der Pages-Einstieg.
+
+v1 in `../moodboard/` bleibt unberührt (kein Rewrite von `payload.bin` dort).
 
 ## Was kombiniert wurde
 
@@ -34,14 +41,17 @@ Superlative.
 ## Token-Entscheidungen
 
 - **Typo:** Newsreader (Display, opsz auto, Gewicht 500) + IBM Plex Sans (UI) +
-  IBM Plex Mono (Kicker, Chips, Datenlabels). Lora wurde geprüft und
-  verworfen — zwei Serifen mischen wir nicht, Newsreader liest sich ernster.
+  IBM Plex Mono (Kicker, Chips, Datenlabels). **Lora 600 nur im Wordmark**
+  (Lu + Herz-m + en); Headlines bleiben Newsreader.
+- **Wordmark:** Inline-SVG (`assets/lumen-wordmark.svg`), `currentColor` für
+  Lu/en (Creme auf dunklem Glas, Tinte `#26211A` auf hellem Nav), Herz-m fest
+  in Brand-Gelb `#FCBA30`, Nav-Höhe ~24px.
 - **Warme Neutrale statt Kühlgrau:** Papier `#F6F0E4`, Tinte `#26211A`,
   Hairlines `#E5DCCB` (~35–41° Farbton, niedrige Sättigung).
 - **Amber als Hauch, nicht als Fläche:** `#FFF4E8` (amber.50) als
   Radial-Hauch auf dem Papierfeld, als Creme-CTA auf dem Dunkelfeld und als
-  Hintergrund der Privacy-Zeile. Brand-Amber `#FCBA30` genau **einmal**
-  sichtbar: der Statuspunkt im EU-Privacy-Chip (plus Fokusring des Switchers).
+  Hintergrund der Privacy-Zeile. Brand-Amber `#FCBA30` im Wordmark-Herz und
+  als Statuspunkt im EU-Privacy-Chip (plus Fokusring des Switchers).
 - **Akzent bleibt klinisches Grün** `#2E5E4E` (CTA auf hell, Schalter im
   Produkt) — karrieresicher, kein Consumer-Gelb.
 - **Datenfarben** unverändert aus v1 (`sleep #5B7FA6`, `activity #4E8A70`,
@@ -74,9 +84,13 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 
 ## Dateien
 
-- `index.html` — beide Varianten + Umschalter (einzige JS-Logik).
+- `index.html` — Login-Wall (AES-GCM, gleiches Session-Schema wie v1/Galerie).
+- `app.html` — beide Varianten + Umschalter (klare Review-Kopie).
+- `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
+- `token.html` — Share-Link-Generator für `index.html#k=…`.
 - `styles.css` — Tokens + Layout, ein File.
-- `assets/` — zwei Fotos, kopiert aus `../moodboard/assets/photos/`
-  (Credits: `ASSETS.md`).
+- `assets/` — Wordmark-SVG + zwei Fotos aus `../moodboard/assets/photos/`
+  (Credits: `ASSETS.md`). Fotos bleiben Dateien, keine data-URIs.
 
-Nichts hotlinkt; einzige externe Abhängigkeit ist Google Fonts.
+Nach dem Unlock lösen relative URLs (`styles.css`, `assets/…`) wie gewohnt auf.
+Einzige externe Abhängigkeit: Google Fonts.

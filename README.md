@@ -4,6 +4,7 @@ Internal password-gated moodboard. Ask Niclas for the login.
 
 The design moodboard is a sibling path with the same login:
 [https://niclas-183.github.io/lumen-inspo/moodboard/](https://niclas-183.github.io/lumen-inspo/moodboard/).
+Moodboard v2 (combined hero): [https://niclas-183.github.io/lumen-inspo/moodboard-v2/](https://niclas-183.github.io/lumen-inspo/moodboard-v2/).
 A gallery session on this origin unlocks it. Share links: `moodboard/token.html`.
 
 ## Share links
