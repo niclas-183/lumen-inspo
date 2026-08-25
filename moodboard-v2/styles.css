@@ -540,7 +540,8 @@ ul { list-style: none; }
 
 .photo-credit-on {
   position: absolute;
-  right: 20px;
+  /* oben links: rechts oben sitzt das fixe Mood-Dock (Reviewer-Chrome) */
+  left: 20px;
   top: 16px;
   z-index: 2;
   color: rgba(248, 243, 233, 0.85);
@@ -852,8 +853,9 @@ ul { list-style: none; }
 /* sticky reviewer chrome — always on screen, not product UI */
 .mood-dock {
   position: fixed;
-  top: 96px;
-  right: 20px;
+  /* unter der Nav (V1 hat Announce + Nav bis 120px), an der Nav-Rail ausgerichtet */
+  top: 136px;
+  right: max(24px, calc((100% - var(--rail-w)) / 2));
   z-index: 60;
   display: flex;
   flex-direction: column;
