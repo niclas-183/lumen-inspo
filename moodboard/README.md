@@ -18,7 +18,7 @@
 
 ## Ansehen
 
-- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard/](https://niclas-183.github.io/lumen-inspo/moodboard/) — `index.html` ist das gleiche Token-Gate wie die Galerie (User `lumen`, Session `lumen-inspo-session`). Share-Links über `moodboard/token.html` → `index.html#k=…`.
-- **Review / von Disk:** `moodboard/app.html` ist die unverschlüsselte Scroll-Seite (kein Login). Nicht der Pages-Einstieg.
+- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard/](https://niclas-183.github.io/lumen-inspo/moodboard/) — `index.html` ist das gleiche Token-Gate wie die Galerie (User `lumen`, Session `lumen-inspo-session`). Review läuft nur über diesen Login. Share-Links über `moodboard/token.html` (nur mit Session) → `index.html#k=…`.
+- **Lokal / Claude:** Klartext-Quelle ist `moodboard/_src/app.html` (nicht von Pages ausgeliefert). `app.html` auf Pages ist ein Redirect nach `index.html`.
 
 Die verschlüsselte Galerie, Login und `stack.csv` dieses Repos bleiben unberührt.
