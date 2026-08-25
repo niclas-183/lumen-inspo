@@ -15,8 +15,8 @@ und leicht unterschiedlicher Reihenfolge:
    Vier-Spalten-Raster, V2 als editoriale Hairline-Liste mit Lora-Zitat).
 2. **Programm / Produkt tiefer** — Oberfläche als Beweis: V1 ein breites
    App-Fenster (Bio-Age-Trend, Schlaf, Aktivität, 6 Blutwerte, Privacy-
-   Schalter), V2 Phone + Laborbericht. Dazu beschriftete Dichte-Referenzen
-   aus dem Korpus (Bevel, Linear, Prenuvo) — als Referenz, nie als Lumen.
+   Schalter), V2 Phone + Laborbericht. Beide Sektionen zeigen ausschließlich
+   originale Lumen-Oberflächen; fremde Screenshots stehen nicht auf der Seite.
 3. **Beweisstück (Forward-Artifact, ELM)** — V1 ein Einseiter-Mock mit
    PDF-CTA („ohne Registrierung"), V2 vier interne FAQ + derselbe CTA.
 4. **Fotostrecke** — je drei bislang ungenutzte Fotos aus der Bibliothek,
@@ -120,7 +120,6 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 - `token.html` — Share-Link-Generator für `index.html#k=…`.
 - `styles.css` — Tokens + Layout, ein File.
 - `assets/` — Wordmark-SVG + acht Fotos aus `../moodboard/assets/photos/`
-  sowie `assets/referenz/` mit drei beschrifteten Korpus-Screenshots
   (Credits und Regeln: `ASSETS.md`). Fotos bleiben Dateien, keine data-URIs.
 
 Nach dem Unlock lösen relative URLs (`styles.css`, `assets/…`) wie gewohnt auf.

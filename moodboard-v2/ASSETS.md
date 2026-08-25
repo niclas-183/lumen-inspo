@@ -23,18 +23,6 @@ jeweiligen Kontext („Gestellte Szene — keine Kundin/Patientin.",
 „Symbolbilder — Unsplash, gestellte Szenen.").
 Kein neues Stockmaterial wurde gescrapt.
 
-## Referenz-Screenshots (interne Referenz, Mockup only)
-
-Unveränderte Kopien aus `../moodboard/assets/referenz/` (Screenshots aus dem
-150er-Korpus, Aug 2026). Gebrandete Fremd-UI — **nur** als beschriftete
-Dichte-Referenz im internen Moodboard, nie als Lumen-Produkt, nie öffentlich.
-
-| Datei (assets/referenz/) | Verwendung |
-|---|---|
-| `bevel.jpg` | V1 + V2 Produkt-Sektion — Product-as-demo / Phone-Dichte |
-| `linear.jpg` | V1 Produkt-Sektion — Oberfläche als Beweis |
-| `prenuvo.jpg` | V2 Produkt-Sektion — Mensch + Methode |
-
 ## Schrift
 
 Google Fonts, ein `<link>` mit `display=swap`:
