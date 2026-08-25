@@ -9,11 +9,13 @@ Variante unter die Falz weiter — Fotofeld bleibt dunkles Feld, Editorial
 bleibt Papier.
 
 Auf Variante 1 liegt ein zweites **Moodboard-Werkzeug** (nicht Produkt-UI):
-Hero-Dither des Fotofelds, berechnet zur Laufzeit aus
+sieben Hero-Zustände des Fotofelds, berechnet zur Laufzeit aus
 `assets/office_window_quiet.jpg` — Original, Raster (Bayer 8×8, Originalfarben),
 Atkinson (1-Bit, Tinte `#26211A` auf Papier `#F6F0E4`), Halftone (Zeitungspunkte,
-gleiche zwei Farben). Keine vorgerenderten JPEGs; Canvas nur, wenn ein Modus
-aktiv ist. Auf Variante 2 ist das Werkzeug ausgeblendet.
+gleiche zwei Farben), plus drei Paper-Filter (vendored `@paper-design/shaders`,
+WebGL, erste Frame gecacht): **Glas** (Fluted Glass), **CMYK** (Halftone CMYK),
+**Papier** (Paper Texture). Keine vorgerenderten JPEGs; Overlay nur, wenn ein
+Modus aktiv ist. Auf Variante 2 ist das Werkzeug ausgeblendet.
 
 ## Unter der Falz (Issue #9)
 
@@ -138,7 +140,8 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 
 - `index.html` — Login-Wall (AES-GCM, gleiches Session-Schema wie v1/Galerie).
 - `app.html` — beide Varianten + Umschalter (klare Review-Kopie).
-- `hero-dither.js` — sticky Variantenwechsel + Hero-Dither (Canvas, kein npm).
+- `hero-dither.js` — sticky Variantenwechsel + Hero-Filter (Canvas-Dither + Paper-WebGL).
+- `vendor/paper-shaders/` — Apache-2.0 Vanilla-Subset von `@paper-design/shaders` 0.0.80 (Fluted Glass, Halftone CMYK, Paper Texture).
 - `rondell.js` — 3D-Rondell „Marktumfeld" (rAF, IntersectionObserver, kein npm);
   rührt Variantenumschaltung und Tastenkürzel nicht an.
 - `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).

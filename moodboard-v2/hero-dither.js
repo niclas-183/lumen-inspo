@@ -1,9 +1,11 @@
-/* Moodboard-Werkzeug: Variantenwechsel + Hero-Dither (Variante 1).
-   Keine Dependencies. Canvas nur über dem Foto, wenn ein Dither aktiv ist. */
+/* Moodboard-Werkzeug: Variantenwechsel + Hero-Filter (Variante 1).
+   Dither: kein npm. Paper-Filter: vendored @paper-design/shaders (WebGL, speed 0).
+   Overlay nur, wenn ein Modus aktiv ist. */
 (function () {
   var PHOTO_SRC = "assets/office_window_quiet.jpg";
   var INK = [0x26, 0x21, 0x1A];
   var PAPER = [0xF6, 0xF0, 0xE4];
+  var PAPER_MODES = { glas: 1, cmyk: 1, papier: 1 };
   var BAYER8 = [
     0, 32, 8, 40, 2, 34, 10, 42,
     48, 16, 56, 24, 50, 18, 58, 26,
@@ -20,6 +22,8 @@
   var ditherDock = document.getElementById("dither-dock");
   var canvas = document.getElementById("field-dither");
   var photo = document.getElementById("field-photo");
+  var shaderHost = document.getElementById("field-shader");
+  var shaderInner = document.getElementById("field-shader-mount");
 
   var variant = "variant-1";
   var ditherMode = "original";
@@ -28,6 +32,10 @@
   var fullData = null;
   var sizeCache = Object.create(null);
   var modeCache = Object.create(null);
+  var paperLib = null;
+  var paperLibLoading = null;
+  var noiseImg = null;
+  var shaderMount = null;
 
   function showVariant(id) {
     variant = id;
@@ -38,7 +46,7 @@
       t.setAttribute("aria-selected", String(t.dataset.target === id));
     });
     if (ditherDock) ditherDock.hidden = id !== "variant-1";
-    if (id !== "variant-1") hideCanvas();
+    if (id !== "variant-1") hideOverlays();
     else applyDither(ditherMode);
     window.scrollTo(0, 0);
   }
@@ -46,6 +54,201 @@
   function hideCanvas() {
     if (!canvas) return;
     canvas.classList.remove("is-on");
+  }
+
+  function hideShader() {
+    if (shaderHost) shaderHost.classList.remove("is-on");
+    disposeShader();
+  }
+
+  function hideOverlays() {
+    hideCanvas();
+    hideShader();
+  }
+
+  function isPaperMode(mode) {
+    return !!PAPER_MODES[mode];
+  }
+
+  function disposeShader() {
+    if (shaderMount) {
+      try { shaderMount.dispose(); } catch (e) {}
+      shaderMount = null;
+    }
+  }
+
+  function loadPaperLib() {
+    if (paperLib) return Promise.resolve(paperLib);
+    if (paperLibLoading) return paperLibLoading;
+    paperLibLoading = import("./vendor/paper-shaders/index.js").then(function (m) {
+      paperLib = m;
+      return m;
+    });
+    return paperLibLoading;
+  }
+
+  function waitImage(img) {
+    if (!img) return Promise.reject(new Error("image"));
+    if (img.complete && img.naturalWidth) return Promise.resolve(img);
+    if (img.decode) {
+      return img.decode().then(function () { return img; }).catch(function () {
+        return new Promise(function (resolve, reject) {
+          img.onload = function () { resolve(img); };
+          img.onerror = reject;
+        });
+      });
+    }
+    return new Promise(function (resolve, reject) {
+      img.onload = function () { resolve(img); };
+      img.onerror = reject;
+    });
+  }
+
+  function loadNoise(P) {
+    if (noiseImg && noiseImg.complete && noiseImg.naturalWidth) {
+      return Promise.resolve(noiseImg);
+    }
+    noiseImg = P.getShaderNoiseTexture();
+    return waitImage(noiseImg);
+  }
+
+  function paperUniforms(mode, P, img, noise) {
+    var color = P.getShaderColorFromString;
+    var fit = P.ShaderFitOptions.cover;
+    var sizing = {
+      u_fit: fit,
+      u_scale: 1,
+      u_rotation: 0,
+      u_offsetX: 0,
+      u_offsetY: 0,
+      u_originX: 0.5,
+      u_originY: 0.58,
+      u_worldWidth: 0,
+      u_worldHeight: 0
+    };
+    if (mode === "glas") {
+      return {
+        fragment: P.flutedGlassFragmentShader,
+        mipmaps: ["u_image"],
+        uniforms: Object.assign({
+          u_image: img,
+          u_colorBack: color("#00000000"),
+          u_colorShadow: color("#000000"),
+          u_colorHighlight: color("#ffffff"),
+          u_shadows: 0.2,
+          u_size: 0.42,
+          u_angle: 0,
+          u_distortion: 0.4,
+          u_shift: 0,
+          u_blur: 0,
+          u_edges: 0.2,
+          u_stretch: 0,
+          u_distortionShape: P.GlassDistortionShapes.prism,
+          u_highlights: 0.12,
+          u_shape: P.GlassGridShapes.lines,
+          u_marginLeft: 0,
+          u_marginRight: 0,
+          u_marginTop: 0,
+          u_marginBottom: 0,
+          u_grainMixer: 0.06,
+          u_grainOverlay: 0.08
+        }, sizing)
+      };
+    }
+    if (mode === "cmyk") {
+      return {
+        fragment: P.halftoneCmykFragmentShader,
+        mipmaps: [],
+        uniforms: Object.assign({
+          u_image: img,
+          u_noiseTexture: noise,
+          u_colorBack: color("#fbfaf4"),
+          u_colorC: color("#00b3ff"),
+          u_colorM: color("#fc4f9d"),
+          u_colorY: color("#ffd900"),
+          u_colorK: color("#231f20"),
+          u_size: 0.09,
+          u_contrast: 1.05,
+          u_softness: 0.85,
+          u_grainSize: 0.45,
+          u_grainMixer: 0,
+          u_grainOverlay: 0.05,
+          u_gridNoise: 0.16,
+          u_floodC: 0.1,
+          u_floodM: 0,
+          u_floodY: 0,
+          u_floodK: 0,
+          u_gainC: 0.22,
+          u_gainM: 0,
+          u_gainY: 0.15,
+          u_gainK: 0,
+          u_type: P.HalftoneCmykTypes.ink
+        }, sizing)
+      };
+    }
+    return {
+      fragment: P.paperTextureFragmentShader,
+      mipmaps: ["u_image"],
+      uniforms: Object.assign({
+        u_image: img,
+        u_noiseTexture: noise,
+        u_colorFront: color("#7B7160"),
+        u_colorBack: color("#F6F0E4"),
+        u_contrast: 0.28,
+        u_roughness: 0.38,
+        u_fiber: 0.42,
+        u_fiberSize: 0.22,
+        u_crumples: 0.38,
+        u_crumpleSize: 0.32,
+        u_folds: 0.42,
+        u_foldCount: 5,
+        u_fade: 0,
+        u_drops: 0.16,
+        u_seed: 5.8
+      }, sizing)
+    };
+  }
+
+  function waitShaderFrame(mount) {
+    return new Promise(function (resolve, reject) {
+      var tries = 0;
+      function tick() {
+        tries++;
+        if (mount.canvasElement && mount.canvasElement.width > 1 && mount.canvasElement.height > 1) {
+          mount.setFrame(0);
+          requestAnimationFrame(function () { resolve(); });
+          return;
+        }
+        if (tries > 90) {
+          reject(new Error("shader-size"));
+          return;
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  function captureShader(mount) {
+    var src = mount.canvasElement;
+    var snap = document.createElement("canvas");
+    snap.width = src.width;
+    snap.height = src.height;
+    snap.getContext("2d").drawImage(src, 0, 0);
+    return snap;
+  }
+
+  function showShaderCache(snap) {
+    disposeShader();
+    hideCanvas();
+    if (!shaderInner || !shaderHost) return;
+    shaderInner.replaceChildren();
+    var c = document.createElement("canvas");
+    c.width = snap.width;
+    c.height = snap.height;
+    c.getContext("2d").drawImage(snap, 0, 0);
+    shaderInner.appendChild(c);
+    shaderHost.classList.add("is-on");
   }
 
   function setDitherSelected(mode) {
@@ -291,6 +494,7 @@
   }
 
   function paint(frame) {
+    hideShader();
     canvas.width = frame.width;
     canvas.height = frame.height;
     var ctx = canvas.getContext("2d");
@@ -299,13 +503,70 @@
     canvas.classList.add("is-on");
   }
 
+  function applyPaper(mode) {
+    if (modeCache[mode]) {
+      showShaderCache(modeCache[mode]);
+      return;
+    }
+    setBusy(true);
+    Promise.resolve()
+      .then(function () { return sourceImg ? sourceImg : loadImage(PHOTO_SRC); })
+      .then(function (img) {
+        sourceImg = img;
+        return loadPaperLib();
+      })
+      .then(function (P) {
+        return loadNoise(P).then(function (noise) { return { P: P, noise: noise }; });
+      })
+      .then(function (pack) {
+        hideCanvas();
+        disposeShader();
+        if (shaderInner) shaderInner.replaceChildren();
+        if (shaderHost) shaderHost.classList.add("is-on");
+        var spec = paperUniforms(mode, pack.P, sourceImg, pack.noise);
+        shaderMount = new pack.P.ShaderMount(
+          shaderInner,
+          spec.fragment,
+          spec.uniforms,
+          { preserveDrawingBuffer: true, alpha: true, antialias: false, premultipliedAlpha: true },
+          0,
+          0,
+          2,
+          undefined,
+          spec.mipmaps
+        );
+        return waitShaderFrame(shaderMount);
+      })
+      .then(function () {
+        var snap = captureShader(shaderMount);
+        modeCache[mode] = snap;
+        if (ditherMode === mode && variant === "variant-1") showShaderCache(snap);
+        else {
+          disposeShader();
+          if (shaderHost) shaderHost.classList.remove("is-on");
+        }
+      })
+      .catch(function (err) {
+        console.warn("hero filter", mode, err);
+        ditherMode = "original";
+        setDitherSelected("original");
+        hideOverlays();
+      })
+      .then(function () { setBusy(false); });
+  }
+
   function applyDither(mode) {
     ditherMode = mode;
     setDitherSelected(mode);
     if (variant !== "variant-1" || mode === "original") {
-      hideCanvas();
+      hideOverlays();
       return;
     }
+    if (isPaperMode(mode)) {
+      applyPaper(mode);
+      return;
+    }
+    hideShader();
     if (modeCache[mode]) {
       paint(modeCache[mode]);
       return;
@@ -324,7 +585,7 @@
         .catch(function () {
           ditherMode = "original";
           setDitherSelected("original");
-          hideCanvas();
+          hideOverlays();
         })
         .then(function () { setBusy(false); });
     }, 30);
