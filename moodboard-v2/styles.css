@@ -15,10 +15,6 @@
   --ink-3: #7B7160;
   --line: #E5DCCB;
 
-  /* V1 dark field below the fold — warm espresso, kein Schwarz */
-  --field: #211B13;
-  --field-band: #272016;
-
   /* on dark photo */
   --cream: #F8F3E9;
   --cream-dim: rgba(248, 243, 233, 0.78);
@@ -975,11 +971,13 @@ ul { list-style: none; }
    Each variant is one .page; the hero's material continues.
    ============================================================ */
 
+/* Angehobenes warmes Anthrazit statt Loch — plus ein feines Korn als
+   140er-Kachel, damit die große Fläche nicht als Farbfläche kippt.
+   Der Hero bleibt unberührt: .hero-field trägt sein eigenes #14110C. */
 .page-dark {
-  background-color: var(--field);
-  /* feines Korn — das Feld wird Material, keine Fläche */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
+  background-color: #191511;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='linear' slope='0.05'/></feComponentTransfer></filter><rect width='140' height='140' filter='url(%23g)'/></svg>");
+  background-repeat: repeat;
   color: var(--cream);
 }
 
@@ -1001,22 +999,24 @@ ul { list-style: none; }
 /* dark sections (V1)                                          */
 /* ---------------------------------------------------------- */
 
+/* Jeder Abschnitt bekommt oben einen Lichtteller — die Naht wird zur
+   Kante, nicht zum Strich, und die Tiefe kommt aus dem Licht. */
 .sect {
   padding: 128px var(--pad-x) 136px;
-  border-top: 1px solid rgba(248, 243, 233, 0.1);
-  /* warmes Streiflicht am Sektionskopf — bricht die Fläche, trägt den Inhalt */
-  background-image:
-    radial-gradient(110% 72% at 16% 0%, rgba(252, 186, 48, 0.05), rgba(252, 186, 48, 0) 58%),
-    linear-gradient(180deg, rgba(248, 236, 216, 0.025), rgba(248, 236, 216, 0) 340px);
-}
-
-/* Bandwechsel im Scroll — zwei Sektionen heben sich einen Ton ab */
-#v1-programm,
-#v1-datenschutz {
-  background-color: var(--field-band);
+  border-top: 1px solid rgba(248, 243, 233, 0.12);
+  background: radial-gradient(68% 420px at 50% 0%, rgba(248, 243, 233, 0.038), transparent 74%);
+  background-repeat: no-repeat;
 }
 
 .sect-tight { padding: 104px var(--pad-x); }
+
+/* Ausgewählte Abschnitte stehen zusätzlich einen Hauch heller im Raum */
+.sect-lift {
+  background:
+    radial-gradient(68% 420px at 50% 0%, rgba(248, 243, 233, 0.038), transparent 74%),
+    linear-gradient(rgba(248, 243, 233, 0.022), rgba(248, 243, 233, 0.022));
+  background-repeat: no-repeat, repeat;
+}
 
 .sect-head { max-width: 880px; }
 
@@ -1246,7 +1246,9 @@ ul { list-style: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   padding: 104px var(--pad-x) 110px;
-  border-top: 1px solid rgba(248, 243, 233, 0.1);
+  border-top: 1px solid rgba(248, 243, 233, 0.12);
+  background: radial-gradient(68% 420px at 50% 0%, rgba(248, 243, 233, 0.038), transparent 74%);
+  background-repeat: no-repeat;
 }
 
 .strip-cell { margin: 0; }
@@ -1485,9 +1487,13 @@ ul { list-style: none; }
   border-top: 1px solid rgba(248, 243, 233, 0.1);
 }
 
-/* V1: der Abschluss bekommt ein mittiges, warmes Licht statt Leere */
+/* Der Abschluss von V1 nimmt den Lichtteller auf und sackt nach unten
+   ins Dunkle ab — der Fuß soll schwerer stehen als der Rest. */
 .page-dark .close {
-  background-image: radial-gradient(48% 62% at 50% 26%, rgba(252, 186, 48, 0.06), rgba(252, 186, 48, 0) 72%);
+  background:
+    radial-gradient(68% 420px at 50% 0%, rgba(248, 243, 233, 0.038), transparent 74%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.30));
+  background-repeat: no-repeat, repeat;
 }
 
 .close .display { font-size: 56px; }
@@ -1813,51 +1819,40 @@ ul { list-style: none; }
 }
 
 /* ---------------------------------------------------------- */
-/* Rondell — Marktumfeld, beide Varianten                      */
-/* Zehn App-Store-Karten auf einem 3D-Ring. Ohne JS (und bei   */
-/* reduzierter Bewegung) bleibt .no-3d: eine scrollbare Reihe. */
+/* Serienstreifen — Marktumfeld, beide Varianten               */
+/* Zehn App-Store-Karten flach nebeneinander, drei im Blick.   */
+/* Ohne JS und unter 720px bleibt es eine scrollbare Reihe.    */
 /* ---------------------------------------------------------- */
 
-/* nichts darf aus der Seite bluten — der Ring ragt seitlich hinaus */
-.sect-rondell,
-.psect-rondell { overflow: hidden; }
+.slides { margin-top: 72px; }
 
-.rondell { margin-top: 72px; }
+/* harter Beschnitt — keine Verlaufsmasken, die Kante ist gewollt */
+.slides-viewport { overflow: hidden; }
 
-.rondell-stage {
-  position: relative;
-  height: 600px;
-  perspective: 1300px;
-  perspective-origin: 50% 40%;
-  overflow: visible;
-}
-
-.rondell-ring {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-  /* Ring nur leicht zurückgesetzt: die Frontkarte steht VOR der Bühne
-     (~1,27×), hinten fällt sie auf ~0,68× — echte Tiefe statt 1:1 */
-  transform: translateZ(-100px) rotateY(var(--rot, 0deg));
+.slides-track {
+  list-style: none;
+  display: flex;
+  gap: 24px;
   will-change: transform;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.rondell-card {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 190px;
-  aspect-ratio: 720 / 1560;
-  margin: -206px 0 0 -95px;
-  transform: rotateY(calc(var(--i) * 36deg)) translateZ(380px);
-  border-radius: 18px;
+/* der Rücklauf von der letzten auf die erste Position läuft länger */
+.slides-track.is-rewinding { transition-duration: 950ms; }
+
+.slide {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+}
+
+.slide-card {
+  margin: 0;
+  border-radius: 16px;
   overflow: hidden;
-  /* Rückseite unsichtbar: keine gespiegelten Karten auf der Ring-Rückseite */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  aspect-ratio: 720 / 1560;
 }
 
-.rondell-card img {
+.slide-card img {
   display: block;
   width: 100%;
   height: 100%;
@@ -1865,94 +1860,132 @@ ul { list-style: none; }
 }
 
 /* Kartenhaut je Feld */
-.page-dark .rondell-card {
+.page-dark .slide-card {
   background: #0E0C09;
   border: 1px solid rgba(248, 243, 233, 0.16);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
 }
 
-.page-paper .rondell-card {
+.page-paper .slide-card {
   background: #FFFFFF;
   border: 1px solid rgba(38, 33, 26, 0.12);
   box-shadow: 0 14px 40px rgba(38, 33, 26, 0.18);
 }
 
-.rondell-caption {
-  margin-top: 26px;
-  text-align: center;
+.slide-cap {
+  margin-top: 12px;
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.page-dark .rondell-caption { color: var(--cream-dim); }
-.page-paper .rondell-caption { color: var(--ink-3); }
+.page-dark .slide-cap { color: var(--cream-faint); }
+.page-paper .slide-cap { color: var(--ink-3); }
 
-.rondell-credit {
-  margin-top: 10px;
-  text-align: center;
+/* Fußzeile: Herkunft links, Zähler und Pfeile rechts */
+.slides-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 28px;
 }
 
 /* .photo-credit ist creme — auf Papier braucht der Credit Tinte */
-.page-paper .rondell-credit { color: var(--ink-3); }
+.page-paper .slides-credit { color: var(--ink-3); }
 
-/* Fallback ohne JS / ohne Bewegung: Reihe statt Ring */
-.rondell.no-3d .rondell-stage {
-  height: auto;
-  perspective: none;
-}
-
-.rondell.no-3d .rondell-ring {
-  position: static;
-  transform: none;
-  transform-style: flat;
-  will-change: auto;
+.slides-nav {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 14px;
+}
+
+.slides-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.page-dark .slides-count { color: var(--cream-faint); }
+.page-dark .slides-count b { color: var(--cream); font-weight: 500; }
+.page-paper .slides-count { color: var(--ink-3); }
+.page-paper .slides-count b { color: var(--ink); font-weight: 500; }
+
+.slides-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  cursor: pointer;
+  transition: background 120ms, color 120ms, border-color 120ms;
+}
+
+.slides-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.page-dark .slides-btn {
+  border: 1px solid rgba(248, 243, 233, 0.24);
+  color: var(--cream);
+}
+
+.page-dark .slides-btn:hover {
+  background: var(--paper-hauch);
+  color: var(--ink);
+  border-color: transparent;
+}
+
+.page-dark .slides-btn:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.page-paper .slides-btn {
+  border: 1px solid rgba(38, 33, 26, 0.22);
+  color: var(--ink);
+}
+
+.page-paper .slides-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: transparent;
+}
+
+.page-paper .slides-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Ohne JS: schmalere Karten, frei scrollbar, keine Pfeile */
+.slides.no-js .slides-viewport {
   overflow-x: auto;
-  padding: 8px 4px 20px;
+  padding-bottom: 16px;
 }
 
-.rondell.no-3d .rondell-card {
-  position: static;
-  margin: 0;
-  transform: none;
-  flex: 0 0 190px;
-  opacity: 1;
-}
+.slides.no-js .slide { flex-basis: 220px; }
+.slides.no-js .slides-nav { display: none; }
 
-@media (max-width: 1024px) {
-  .rondell-ring { transform: translateZ(-80px) rotateY(var(--rot, 0deg)); }
-  .rondell-card {
-    width: 160px;
-    margin: -173px 0 0 -80px;
-    transform: rotateY(calc(var(--i) * 36deg)) translateZ(320px);
-  }
-  .rondell.no-3d .rondell-card { flex-basis: 160px; }
-}
-
-/* unter 720px erzwungen flach — auch wenn JS den Ring schon gelöst hat */
+/* Unter 720px wischt man selbst — JS fasst den Track hier nicht an */
 @media (max-width: 720px) {
-  .rondell .rondell-stage { height: auto; perspective: none; }
-  .rondell .rondell-ring {
-    position: static;
-    transform: none;
-    transform-style: flat;
-    will-change: auto;
-    display: flex;
-    gap: 24px;
+  .slides-viewport {
     overflow-x: auto;
-    padding: 8px 4px 20px;
+    scroll-snap-type: x mandatory;
   }
-  .rondell .rondell-card {
-    position: static;
-    margin: 0;
-    transform: none;
-    flex: 0 0 160px;
-    /* schlägt die Inline-Opazität, falls JS den Ring vor dem Resize trieb */
-    opacity: 1 !important;
+  .slides-track { transition: none; }
+  .slide {
+    flex: 0 0 72%;
+    scroll-snap-align: start;
   }
+  .slides-nav { display: none; }
 }
 
 /* ============================================================
