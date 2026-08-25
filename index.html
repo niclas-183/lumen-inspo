@@ -167,6 +167,26 @@ async function unlock(makeKey, session){
   html = null;
   adopt(parsed);
   parsed = null;
+  loadLookfeelOverlay();
+}
+
+function loadLookfeelOverlay(){
+  if (document.querySelector("link[data-lf], script[data-lf]")) return;
+  const css = document.createElement("link");
+  css.rel = "stylesheet";
+  css.href = "ratings.css";
+  css.setAttribute("data-lf", "css");
+  document.head.appendChild(css);
+  const core = document.createElement("script");
+  core.src = "ratings-core.js";
+  core.setAttribute("data-lf", "core");
+  core.onload = () => {
+    const ui = document.createElement("script");
+    ui.src = "ratings.js";
+    ui.setAttribute("data-lf", "ui");
+    document.body.appendChild(ui);
+  };
+  document.body.appendChild(core);
 }
 
 const form = document.getElementById("f");

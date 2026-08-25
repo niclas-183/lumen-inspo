@@ -2,7 +2,7 @@
 
 **Was das ist:** Die eingefrorene visuelle Systematik für Lumen (B2B-Gesundheits-/Longevity-Programm: Aktivität, Schlaf, Ernährung, biologisches Alter, Bluttests) — drei vollständig spezifizierte Hero-Richtungen, ein Token-System, geprüfte Bildquellen und die Bauanleitung für eine einzige scrollende Moodboard-Seite. Basis: Kodierung von 150 Live-Homepages (24.08.2026, PRs [#3](https://github.com/niclas-183/lumen-inspo/pull/3) und [#4](https://github.com/niclas-183/lumen-inspo/pull/4)).
 
-**Was das nicht ist:** keine Lumen-Website, kein MVP, keine Komponenten-Doku, kein Klon von Function/Bevel/Linear. Die verschlüsselte Galerie, Login und `stack.csv` dieses Repos bleiben unberührt.
+**Was das nicht ist:** keine Lumen-Website, kein MVP, keine Komponenten-Doku, kein Klon von Function/Bevel/Linear. Die verschlüsselte Galerie, Login und `stack.csv` dieses Repos bleiben unberührt. Nach dem Galerie-Login: Look-and-Feel-Bewertung (Niclas/Dominik) und Abgleich, siehe Root-README.
 
 ## Inhalt
 
