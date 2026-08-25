@@ -138,7 +138,7 @@ function adopt(parsed){
 }
 
 async function unlock(makeKey, session){
-  const res = await fetch("payload.bin", {cache: "force-cache"});
+  const res = await fetch("payload.bin", {cache: "no-cache"});
   if (!res.ok) throw new Error("payload");
   let buf = new Uint8Array(await res.arrayBuffer());
   if (dec.decode(buf.subarray(0,4)) !== "LIN1") throw new Error("format");
