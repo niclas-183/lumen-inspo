@@ -9,7 +9,7 @@ Attribution erforderlich — wir attribuieren trotzdem.
 
 | Datei (assets/) | Verwendung | Quelle | Fotograf:in | Lizenz |
 |---|---|---|---|---|
-| `office_window_quiet.jpg` | V1 Hero, Vollbild-Fotofeld | https://unsplash.com/photos/person-works-on-laptop-near-large-window-with-plants-gkzP5awCZAQ | Oksana Demenko | Unsplash |
+| `office_window_quiet.jpg` | V1 Hero, Vollbild-Fotofeld (Dither-Modi zur Laufzeit, keine Extra-JPEGs) | https://unsplash.com/photos/person-works-on-laptop-near-large-window-with-plants-gkzP5awCZAQ | Oksana Demenko | Unsplash |
 | `person_window_daylight.jpg` | V2 Hero, Fotospalte rechts | https://www.pexels.com/photo/woman-in-gray-long-sleeves-shirt-standing-beside-glass-window-8297155/ | Mikhail Nilov | Pexels |
 | `sleep_morning_bed.jpg` | V1 Fotostrecke | https://unsplash.com/photos/white-bed-linen-near-white-window-curtain-dYgG6lSWlBY | Egor Myznik | Unsplash |
 | `activity_ridge_walk.jpg` | V1 Fotostrecke | https://unsplash.com/photos/a-person-walking-on-a-path-in-a-foggy-landscape-fX7SogLi7Tg | Renāte Šnore | Unsplash |
