@@ -383,10 +383,11 @@
     var toastEl = document.createElement("div");
     toastEl.className = "lf-toast";
     toastEl.setAttribute("role", "status");
+    var spacer = document.createElement("div");
+    spacer.className = "lf-spacer";
 
-    var nav = $("nav") || $("header");
-    if (nav && nav.parentNode) nav.after(bar);
-    else document.body.insertBefore(bar, document.body.firstChild);
+    document.body.appendChild(bar);
+    document.body.appendChild(spacer);
     document.body.appendChild(panel);
     document.body.appendChild(toastEl);
   }

@@ -27,17 +27,21 @@
 .lf-toast * { box-sizing: border-box; }
 
 .lf-bar {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
   z-index: 40;
   display: flex;
   flex-wrap: wrap;
   gap: 10px 16px;
   align-items: center;
-  padding: 8px 14px;
-  background: color-mix(in srgb, var(--lf-bg) 92%, transparent);
+  padding: 8px 14px 10px;
+  background: color-mix(in srgb, var(--lf-bg) 94%, transparent);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--lf-line);
+  border-top: 1px solid var(--lf-line);
+  border-bottom: 0;
   color: var(--lf-ink);
 }
 .lf-bar-brand {
@@ -61,8 +65,19 @@
   gap: 6px;
 }
 .lf-btn,
-.lf-filter {
+.lf-filter,
+.lf-dot,
+.lf-close {
   appearance: none;
+  width: auto !important;
+  max-width: none;
+  min-height: 0;
+  height: auto;
+  float: none;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--lf-line);
   background: var(--lf-bg-2);
   color: var(--lf-ink);
@@ -145,18 +160,19 @@
   line-height: 1.25;
 }
 .lf-likert {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   gap: 3px;
 }
 .lf-dot {
   flex: 1 1 0;
   min-width: 22px;
-  height: 26px;
-  padding: 0;
+  height: 26px !important;
+  padding: 0 !important;
   border: 1px solid var(--lf-line);
   background: var(--lf-bg-2);
   color: var(--lf-muted);
-  border-radius: 6px;
+  border-radius: 6px !important;
   font: 11px/1 ui-sans-serif, system-ui, sans-serif;
   cursor: pointer;
 }
@@ -171,6 +187,7 @@
 .lf-dot.is-on.lf-lo { background: var(--lf-bad); border-color: var(--lf-bad); color: #1a100f; }
 
 .lf-hidden { display: none !important; }
+.lf-spacer { height: 108px; pointer-events: none; }
 
 .lf-panel {
   position: fixed;
@@ -293,7 +310,7 @@
 
 .lf-toast {
   position: fixed;
-  bottom: 18px;
+  bottom: 118px;
   right: 18px;
   z-index: 90;
   background: var(--lf-ink);
