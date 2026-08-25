@@ -45,9 +45,9 @@ Nav-Punkte verlinken auf die Sektionen der aktiven Variante
 
 ## Ansehen
 
-- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard-v2/](https://niclas-183.github.io/lumen-inspo/moodboard-v2/) — gleiches Token-Gate wie Galerie und v1 (`lumen` / Session `lumen-inspo-session`). Ein Login entsperrt alle drei.
-- **Share-Link:** `token.html` → `index.html#k=…` (Fragment, nie an den Server).
-- **Review / von Disk:** `app.html` ist die unverschlüsselte Seite (kein Login). Nicht der Pages-Einstieg.
+- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard-v2/](https://niclas-183.github.io/lumen-inspo/moodboard-v2/) — gleiches Token-Gate wie Galerie und v1 (`lumen` / Session `lumen-inspo-session`). Ein Login entsperrt alle drei. Review läuft nur über diesen Login — es gibt keine login-freie Pages-Kopie.
+- **Share-Link:** `token.html` (nur mit Session `lumen-inspo-session`) → `index.html#k=…` (Fragment, nie an den Server). Ohne Session Redirect nach `index.html`.
+- **Lokal / Claude:** Klartext-Quelle ist `_src/app.html` (Jekyll liefert `_src` nicht aus). `app.html` auf Pages ist ein Redirect nach `index.html`.
 
 v1 in `../moodboard/` bleibt unberührt (kein Rewrite von `payload.bin` dort).
 
@@ -124,10 +124,11 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 ## Dateien
 
 - `index.html` — Login-Wall (AES-GCM, gleiches Session-Schema wie v1/Galerie).
-- `app.html` — beide Varianten + Umschalter (klare Review-Kopie).
+- `_src/app.html` — Klartext-Quelle beider Varianten + Umschalter (lokal/Claude; nicht auf Pages).
+- `app.html` — Redirect nach `index.html` (kein Moodboard-Markup).
 - `hero-dither.js` — sticky Variantenwechsel + Hero-Dither (Canvas, kein npm).
-- `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
-- `token.html` — Share-Link-Generator für `index.html#k=…`.
+- `payload.bin` — verschlüsseltes `_src/app.html` (LIN1 + Salt + Nonce + Ciphertext).
+- `token.html` — Share-Link-Generator für `index.html#k=…` (nur mit Session).
 - `styles.css` — Tokens + Layout, ein File.
 - `assets/` — Wordmark-SVG + acht Fotos aus `../moodboard/assets/photos/`
   (Credits und Regeln: `ASSETS.md`). Fotos bleiben Dateien, keine data-URIs.

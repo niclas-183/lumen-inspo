@@ -128,7 +128,10 @@ function adopt(parsed){
   document.body.replaceWith(nextBody);
   scripts.forEach(old => {
     const s = document.createElement("script");
-    s.textContent = old.textContent;
+    const src = old.getAttribute("src");
+    s.async = false;
+    if (src) s.src = src;
+    else s.textContent = old.textContent;
     document.body.appendChild(s);
   });
   shrinkScreenshots();

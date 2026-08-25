@@ -5,18 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Lumen · Share-Link</title>
+<script>
+(function(){
+  var SKEY = "lumen-inspo-session";
+  try {
+    var saved = JSON.parse(sessionStorage.getItem(SKEY) || "null");
+    if (saved && (saved.token || (saved.user && saved.pass))) {
+      document.documentElement.classList.add("authed");
+      return;
+    }
+  } catch (e) {}
+  location.replace("index.html");
+})();
+</script>
 <style>
 :root { --bg:#0c0d0b; --ink:#f3f0e8; --muted:#9a9689; --line:#2a2b26; --accent:#d8c7a1; }
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 ui-sans-serif,system-ui,sans-serif}
+html:not(.authed) .wrap{display:none}
 .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:32px}
-form{width:100%;max-width:420px}
+.panel{width:100%;max-width:420px}
 .eyebrow{color:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-size:11px;margin:0 0 10px}
 h1{font-family:ui-serif,Georgia,serif;font-weight:500;font-size:32px;margin:0 0 8px;letter-spacing:-.02em}
 p{color:var(--muted);margin:0 0 28px;font-size:14px}
 label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
-input{width:100%;background:#141512;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:12px 14px;font-size:15px;margin-bottom:14px}
-input:focus{outline:1px solid var(--accent);border-color:var(--accent)}
 button{width:100%;appearance:none;border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:12px 14px;font-size:14px;cursor:pointer;margin-top:6px}
 button:disabled{opacity:.6;cursor:wait}
 button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
@@ -31,13 +43,11 @@ code{display:block;background:#141512;border:1px solid var(--line);border-radius
 </head>
 <body>
 <div class="wrap">
-<form id="f" autocomplete="off">
+<div class="panel">
 <p class="eyebrow">Lumen</p>
 <h1>Share-Link erzeugen</h1>
-<p>Erzeugt aus dem Passwort einen Link, mit dem sich das Moodboard ohne Login öffnen lässt. Läuft komplett im Browser — es wird nichts hochgeladen.</p>
-<label for="p">Passwort</label>
-<input id="p" type="password" autocomplete="current-password" autofocus>
-<button type="submit" id="b">Link erzeugen</button>
+<p>Erzeugt aus der aktuellen Session einen Link, mit dem sich das Moodboard ohne erneutes Login öffnen lässt. Läuft komplett im Browser — es wird nichts hochgeladen.</p>
+<button type="button" id="b">Link erzeugen</button>
 <p class="err" id="e"></p>
 
 <div class="out" id="o">
@@ -52,16 +62,20 @@ code{display:block;background:#141512;border:1px solid var(--line);border-radius
     Das Passwort selbst verrät der Link nicht.
   </p>
 </div>
-</form>
+</div>
 </div>
 <script>
+const SKEY = "lumen-inspo-session";
 const enc = new TextEncoder();
 const dec = new TextDecoder();
-const form = document.getElementById("f");
 const err  = document.getElementById("e");
 const btn  = document.getElementById("b");
 const out  = document.getElementById("o");
 const link = document.getElementById("l");
+
+function sessionCreds(){
+  try { return JSON.parse(sessionStorage.getItem(SKEY) || "null"); } catch (e) { return null; }
+}
 
 function b64url(bytes){
   let bin = "";
@@ -69,45 +83,82 @@ function b64url(bytes){
   return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
 
-async function makeLink(pass){
-  const res = await fetch("payload.bin", {cache: "force-cache"});
+function b64urlBytes(s){
+  const pad = s.length % 4;
+  const bin = atob(s.replace(/-/g, "+").replace(/_/g, "/") + (pad ? "=".repeat(4 - pad) : ""));
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+
+async function loadPayload(){
+  const res = await fetch("payload.bin", {cache: "no-cache"});
   if (!res.ok) throw new Error("payload");
   const buf = new Uint8Array(await res.arrayBuffer());
   if (dec.decode(buf.subarray(0, 4)) !== "LIN1") throw new Error("format");
-  const salt = buf.slice(4, 20);
-  const nonce = buf.slice(20, 32);
-  const base = await crypto.subtle.importKey("raw", enc.encode(pass), "PBKDF2", false, ["deriveKey"]);
-  // extractable: true here, unlike index.html — exporting the raw key is the point.
-  const key = await crypto.subtle.deriveKey(
-    {name:"PBKDF2", salt, iterations:200000, hash:"SHA-256"},
-    base, {name:"AES-GCM", length:256}, true, ["decrypt"]);
-  // AES-GCM only reveals a wrong password by failing its tag check, and that
-  // needs the whole ciphertext. Better to spend it here than to hand someone
-  // a link that silently does not work. The plaintext is dropped immediately.
-  await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, buf.subarray(32));
-  const raw = new Uint8Array(await crypto.subtle.exportKey("raw", key));
-  return new URL("index.html#k=" + b64url(raw), location.href).href;
+  return buf;
 }
 
-form.addEventListener("submit", async (ev) => {
-  ev.preventDefault();
+async function keyFromToken(token){
+  const raw = b64urlBytes(token);
+  if (raw.length !== 32) throw new Error("token");
+  return crypto.subtle.importKey("raw", raw, {name:"AES-GCM"}, false, ["decrypt"]);
+}
+
+async function keyFromPass(pass, salt){
+  const base = await crypto.subtle.importKey("raw", enc.encode(pass), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    {name:"PBKDF2", salt, iterations:200000, hash:"SHA-256"},
+    base, {name:"AES-GCM", length:256}, true, ["decrypt"]);
+}
+
+async function makeLink(saved){
+  const buf = await loadPayload();
+  const salt = buf.slice(4, 20);
+  const nonce = buf.slice(20, 32);
+  const ct = buf.subarray(32);
+  let token = saved.token || null;
+  if (token) {
+    const key = await keyFromToken(token);
+    await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
+  } else if (saved.user && saved.pass) {
+    const key = await keyFromPass(saved.pass, salt);
+    await crypto.subtle.decrypt({name:"AES-GCM", iv:nonce}, key, ct);
+    const raw = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+    token = b64url(raw);
+  } else {
+    throw new Error("session");
+  }
+  return new URL("index.html#k=" + token, location.href).href;
+}
+
+async function generate(){
   err.textContent = "";
   out.classList.remove("on");
+  const saved = sessionCreds();
+  if (!saved || !(saved.token || (saved.user && saved.pass))) {
+    location.replace("index.html");
+    return;
+  }
   btn.disabled = true;
   btn.textContent = "Prüfe…";
   try {
-    link.textContent = await makeLink(document.getElementById("p").value);
+    link.textContent = await makeLink(saved);
     out.classList.add("on");
     btn.textContent = "Link erzeugen";
     btn.disabled = false;
   } catch (e) {
+    sessionStorage.removeItem(SKEY);
     err.textContent = e.message === "payload"
       ? "payload.bin nicht gefunden."
-      : "Passwort stimmt nicht.";
+      : "Session ungültig. Bitte neu einloggen.";
     btn.textContent = "Link erzeugen";
     btn.disabled = false;
+    setTimeout(() => location.replace("index.html"), 1200);
   }
-});
+}
+
+btn.addEventListener("click", generate);
 
 document.getElementById("c").addEventListener("click", async () => {
   const c = document.getElementById("c");

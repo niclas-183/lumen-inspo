@@ -1,0 +1,6 @@
+# GitHub Pages runs Jekyll unless .nojekyll is present.
+# Do not add .nojekyll: directories named _src stay unpublished, so the
+# plaintext moodboard source is not served on Pages.
+exclude:
+  - moodboard/_src
+  - moodboard-v2/_src
