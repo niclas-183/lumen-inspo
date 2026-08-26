@@ -35,8 +35,9 @@ nicht (siehe „Variante 1 · Lichtkammer"):
    dort als solches ausgewiesen.
 3. **Beweisstück (Forward-Artifact, ELM)** — V1 ein Einseiter-Mock mit
    PDF-CTA („ohne Registrierung"), V2 vier interne FAQ + derselbe CTA.
-4. **Fotostrecke** — je drei bislang ungenutzte Fotos aus der Bibliothek,
-   mit Mono-Caption und „Symbolbilder"-Credit.
+4. **Fotostrecke** — je drei Fotos aus der Bibliothek mit Mono-Caption und
+   „Symbolbilder"-Credit (V2 bislang ungenutzte Frames; V1 seit dem
+   Lichtkammer-Neubau bewusst aus V2/V3 re-kuratiert).
 5. **Marktumfeld — Serienstreifen** — zehn App-Store-Screenshots **einer
    einzigen App** (Bevel: AI Health Coach) als flacher, editorialer
    Streifen: drei Karten im Blick, alle 4,2 Sekunden rückt er um eine
