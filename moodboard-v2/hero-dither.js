@@ -627,11 +627,14 @@
     if (e.key === "1") showVariant("variant-1");
     if (e.key === "2") showVariant("variant-2");
     if (e.key === "3") showVariant("variant-3");
+    if (e.key === "4") showVariant("variant-4");
   });
 
   applyTone(tone);
 
-  if (location.hash === "#variant-3" || location.hash.indexOf("#v3-") === 0) {
+  if (location.hash === "#variant-4" || location.hash.indexOf("#v4-") === 0) {
+    showVariant("variant-4");
+  } else if (location.hash === "#variant-3" || location.hash.indexOf("#v3-") === 0) {
     showVariant("variant-3");
   } else if (location.hash === "#variant-2" || location.hash.indexOf("#v2-") === 0) {
     showVariant("variant-2");

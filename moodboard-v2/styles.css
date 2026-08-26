@@ -2812,3 +2812,750 @@ ul { list-style: none; }
 
   .sys-foot-links { margin-left: 0; }
 }
+
+/* ============================================================
+   VARIANTE 4 — Licht
+   Heller Amber-Grund, dunkle Ink-Produktbühne, Bevel-Phone-Fächer
+   im Hero, Marquee der ganzen Serie. Lora + Nunito Sans + Plex Mono
+   (derselbe <link> wie V3), Hugeicons (MIT), Open Doodles im
+   Original (CC0). Eigener Namensraum .w4-*; keine bestehende
+   Regel wird verändert.
+   ============================================================ */
+
+#variant-4 {
+  /* Grund / Flächen */
+  --w4-ground: #FFF4E8;
+  --w4-paper: #FFFDF8;
+  --w4-panel: #FFE8B9;
+  --w4-ink: #26211A;
+  --w4-ink-2: #57503F;
+
+  /* Akzente */
+  --w4-amber: #FCBA30;
+  --w4-amber-deep: #E8A012;
+  --w4-brown: #7A4E00;
+  --w4-green: #2E5E4E;
+
+  /* Linien */
+  --w4-line: #EFE3CE;
+  --w4-line-dark: #3A342A;
+
+  /* Schrift auf Tinte — nie reines Weiß */
+  --w4-cream: #FFF4E8;
+
+  /* Radien */
+  --w4-r: 24px;
+  --w4-r-phone: 44px;
+
+  /* Schatten */
+  --w4-sh-sm: 0 1px 2px rgba(38, 33, 26, .06);
+  --w4-sh-md: 0 12px 32px -12px rgba(38, 33, 26, .18);
+  --w4-sh-phone: 0 32px 64px -24px rgba(38, 33, 26, .35);
+
+  /* Schrift-Aliase — dieselben Familien wie V3, kein neuer Request */
+  --w4-serif: "Lora", Georgia, serif;
+  --w4-sans: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --w4-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --w4-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+.page-licht {
+  background: var(--w4-ground);
+  color: var(--w4-ink);
+  font-family: var(--w4-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  font-variation-settings: "YTLC" 500, "wdth" 100;
+  /* der Hero-Fächer läuft bewusst über das Inhaltsmaß hinaus —
+     clip statt hidden, damit die sticky Nav ihr Bezugssystem behält */
+  overflow-x: clip;
+}
+
+.page-licht :focus-visible {
+  outline: 2px solid var(--w4-amber);
+  outline-offset: 2px;
+}
+
+/* Nav sitzt im Fluss; der Hero zieht sich dahinter (Muster V2/V3). */
+.page-licht .nav { margin-top: 20px; }
+.page-licht .w4-hero { margin-top: calc(-20px - var(--nav-h)); }
+
+.w4-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.w4-narrow { max-width: 720px; margin-inline: auto; }
+
+.w4-section { padding-block: 112px; }
+
+.w4-band-ink {
+  background: var(--w4-ink);
+  color: var(--w4-cream);
+  padding-block: 96px;
+}
+
+/* zweites Ink-Band direkt unter dem ersten — die Naht bleibt unsichtbar */
+.w4-band-ink-flush { padding-top: 0; }
+
+.w4-band-paper {
+  background: var(--w4-paper);
+  border-top: 1px solid var(--w4-line);
+  border-bottom: 1px solid var(--w4-line);
+}
+
+/* ---------------------------------------------------------- */
+/* V4 · Typografie                                              */
+/* ---------------------------------------------------------- */
+
+.w4-display {
+  font-family: var(--w4-serif);
+  font-weight: 600;
+  font-size: clamp(3.5rem, 6.5vw, 5.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.w4-title {
+  font-family: var(--w4-serif);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 3.6vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.w4-subhead {
+  font-family: var(--w4-serif);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.w4-lead {
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 450;
+  font-variation-settings: "YTLC" 500, "wdth" 100;
+}
+
+.w4-body {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--w4-ink-2);
+}
+
+.w4-stat-num {
+  font-family: var(--w4-serif);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.w4-overline {
+  font-family: var(--w4-mono);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--w4-brown);
+}
+
+.w4-cap {
+  font-family: var(--w4-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--w4-ink-2);
+}
+
+/* Auf Tinte: Overline amber, Caption gedämpftes Creme, nie Weiß. */
+.w4-band-ink .w4-overline { color: var(--w4-amber); }
+.w4-band-ink .w4-cap,
+.w4-panelcard-ink .w4-cap { color: rgba(255, 244, 232, .64); }
+.w4-band-ink .w4-lead { color: var(--w4-cream); opacity: .64; }
+.w4-band-ink .w4-body { color: rgba(255, 244, 232, .72); }
+
+.w4-head { display: flex; flex-direction: column; gap: 16px; }
+.w4-head .w4-lead { max-width: 62ch; }
+
+.w4-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+.w4-head-row .w4-head { flex: 1 1 auto; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Ikonografie (Hugeicons Stroke Rounded 1.5)              */
+/* ---------------------------------------------------------- */
+
+.w4-ic { width: 20px; height: 20px; flex: none; }
+.w4-ic-lg { width: 24px; height: 24px; flex: none; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Illustration (Open Doodles, CC0 — Originaldateien)      */
+/* Die SVGs kommen unverändert vom Zeichner und bringen ihre    */
+/* Farbwelt selbst mit: als <img>, ohne Filter, ohne Umfärben.  */
+/* ---------------------------------------------------------- */
+
+.w4-doodle { display: block; height: auto; flex: none; }
+.w4-doodle-hero { width: 216px; margin-top: 26px; }
+.w4-doodle-proof { width: 180px; }
+.w4-doodle-privacy { width: 160px; }
+.w4-doodle-paths { width: 140px; }
+.w4-doodle-close { width: 264px; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Nav — helles Liquid Glass                               */
+/* ---------------------------------------------------------- */
+
+.nav-licht {
+  background: linear-gradient(rgba(255, 253, 248, .72), rgba(255, 244, 232, .55));
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgba(122, 78, 0, .16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), 0 8px 28px rgba(122, 78, 0, .10);
+  color: var(--w4-ink);
+}
+
+.w4-nav-links {
+  display: flex;
+  gap: 32px;
+  margin-right: auto;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+.w4-nav-links a:hover { color: var(--w4-brown); }
+
+.w4-nav-side { display: flex; align-items: center; gap: 12px; }
+.w4-nav-side .w4-btn { height: 40px; padding: 0 18px; font-size: 15px; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Buttons                                                 */
+/* ---------------------------------------------------------- */
+
+.w4-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--w4-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.w4-btn-amber {
+  background: var(--w4-amber);
+  color: var(--w4-ink);
+  box-shadow: var(--w4-sh-sm);
+}
+.w4-btn-amber:hover { background: var(--w4-amber-deep); }
+
+.w4-btn-ghost {
+  background: transparent;
+  color: var(--w4-ink);
+  border-color: rgba(122, 78, 0, .38);
+}
+.w4-btn-ghost:hover { background: rgba(122, 78, 0, .07); }
+
+/* Creme auf Tinte — die eine erlaubte helle Schrift */
+.w4-btn-ink { background: var(--w4-ink); color: var(--w4-cream); }
+.w4-btn-ink:hover { background: #14110C; }
+
+.w4-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+
+.w4-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--w4-ink-2);
+}
+.w4-trust svg { color: var(--w4-green); }
+
+/* ---------------------------------------------------------- */
+/* V4 · Hero — Copy links, Phone-Fächer rechts                  */
+/* ---------------------------------------------------------- */
+
+.w4-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 88vh;
+  /* oben Platz für Nav UND das sticky Reviewer-Dock (top 136px):
+     der Fächer startet erst unterhalb davon */
+  padding-block: 200px 88px;
+}
+
+/* radialer Hauch oben rechts, max 40 % Deckung */
+.w4-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(46% 46% at 78% 14%, var(--w4-panel) 0%, rgba(255, 232, 185, 0) 72%);
+  opacity: .4;
+  pointer-events: none;
+}
+
+.w4-hero > .w4-wrap { position: relative; z-index: 1; }
+
+.w4-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.w4-hero-copy {
+  grid-column: 1 / span 7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+.w4-hero-copy .w4-lead { max-width: 46ch; }
+.w4-hero-copy .w4-cta-row { margin-top: 6px; }
+
+.w4-hero-stage { grid-column: 8 / span 5; position: relative; }
+
+.w4-fan {
+  /* kompakter als die Erstfassung, damit die oberste Phone-Kante
+     unter dem Reviewer-Dock (bottom ~205px) bleibt */
+  --w4-ph: 264px;
+  --w4-ph-mid: 308px;
+  --w4-ov: 156px;
+  position: relative;
+  height: 656px;
+  margin-top: 48px;
+}
+
+.w4-phone {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: var(--w4-ph);
+  padding: 10px;
+  border-radius: var(--w4-r-phone);
+  background: #171310;
+  box-shadow: var(--w4-sh-phone);
+  translate: 0 calc(var(--w4-par, 0px) + var(--w4-lift, 0px));
+}
+.w4-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--w4-r-phone) - 10px);
+}
+
+/* links → rechts: Schlaf · Recovery (Mitte, oben) · Energie */
+.w4-phone-a { right: calc(var(--w4-ph-mid) + var(--w4-ph) - 2 * var(--w4-ov) - 88px); rotate: -8deg; z-index: 1; }
+.w4-phone-b { right: calc(var(--w4-ph) - var(--w4-ov) - 88px); width: var(--w4-ph-mid); rotate: -2deg; z-index: 3; }
+.w4-phone-c { right: -88px; rotate: 6deg; z-index: 2; }
+
+.w4-fan-credit { display: block; margin-top: 28px; text-align: right; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Zahlenband (Tinte)                                      */
+/* ---------------------------------------------------------- */
+
+.w4-stats { display: grid; grid-template-columns: repeat(4, 1fr); }
+
+/* Ziffernzeile darf zweizeilig werden („2× im Jahr"), die Mono-Caption
+   bleibt trotzdem auf einer gemeinsamen Linie: eigene Zeile im Raster. */
+.w4-stat {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  padding-inline: 40px;
+  border-left: 1px solid var(--w4-line-dark);
+}
+.w4-stat:first-child { padding-left: 0; border-left: 0; }
+.w4-stat:last-child { padding-right: 0; }
+.w4-stat .w4-stat-num { color: var(--w4-cream); }
+
+/* ---------------------------------------------------------- */
+/* V4 · Marquee — zehn Bevel-Screens in Phone-Frames            */
+/* ---------------------------------------------------------- */
+
+.w4-marquee {
+  display: flex;
+  gap: 28px;
+  overflow: hidden;
+  margin-top: 56px;
+}
+
+.w4-marquee-track {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.w4-marquee-item { flex: 0 0 240px; width: 240px; }
+.w4-marquee-item .w4-cap { display: block; margin-top: 12px; }
+
+.w4-frame {
+  display: block;
+  padding: 10px;
+  border-radius: 40px;
+  background: #171310;
+}
+.w4-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 32px;
+}
+
+.w4-credit { display: block; margin-top: 28px; }
+
+@keyframes w4-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(calc(-100% - 28px), 0, 0); }
+}
+
+/* ---------------------------------------------------------- */
+/* V4 · Methode — Bento 2×2 + hohe Foto-Rail                    */
+/* ---------------------------------------------------------- */
+
+.w4-split {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.w4-bento {
+  grid-column: 1 / span 7;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.w4-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border: 1px solid var(--w4-line);
+  border-radius: var(--w4-r);
+  background: var(--w4-paper);
+  box-shadow: var(--w4-sh-sm);
+  transition: box-shadow .24s ease;
+}
+.w4-card:hover { box-shadow: var(--w4-sh-md); }
+.w4-card .w4-ic-lg { color: var(--w4-brown); }
+
+.w4-rail { grid-column: 8 / span 5; margin: 0; }
+.w4-rail img {
+  display: block;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  border-radius: var(--w4-r);
+}
+.w4-rail figcaption { display: block; margin-top: 12px; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Alltag — Diptychon auf gemeinsamer Grundlinie           */
+/* ---------------------------------------------------------- */
+
+.w4-dip {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 48px;
+  margin-top: 56px;
+}
+.w4-dip figure { grid-column: span 6; margin: 0; }
+.w4-dip img {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: var(--w4-r);
+}
+.w4-dip figcaption { display: block; margin-top: 12px; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Beweisstück — FAQ + PDF-Karte                           */
+/* ---------------------------------------------------------- */
+
+.w4-faqs { grid-column: 1 / span 8; }
+
+.w4-faq { border-top: 1px solid var(--w4-line); }
+.w4-faq:last-of-type { border-bottom: 1px solid var(--w4-line); }
+
+.w4-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--w4-serif);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+}
+.w4-faq summary::-webkit-details-marker { display: none; }
+.w4-faq summary svg { color: var(--w4-brown); rotate: 90deg; }
+.w4-faq[open] summary svg { rotate: 270deg; }
+.w4-faq p { padding-bottom: 24px; max-width: 60ch; }
+
+.w4-pdf {
+  grid-column: 9 / span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 32px;
+  border-radius: var(--w4-r);
+  background: var(--w4-panel);
+}
+.w4-pdf .w4-ic-lg { color: var(--w4-brown); }
+.w4-pdf .w4-btn { margin-top: 6px; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Zwei Karten (Datenschutz, Pfade)                        */
+/* ---------------------------------------------------------- */
+
+.w4-two {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+}
+.w4-two > * { grid-column: span 6; }
+
+.w4-panelcard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 36px;
+  border-radius: var(--w4-r);
+}
+.w4-panelcard-paper {
+  background: var(--w4-paper);
+  border: 1px solid var(--w4-line);
+  box-shadow: var(--w4-sh-sm);
+}
+.w4-panelcard-ink { background: var(--w4-ink); color: var(--w4-cream); }
+.w4-panelcard-ink .w4-body { color: rgba(255, 244, 232, .72); }
+.w4-panelcard-amber { background: var(--w4-panel); }
+.w4-panelcard .w4-ic-lg { color: var(--w4-brown); }
+.w4-panelcard-ink .w4-ic-lg { color: var(--w4-amber); }
+.w4-panelcard .w4-btn { margin-top: 6px; }
+
+.w4-list { display: flex; flex-direction: column; gap: 14px; }
+.w4-list li { display: flex; align-items: flex-start; gap: 12px; }
+.w4-list svg { margin-top: 3px; }
+.w4-list-tick svg { color: var(--w4-green); }
+.w4-list-cross svg { color: var(--w4-amber); }
+
+.w4-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  padding: 12px 22px;
+  border: 1px solid var(--w4-line);
+  border-radius: 999px;
+  background: var(--w4-paper);
+  font-size: 15px;
+}
+.w4-chip svg { color: var(--w4-brown); }
+.w4-chip i {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 999px;
+  background: var(--w4-amber);
+}
+
+.w4-paths-doodle { margin: 28px 0 -8px; }
+
+/* ---------------------------------------------------------- */
+/* V4 · Grenzen — schmale Spalte, Hairline-Zeilen              */
+/* ---------------------------------------------------------- */
+
+.w4-limits { margin-top: 40px; }
+.w4-limits li {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--w4-line);
+}
+.w4-limits li:last-child { border-bottom: 1px solid var(--w4-line); }
+.w4-limits b {
+  flex: none;
+  font-family: var(--w4-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--w4-brown);
+}
+
+/* ---------------------------------------------------------- */
+/* V4 · Close + Footer                                          */
+/* ---------------------------------------------------------- */
+
+.w4-close {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 72px;
+  border-radius: 32px;
+  background: var(--w4-amber);
+  color: var(--w4-ink);
+}
+.w4-close-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 34ch;
+}
+.w4-close-copy .w4-btn { margin-top: 6px; }
+
+.w4-foot { padding-bottom: 96px; }
+.w4-foot-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--w4-line);
+}
+.w4-foot-inner .wordmark svg { height: 22px; }
+.w4-foot-links {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+  font-size: 15px;
+  color: var(--w4-ink-2);
+}
+.w4-foot-links a:hover { color: var(--w4-ink); }
+
+/* ---------------------------------------------------------- */
+/* V4 · Bewegung — nur ohne ausdrücklichen Ruhe-Wunsch          */
+/* Die Reveal-Klasse blendet erst aus, wenn JS die Root-Klasse  */
+/* .w4-js gesetzt hat: ohne JS bleibt alles sichtbar.           */
+/* ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .w4-js .w4-reveal {
+    opacity: 0;
+    translate: 0 24px;
+    transition: opacity 600ms var(--w4-ease), translate 600ms var(--w4-ease);
+    transition-delay: calc(var(--w4-d, 0) * 80ms);
+  }
+  .w4-js .w4-reveal.is-in { opacity: 1; translate: 0 0; }
+
+  .w4-marquee-track { animation: w4-marquee 70s linear infinite; }
+  .w4-marquee:hover .w4-marquee-track,
+  .w4-marquee:focus-within .w4-marquee-track { animation-play-state: paused; }
+
+  .w4-phone { transition: translate 300ms var(--w4-ease); }
+  .w4-phone:hover { --w4-lift: -8px; }
+
+  .w4-faq summary svg { transition: rotate .24s var(--w4-ease); }
+}
+
+/* Ruhe-Wunsch: kein Lauf, dafür eine frei scrollbare Reihe. */
+@media (prefers-reduced-motion: reduce) {
+  .w4-marquee { overflow-x: auto; }
+}
+
+/* ---------------------------------------------------------- */
+/* V4 · Responsive                                              */
+/* ---------------------------------------------------------- */
+
+@media (max-width: 1360px) {
+  .w4-fan { --w4-ph: 236px; --w4-ph-mid: 278px; --w4-ov: 140px; height: 596px; }
+  .w4-rail img { height: 480px; }
+}
+
+@media (max-width: 1100px) {
+  .w4-hero { min-height: 0; padding-block: 168px 72px; }
+  .w4-hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .w4-hero-copy,
+  .w4-hero-stage { grid-column: 1 / -1; }
+  .w4-fan {
+    --w4-ph: 208px; --w4-ph-mid: 246px; --w4-ov: 124px;
+    height: 528px;
+    width: calc(var(--w4-ph) + var(--w4-ph-mid) + var(--w4-ph) - 2 * var(--w4-ov));
+    margin-inline: auto;
+  }
+  .w4-phone-a { right: calc(var(--w4-ph-mid) + var(--w4-ph) - 2 * var(--w4-ov)); }
+  .w4-phone-b { right: calc(var(--w4-ph) - var(--w4-ov)); }
+  .w4-phone-c { right: 0; }
+  .w4-fan-credit { text-align: center; }
+
+  .w4-bento { grid-column: 1 / -1; }
+  .w4-rail { grid-column: 1 / -1; }
+  .w4-rail img { height: 420px; }
+
+  .w4-faqs { grid-column: 1 / -1; }
+  .w4-pdf { grid-column: 1 / -1; }
+  .w4-two > * { grid-column: span 12; }
+  .w4-nav-links { display: none; }
+}
+
+@media (max-width: 760px) {
+  .w4-section { padding-block: 72px; }
+  .w4-band-ink { padding-block: 64px; }
+  .w4-wrap { padding-inline: 20px; }
+
+  .w4-hero { padding-block: 132px 56px; }
+  .w4-fan {
+    --w4-ph: 150px; --w4-ph-mid: 178px; --w4-ov: 92px;
+    height: 382px;
+  }
+  .w4-display { font-size: 40px; }
+  .w4-title { font-size: 30px; }
+  .w4-subhead { font-size: 21px; }
+  .w4-faq summary { font-size: 21px; }
+  .w4-doodle-hero { width: 168px; }
+
+  .w4-stats { grid-template-columns: repeat(2, 1fr); gap: 32px 0; }
+  .w4-stat { padding-inline: 24px; }
+  .w4-stat:nth-child(odd) { padding-left: 0; border-left: 0; }
+
+  .w4-marquee-item { flex-basis: 180px; width: 180px; }
+  .w4-frame { border-radius: 30px; padding: 8px; }
+  .w4-frame img { border-radius: 22px; }
+
+  .w4-bento { grid-template-columns: 1fr; }
+  .w4-split, .w4-dip, .w4-two { gap: 28px; }
+  .w4-dip figure { grid-column: span 12; }
+  .w4-dip img { height: auto; aspect-ratio: 4 / 3; }
+  .w4-rail img { height: auto; aspect-ratio: 4 / 5; }
+
+  .w4-panelcard, .w4-pdf { padding: 28px; }
+  .w4-close { flex-direction: column; align-items: flex-start; padding: 40px; }
+  .w4-close-doodle { align-self: center; }
+  .w4-foot-links { margin-left: 0; }
+  .w4-head-row { flex-direction: column; align-items: flex-start; gap: 24px; }
+}

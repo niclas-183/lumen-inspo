@@ -20,6 +20,13 @@ Attribution erforderlich — wir attribuieren trotzdem.
 | `still_breakfast_window.jpg` | V3 Methode, linke Spalte | https://images.unsplash.com/photo-1759782552306-c972b2e11b07 | Unsplash-Fotograf:in (photo-1759782552306-c972b2e11b07) | Unsplash |
 | `ridge_above_clouds.jpg` | V3 Alltag, großes Bild | https://images.unsplash.com/photo-1633137197599-111514c9af09 | Unsplash-Fotograf:in (photo-1633137197599-111514c9af09) | Unsplash |
 | `activity_morning_run.jpg` | V3 Alltag, hohes Bild daneben | https://images.unsplash.com/photo-1657765167225-962410a07c0e | Unsplash-Fotograf:in (photo-1657765167225-962410a07c0e) | Unsplash |
+| `cup_window_sill.jpg` | V4 Methode, hohe Foto-Rail rechts | https://www.pexels.com/photo/cozy-morning-coffee-by-sunlit-window-31146885 | „hello aesthe" (Pexels-Handle, kein Klarname hinterlegt) | Pexels |
+| `morning_walk_sun.jpg` | V4 Alltag, linkes Bild des Diptychons | https://www.pexels.com/photo/a-person-walking-outdoors-on-a-sunny-day-7330280 | Ben Collins | Pexels |
+| `kitchen_window_sun.jpg` | V4 Alltag, rechtes Bild des Diptychons | https://www.pexels.com/photo/cozy-kitchen-interior-with-sunlit-window-view-32960956 | Dương Nhân | Pexels |
+
+Die drei Pexels-Motive für Variante 4 wurden am 25. Aug 2026 über
+`images.pexels.com/photos/{id}/pexels-photo-{id}.jpeg?w=1600` geladen
+(kein API-Key nötig, Langkante ≥ 1600px, JPEG) und unverändert abgelegt.
 
 Alle Motive sind gestellte Szenen; das steht als Mono-Caption sichtbar im
 jeweiligen Kontext („Gestellte Szene — keine Kundin/Patientin.",
@@ -62,6 +69,39 @@ Quelle in allen Fällen: die `screenshotUrls` aus dem iTunes-Lookup zu
 | `09-bevel-wearables.jpg` | Wearables | Bevel: AI Health Coach | Starlight Tech LLC |
 | `10-bevel-zyklus.jpg` | Zyklus | Bevel: AI Health Coach | Starlight Tech LLC |
 
+### Frische Serie für Variante 4 (`assets/bevel/`)
+
+Variante 4 zieht dieselbe App neu aus dem Store: Lookup
+`https://itunes.apple.com/lookup?id=6456176249&country=us`, App **Bevel: AI
+Health Coach**, Anbieter (`sellerName`) **Starlight Tech LLC** (`artistName`:
+Finerpoint, Inc), Version **3.1.7**, Abruf **25. Aug 2026**, `resultCount` 1,
+zehn `screenshotUrls`. Rendition `1284x2778bb`, JPEG, **unbeschnitten**
+(1284×2778) abgelegt — deshalb ein eigener Ordner statt `assets/rondell/`.
+Die Reihenfolge der API weicht vom alten `rondell/`-Ordner ab; maßgeblich ist
+die Tabelle hier. Roh-URLs: `.workflow/scratch/bevel-lookup.json`.
+
+Dieselbe Ausnahme wie oben, dieselben Grenzen: interne Dichte-Referenz, kein
+Lumen-Material, keine Vorlage zum Nachbauen, keine Partnerschaft und kein
+Vergleich. Der Credit steht bei jedem Vorkommen sichtbar darunter — im Hero
+(„App-Store-Serie als Dichte-Referenz — Bevel, nicht Lumen.") und unter dem
+Marquee („App-Store-Screenshots — interne Referenz, nicht Lumen."); dazu
+tragen die Marquee-Karten „Bevel · <Kategorie>"-Captions. Die Alt-Texte
+beschreiben bewusst markenfrei („App-Store-Screenshot einer
+Gesundheits-App: …").
+
+| Datei (assets/bevel/) | Kategorie (Caption) | Verwendung in V4 |
+|---|---|---|
+| `bevel-01.jpg` | Überblick | Marquee (10.) |
+| `bevel-02.jpg` | Ziele | Marquee (8.) |
+| `bevel-03.jpg` | Wearables | Marquee (9.) |
+| `bevel-04.jpg` | Schlaf | Hero-Fächer links · Marquee (2.) |
+| `bevel-05.jpg` | Recovery | Hero-Fächer Mitte (oben) · Marquee (1.) |
+| `bevel-06.jpg` | Datenfragen | Marquee (6.) |
+| `bevel-07.jpg` | Biologisches Alter | Marquee (4.) |
+| `bevel-08.jpg` | Ernährung | Marquee (5.) |
+| `bevel-09.jpg` | Zyklus | Marquee (7.) |
+| `bevel-10.jpg` | Energie | Hero-Fächer rechts · Marquee (3.) |
+
 ## Schrift
 
 Google Fonts, ein `<link>` mit `display=swap`:
@@ -87,6 +127,12 @@ Variante 3 nutzt ausschließlich Hugeicons Stroke Rounded
 `ArrowRight01Icon`, `SecurityCheckIcon`, `TestTube01Icon`, `Moon01Icon`,
 `RunningShoesIcon`, `HeartPulseIcon`, `Download01Icon`, `Tick01Icon`,
 `Cancel01Icon`, `SquareLock01Icon`, `Building01Icon`, `UserIcon`.
+
+Variante 4 nutzt genau dieselben zwölf Icons — die Pfade sind aus dem
+V3-Markup übernommen und mit ihm byte-identisch, getauscht ist nur die Klasse
+(`.w4-ic` / `.w4-ic-lg`). Das Accordion-Chevron ist `ArrowRight01Icon`, per
+CSS gedreht (90° zu, 270° offen). Kein einziger selbst gezeichneter Pfad,
+kein zweites Icon-Set.
 
 ## Illustration
 
@@ -122,6 +168,25 @@ Originaldateien byte-identisch.
 | `plant.svg` | V3 Zwei Pfade (`#v3-pfade`) |
 | `jumping.svg` | V3 Close (`#v3-kontakt`), On-Brand auf Gelb |
 | `coffee.svg`, `running.svg`, `strolling.svg` | liegen bereit, aktuell ungenutzt |
+
+### Originaldateien für Variante 4 (`assets/doodles-original/`)
+
+Dieselben acht Motive, aber **komplett unangetastet**: XML-Kopf, Sketch-
+Kommentar, `title`/`desc`, Layernamen und die 1024×768-Bühne bleiben drin,
+die Farbwelt des Zeichners bleibt seine. Variante 4 bindet sie als
+`<img src="assets/doodles-original/…" alt="" aria-hidden="true">` ein — nicht
+inline, ohne Umfärben, ohne Filter. Quelle und Lizenz wie oben
+(`https://opendoodles.s3-us-west-1.amazonaws.com/<name>.svg`, CC0 1.0,
+Abruf 25. Aug 2026); jeder Dateiname existierte 1:1, kein Mapping nötig.
+
+| Datei (assets/doodles-original/) | Verwendung in V4 | Breite |
+|---|---|---|
+| `meditating.svg` | Hero, unten links auf der Grundlinie | 216px |
+| `sitting-reading.svg` | Beweisstück (`#v4-beweis`), neben der H2 | 180px |
+| `loving.svg` | Datenschutz (`#v4-datenschutz`), am Sektionskopf | 160px |
+| `plant.svg` | Zwei Pfade (`#v4-pfade`), zwischen H2 und Karten | 140px |
+| `jumping.svg` | Close (`#v4-kontakt`), im Amber-Panel | 200px |
+| `coffee.svg`, `running.svg`, `strolling.svg` | liegen bereit, ungenutzt | — |
 
 Keine weiteren Icon- oder Illustrationsquellen, keine selbst gezeichneten
 SVG-Pfade.
