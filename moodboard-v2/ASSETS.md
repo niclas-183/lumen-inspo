@@ -14,12 +14,12 @@ Attribution erforderlich — wir attribuieren trotzdem.
 | `sleep_morning_bed.jpg` | V1 Fotostrecke | https://unsplash.com/photos/white-bed-linen-near-white-window-curtain-dYgG6lSWlBY | Egor Myznik | Unsplash |
 | `activity_ridge_walk.jpg` | V1 Fotostrecke | https://unsplash.com/photos/a-person-walking-on-a-path-in-a-foggy-landscape-fX7SogLi7Tg | Renāte Šnore | Unsplash |
 | `labs_sample_tubes.jpg` | V1 Fotostrecke | https://unsplash.com/photos/blood-collection-tubes-in-laboratory-rack-0jE8ynV4mis | Testalize.me | Unsplash |
-| `labs_pipette_researcher.jpg` | V2 Fotostrecke | https://unsplash.com/photos/woman-in-white-shirt-holding-white-ceramic-mug-lTlB51-XGP4 | National Cancer Institute | Unsplash |
-| `warmth_hands_cup.jpg` | V2 Fotostrecke | https://unsplash.com/photos/person-holding-white-ceramic-cup-with-liquid-g6e641CiHFQ | SnapbyThree MY | Unsplash |
+| `labs_pipette_researcher.jpg` | V2 Fotostrecke · V1 (Lichtkammer) Alltag 03 | https://unsplash.com/photos/woman-in-white-shirt-holding-white-ceramic-mug-lTlB51-XGP4 | National Cancer Institute | Unsplash |
+| `warmth_hands_cup.jpg` | V2 Fotostrecke · V1 (Lichtkammer) Alltag 01 | https://unsplash.com/photos/person-holding-white-ceramic-cup-with-liquid-g6e641CiHFQ | SnapbyThree MY | Unsplash |
 | `activity_park_pair.jpg` | V2 Fotostrecke | https://unsplash.com/photos/two-people-walk-on-a-foggy-path-through-bare-trees-sjZ4pNskdtc | T (@tanyabarrow) | Unsplash |
-| `still_breakfast_window.jpg` | V3 Methode, linke Spalte | https://images.unsplash.com/photo-1759782552306-c972b2e11b07 | Unsplash-Fotograf:in (photo-1759782552306-c972b2e11b07) | Unsplash |
-| `ridge_above_clouds.jpg` | V3 Alltag, großes Bild | https://images.unsplash.com/photo-1633137197599-111514c9af09 | Unsplash-Fotograf:in (photo-1633137197599-111514c9af09) | Unsplash |
-| `activity_morning_run.jpg` | V3 Alltag, hohes Bild daneben | https://images.unsplash.com/photo-1657765167225-962410a07c0e | Unsplash-Fotograf:in (photo-1657765167225-962410a07c0e) | Unsplash |
+| `still_breakfast_window.jpg` | V3 Methode, linke Spalte · V1 (Lichtkammer) Methode-Rail | https://images.unsplash.com/photo-1759782552306-c972b2e11b07 | Unsplash-Fotograf:in (photo-1759782552306-c972b2e11b07) | Unsplash |
+| `ridge_above_clouds.jpg` | V3 Alltag, großes Bild · V1 (Lichtkammer) Close-Panel | https://images.unsplash.com/photo-1633137197599-111514c9af09 | Unsplash-Fotograf:in (photo-1633137197599-111514c9af09) | Unsplash |
+| `activity_morning_run.jpg` | V3 Alltag, hohes Bild daneben · V1 (Lichtkammer) Alltag 02 | https://images.unsplash.com/photo-1657765167225-962410a07c0e | Unsplash-Fotograf:in (photo-1657765167225-962410a07c0e) | Unsplash |
 | `cup_window_sill.jpg` | V4 Methode, hohe Foto-Rail rechts | https://www.pexels.com/photo/cozy-morning-coffee-by-sunlit-window-31146885 | „hello aesthe" (Pexels-Handle, kein Klarname hinterlegt) | Pexels |
 | `morning_walk_sun.jpg` | V4 Alltag, linkes Bild des Diptychons | https://www.pexels.com/photo/a-person-walking-outdoors-on-a-sunny-day-7330280 | Ben Collins | Pexels |
 | `kitchen_window_sun.jpg` | V4 Alltag, rechtes Bild des Diptychons | https://www.pexels.com/photo/cozy-kitchen-interior-with-sunlit-window-view-32960956 | Dương Nhân | Pexels |
@@ -119,7 +119,9 @@ Lora 600 trägt dort alle Überschriften. SIL Open Font License.
 Lucide (https://lucide.dev, ISC-Lizenz), als Inline-SVG eingebettet,
 Stroke 1.7, `currentColor`: `lock`, `shield-check`, `moon`, `footprints`,
 `activity`, `test-tube`, `arrow-right`, `search`, `menu`, `download`,
-`check`, `x`, `building-2`, `user` — nur in V1 und V2.
+`check`, `x`, `building-2`, `user` — in V2 und in V1 nur noch dort, wo
+Bestand unverändert weiterläuft: Hero, Nav und die wiederverwendeten
+Artefakte (App-Fenster, Einseiter).
 
 Variante 3 nutzt ausschließlich Hugeicons Stroke Rounded
 (`@hugeicons/core-free-icons` 4.3.0, MIT), als Inline-SVG, Stroke 1.5,
@@ -127,6 +129,17 @@ Variante 3 nutzt ausschließlich Hugeicons Stroke Rounded
 `ArrowRight01Icon`, `SecurityCheckIcon`, `TestTube01Icon`, `Moon01Icon`,
 `RunningShoesIcon`, `HeartPulseIcon`, `Download01Icon`, `Tick01Icon`,
 `Cancel01Icon`, `SquareLock01Icon`, `Building01Icon`, `UserIcon`.
+
+Die **Lichtkammer** (alles unter dem Fotofeld der Variante 1) nutzt
+ausschließlich Hugeicons: zehn Pfade aus dem V3/V4-Bestand byte-gleich
+übernommen, nur die Klasse getauscht (`.f1-ic-lg` 28px / `.f1-ic` 20px /
+`.f1-ic-sm` 16px) — `TestTube01Icon`, `Moon01Icon`, `RunningShoesIcon`,
+`HeartPulseIcon`, `SecurityCheckIcon`, `Download01Icon`, `ArrowRight01Icon`,
+`SquareLock01Icon`, `Building01Icon`, `UserIcon`. Neu aus demselben Paket
+(4.3.0, Stroke Rounded 1.5) beschafft: **`StethoscopeIcon`** (ärztliche
+Einordnung) und **`Key01Icon`** (das Konto bleibt). Das eine Amber-Detail je
+Messgrößen-Icon setzt CSS auf einen Sekundärpfad — das Markup bleibt
+unangetastet.
 
 Variante 4 nutzt genau dieselben zwölf Icons — die Pfade sind aus dem
 V3-Markup übernommen und mit ihm byte-identisch, getauscht ist nur die Klasse

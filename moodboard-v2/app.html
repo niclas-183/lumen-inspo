@@ -11,7 +11,7 @@
 <!-- Versions-Query gegen Cache-Skew: GH Pages cacht 10 min pro Datei; ohne
      Marker kann ein frisches app.html auf ein altes styles.css treffen.
      Bei jeder Änderung an styles.css/JS mitdrehen. -->
-<link rel="stylesheet" href="styles.css?v=2026-08-26-v5">
+<link rel="stylesheet" href="styles.css?v=2026-08-26-v6">
 </head>
 <body>
 
@@ -97,207 +97,176 @@
     </footer>
   </section>
 
-  <!-- 1 · Methode — benannte Messgrößen, knapp benannt -->
-  <section class="sect" id="v1-methode">
-    <header class="sect-head">
-      <p class="eyebrow">Methode</p>
-      <h2 class="display">Vier Messgrößen. Kein Nebel.</h2>
+  <!-- 1 · Methode — vier Messgrößen als Bento, Foto-Rail daneben -->
+  <section class="f1-section" id="v1-methode" aria-label="Methode">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">01 &middot; Methode</p>
+      <h2 class="f1-display">Vier Messgrößen. Kein Nebel.</h2>
     </header>
-    <ol class="measure-list">
-      <li>
-        <span class="measure-no">01</span>
-        <h3 class="measure-name">Blutbild</h3>
-        <p class="measure-line">38 Werte, zweimal im Jahr — abgenommen vor Ort, ausgewertet von Ärzt&shy;innen und Ärzten.</p>
-        <div class="measure-card">
-          <div class="lab-row"><span class="lab-name">LDL</span><span class="lab-track"><i style="--x:38%"></i></span><span class="lab-val">104 mg/dl</span></div>
-          <div class="lab-row"><span class="lab-name">hs-CRP</span><span class="lab-track"><i style="--x:24%"></i></span><span class="lab-val">0,8 mg/l</span></div>
+    <div class="f1-bento">
+      <article class="f1-card f1-card-blut f1-reveal" style="--f1-d:0">
+        <svg class="f1-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+        <h3 class="f1-card-title">Blutbild</h3>
+        <p class="f1-body">38 Werte, zweimal im Jahr — abgenommen vor Ort, ausgewertet von Ärzt&shy;innen und Ärzten.</p>
+        <div class="f1-mod">
+          <div class="f1-lab"><span class="f1-lab-name">LDL</span><span class="f1-lab-track"><i style="--x:38%"></i></span><span class="f1-lab-val">104 mg/dl</span></div>
+          <div class="f1-lab"><span class="f1-lab-name">hs-CRP</span><span class="f1-lab-track"><i style="--x:24%"></i></span><span class="f1-lab-val">0,8 mg/l</span></div>
         </div>
-      </li>
-      <li>
-        <span class="measure-no">02</span>
-        <h3 class="measure-name">Schlaf</h3>
-        <p class="measure-line">Jede Nacht, vom eigenen Wearable — Dauer, Regelmäßigkeit, Erholung.</p>
-        <div class="measure-card">
-          <div class="sleep-bars" aria-hidden="true">
-            <i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:70%"></i><i style="--h:88%"></i><i style="--h:74%"></i><i style="--h:96%"></i><i style="--h:82%"></i>
-          </div>
-          <p class="module-value">&Oslash; 7,1&nbsp;h</p>
+      </article>
+      <article class="f1-card f1-card-schlaf f1-reveal" style="--f1-d:1">
+        <svg class="f1-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M21.0985 7.84477C20.458 8.55417 19.5311 9 18.5 9C16.567 9 15 7.433 15 5.5C15 4.46895 15.4458 3.54203 16.1552 2.90149M16.1552 2.90149C18.3384 3.90018 20.0998 5.66155 21.0985 7.84477C21.6774 9.11025 22 10.5174 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C13.4826 2 14.8898 2.32262 16.1552 2.90149Z" stroke="currentColor" stroke-width="1.5" /> <path d="M16 16C16 17.1046 15.1046 18 14 18C12.8954 18 12 17.1046 12 16C12 14.8954 12.8954 14 14 14C15.1046 14 16 14.8954 16 16Z" stroke="currentColor" stroke-width="1.5" /> <path d="M7.13086 14H7.00586M7.25586 14C7.25586 14.1381 7.14393 14.25 7.00586 14.25C6.86779 14.25 6.75586 14.1381 6.75586 14C6.75586 13.8619 6.86779 13.75 7.00586 13.75C7.14393 13.75 7.25586 13.8619 7.25586 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M10.1309 8H10.0059M10.2559 8C10.2559 8.13807 10.1439 8.25 10.0059 8.25C9.86779 8.25 9.75586 8.13807 9.75586 8C9.75586 7.86193 9.86779 7.75 10.0059 7.75C10.1439 7.75 10.2559 7.86193 10.2559 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+        <h3 class="f1-card-title">Schlaf</h3>
+        <p class="f1-body">Jede Nacht, vom eigenen Wearable — Dauer, Regelmäßigkeit, Erholung.</p>
+        <div class="f1-mod">
+          <div class="f1-bars" aria-hidden="true"><i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:70%"></i><i style="--h:88%"></i><i style="--h:74%"></i><i style="--h:96%"></i><i style="--h:82%"></i></div>
+          <p class="f1-mod-value">&Oslash; 7,1&nbsp;h</p>
         </div>
-      </li>
-      <li>
-        <span class="measure-no">03</span>
-        <h3 class="measure-name">Aktivität</h3>
-        <p class="measure-line">Schritte, Training, Alltag — fortlaufend, ohne Wettbewerb.</p>
-        <div class="measure-card">
-          <svg class="sparkline" viewBox="0 0 220 44" preserveAspectRatio="none" aria-hidden="true">
-            <polyline points="0,32 18,26 36,30 54,20 72,25 90,15 108,22 126,13 144,18 162,9 180,15 198,8 220,12"/>
-          </svg>
-          <p class="module-value">&Oslash; 8&nbsp;412 Schritte</p>
+      </article>
+      <article class="f1-card f1-card-akt f1-reveal" style="--f1-d:2">
+        <svg class="f1-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12.4059 18.9923C13.4443 19.7399 13.9635 20.1137 14.5623 20.3069C15.1611 20.5 15.8008 20.5 17.0804 20.5H19C20.4142 20.5 21.1213 20.5 21.5607 20.0607C22 19.6213 22 18.9142 22 17.5H16.7902C16.1504 17.5 15.8305 17.5 15.5311 17.4034C15.2318 17.3069 14.9722 17.12 14.453 16.7461L3 8.5L2.30911 9.53634C2.10755 9.83867 2 10.1939 2 10.5572C2 11.1492 2.2847 11.705 2.76507 12.0509L12.4059 18.9923Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M3 8.5L6 3.5L6.30704 5.34226C6.42827 6.06965 6.89023 6.69511 7.5498 7.0249C8.64393 7.57197 9.97486 7.16899 10.5818 6.10689L11.1396 5.13069C11.3625 4.74069 11.7772 4.5 12.2264 4.5C12.7005 4.5 13.1339 4.76787 13.346 5.19193L17.2764 13.0528C17.4134 13.3269 17.6936 13.5 18 13.5C20.2091 13.5 22 15.2909 22 17.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M12.5 9.5L14.5 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M14 12L16 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M6 20.5H18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M2 17.5H5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+        <h3 class="f1-card-title">Aktivität</h3>
+        <p class="f1-body">Schritte, Training, Alltag — fortlaufend, ohne Wettbewerb.</p>
+        <div class="f1-mod">
+          <div class="f1-bars f1-bars-act" aria-hidden="true"><i style="--h:27%"></i><i style="--h:41%"></i><i style="--h:32%"></i><i style="--h:55%"></i><i style="--h:43%"></i><i style="--h:66%"></i><i style="--h:50%"></i><i style="--h:70%"></i><i style="--h:59%"></i><i style="--h:80%"></i><i style="--h:66%"></i><i style="--h:82%"></i><i style="--h:73%"></i></div>
+          <p class="f1-mod-value">&Oslash; 8&nbsp;412 Schritte</p>
         </div>
-      </li>
-      <li>
-        <span class="measure-no">04</span>
-        <h3 class="measure-name">Biologisches Alter</h3>
-        <p class="measure-line">Ein Wert, der alles zusammenfasst — und sich bewegen lässt.</p>
-        <div class="measure-card">
-          <div class="bioage-row">
-            <span class="bioage-value bioage-value-s">41,2</span>
-            <span class="bioage-unit">Jahre</span>
-            <span class="delta-chip">−3,4</span>
+      </article>
+      <article class="f1-card f1-card-bio f1-reveal" style="--f1-d:3">
+        <svg class="f1-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M20.001 13.0001H16.0288C15.8168 13.0001 15.7107 13.0001 15.619 12.9639C15.5691 12.9442 15.5229 12.9169 15.4821 12.8831C15.4072 12.8209 15.3598 12.7303 15.2649 12.5491C14.9921 12.0278 14.8557 11.7672 14.6597 11.7045C14.5567 11.6716 14.4453 11.6716 14.3422 11.7045C14.1462 11.7672 14.0098 12.0278 13.737 12.5491L13.1172 13.7335C12.6442 14.6372 12.4078 15.089 12.0706 15.0624C11.7335 15.0357 11.578 14.5529 11.267 13.5872L10.8024 12.1447C10.4668 11.1027 10.299 10.5817 9.95039 10.5639C9.60176 10.5462 9.377 11.0472 8.92748 12.0493L8.76073 12.4211C8.63475 12.7019 8.57176 12.8423 8.44652 12.9212C8.32129 13.0001 8.16139 13.0001 7.84158 13.0001H4.00098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+        <h3 class="f1-card-title">Biologisches Alter</h3>
+        <p class="f1-body">Ein Wert, der alles zusammenfasst — und sich bewegen lässt.</p>
+        <div class="f1-mod">
+          <div class="f1-bio">
+            <span class="f1-bio-val">41,2</span>
+            <span class="f1-bio-unit">Jahre</span>
+            <span class="f1-bio-delta">−3,4</span>
           </div>
         </div>
-      </li>
-    </ol>
-  </section>
-
-  <!-- 2 · Produkt tiefer — Oberfläche als Beweis -->
-  <section class="sect sect-lift" id="v1-programm">
-    <header class="sect-head">
-      <p class="eyebrow">Programm</p>
-      <h2 class="display">Die Oberfläche ist der Beweis.</h2>
-      <p class="sect-sub">Kein Marketing-Screenshot — die Ansicht, die Mitarbeitende jeden Morgen öffnen. Beispieldaten.</p>
-    </header>
-
-    <div class="appwin" role="img" aria-label="Lumen Web-App — Beispieldaten">
-      <div class="artifact-bar">
-        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="url-pill">app.lumen.health</span>
-        <span class="bar-meta">Beispieldaten</span>
-      </div>
-      <div class="appwin-body">
-        <div class="module module-bioage">
-          <div class="module-label">
-            <svg class="ic" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
-            Biologisches Alter
-            <span class="module-meta">12 Monate</span>
-          </div>
-          <div class="bioage-row">
-            <span class="bioage-value">41,2</span>
-            <span class="bioage-unit">Jahre</span>
-            <span class="delta-chip">−3,4 Jahre</span>
-          </div>
-          <p class="bioage-ref">kalendarisch 44,6</p>
-          <svg class="sparkline spark-tall" viewBox="0 0 220 44" preserveAspectRatio="none" aria-hidden="true">
-            <polyline points="0,10 20,12 40,11 60,15 80,18 100,17 120,22 140,25 160,27 180,30 200,32 220,35" style="stroke: var(--data-bioage)"/>
-          </svg>
-        </div>
-        <div class="module">
-          <div class="module-label">
-            <svg class="ic" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
-            Schlaf
-            <span class="module-meta">7 Tage</span>
-          </div>
-          <div class="sleep-bars sleep-bars-tall" aria-hidden="true">
-            <i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:70%"></i><i style="--h:88%"></i><i style="--h:74%"></i><i style="--h:96%"></i><i style="--h:82%"></i>
-          </div>
-          <p class="module-value">&Oslash; 7,1&nbsp;h</p>
-        </div>
-        <div class="module">
-          <div class="module-label">
-            <svg class="ic" viewBox="0 0 24 24"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg>
-            Aktivität
-            <span class="module-meta">7 Tage</span>
-          </div>
-          <svg class="sparkline spark-tall" viewBox="0 0 220 44" preserveAspectRatio="none" aria-hidden="true">
-            <polyline points="0,32 18,26 36,30 54,20 72,25 90,15 108,22 126,13 144,18 162,9 180,15 198,8 220,12"/>
-          </svg>
-          <p class="module-value">&Oslash; 8&nbsp;412 Schritte</p>
-        </div>
-        <div class="module module-labs appwin-labs">
-          <div class="module-label">
-            <svg class="ic" viewBox="0 0 24 24"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2"/><path d="M8.5 2h7"/><path d="M14.5 16h-5"/></svg>
-            Blutwerte
-            <span class="module-meta">6 von 38</span>
-          </div>
-          <div class="lab-cols">
-            <div>
-              <div class="lab-row"><span class="lab-name">LDL</span><span class="lab-track"><i style="--x:38%"></i></span><span class="lab-val">104 mg/dl</span></div>
-              <div class="lab-row"><span class="lab-name">HDL</span><span class="lab-track"><i style="--x:56%"></i></span><span class="lab-val">62 mg/dl</span></div>
-              <div class="lab-row"><span class="lab-name">HbA1c</span><span class="lab-track"><i style="--x:31%"></i></span><span class="lab-val">5,2&nbsp;%</span></div>
-            </div>
-            <div>
-              <div class="lab-row"><span class="lab-name">hs-CRP</span><span class="lab-track"><i style="--x:24%"></i></span><span class="lab-val">0,8 mg/l</span></div>
-              <div class="lab-row"><span class="lab-name">Ferritin</span><span class="lab-track"><i style="--x:47%"></i></span><span class="lab-val">96 µg/l</span></div>
-              <div class="lab-row"><span class="lab-name">Vitamin D</span><span class="lab-track"><i style="--x:52%"></i></span><span class="lab-val">34 ng/ml</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="artifact-privacy appwin-privacy">
-          <svg class="ic" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span>Einzelwerte: nur für Sie sichtbar</span>
-          <span class="switch on" role="img" aria-label="aktiviert"><i></i></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3 · Beweis — Forward-Artifact -->
-  <section class="sect" id="v1-beweis">
-    <div class="proof-grid">
-      <div class="proof-copy">
-        <p class="eyebrow">Beweisstück</p>
-        <h2 class="display">Zum Weiterleiten gedacht.</h2>
-        <p class="sect-sub">Eine Seite für die Person, die Sie intern überzeugen müssen: was gemessen wird, wie das Jahr läuft, was Arbeitgeber sehen — und was nicht.</p>
-        <div class="cta-row">
-          <a class="btn btn-cream" href="#">Programmübersicht laden
-            <svg class="ic" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-          </a>
-          <span class="cta-note">PDF, eine Seite — ohne Registrierung, ohne Formular.</span>
-        </div>
-      </div>
-      <figure class="onepager" role="img" aria-label="Programmübersicht — Einseiter (Mock)">
-        <div class="onepager-head">
-          <svg viewBox="0 0 167 55" width="49" height="16" aria-hidden="true" focusable="false">
-            <text x="0" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">Lu</text>
-            <path d="M52 34c0-9 4-15 9-15 4 0 6 4 7 8 1-4 3-8 7-8 5 0 9 6 9 15 0 8-5 14-9 18 1-6 4-11 4-17 0-5-2-9-4-9s-4 3-5 8h-4c-1-5-3-8-5-8s-4 4-4 9c0 6 3 11 4 17-4-4-9-10-9-18z" fill="#FCBA30"/>
-            <text x="86" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">en</text>
-          </svg>
-          <span>Programmübersicht · 1 Seite</span>
-        </div>
-        <p class="onepager-title">Vorsorge für Teams — was Lumen misst, und was nicht.</p>
-        <div class="onepager-sec">
-          <h4>Was gemessen wird</h4>
-          <p>38 Blutwerte (2× jährlich), Schlaf und Aktivität vom eigenen Wearable, biologisches Alter als Verlaufswert.</p>
-        </div>
-        <div class="onepager-sec">
-          <h4>Wie das Jahr läuft</h4>
-          <p>Blutabnahme vor Ort, Ergebnisse im ärztlichen Gespräch, dazwischen die App — freiwillig, im privaten Konto.</p>
-        </div>
-        <div class="onepager-sec">
-          <h4>Was Arbeitgeber sehen</h4>
-          <p>Anzahl aktiver Lizenzen und anonyme Trends, sobald die Gruppengröße Anonymität trägt. Keine Namen, keine Einzelwerte — technisch ausgeschlossen.</p>
-        </div>
-        <div class="onepager-foot">
-          <span>lumen.health</span>
-          <span>Stand 08/2026 · DSGVO · EU AI Act</span>
-        </div>
+      </article>
+      <figure class="f1-rail f1-reveal" style="--f1-d:4">
+        <img src="assets/still_breakfast_window.jpg" alt="Frühstück am Fenster: Croissant, Buch und Tasse im Morgenlicht" loading="lazy">
+        <figcaption class="f1-cap">Gestellte Szene — Symbolbild.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- 4 · Fotostrecke — Ritual, drei Felder -->
-  <section class="strip" id="v1-strecke" aria-label="Fotostrecke">
-    <figure class="strip-cell">
-      <img src="assets/sleep_morning_bed.jpg" alt="Bett im Morgenlicht" loading="lazy">
-      <figcaption><span class="strip-label">Schlaf</span> gemessen, nicht geschätzt.</figcaption>
-    </figure>
-    <figure class="strip-cell">
-      <img src="assets/activity_ridge_walk.jpg" alt="Weg über einen Bergrücken im Nebel" loading="lazy">
-      <figcaption><span class="strip-label">Aktivität</span> draußen, nicht im Dashboard.</figcaption>
-    </figure>
-    <figure class="strip-cell">
-      <img src="assets/labs_sample_tubes.jpg" alt="Probenröhrchen im Laborgestell" loading="lazy">
-      <figcaption><span class="strip-label">Labor</span> zweimal im Jahr, 38 Werte.</figcaption>
-    </figure>
-    <p class="strip-credit photo-credit">Symbolbilder — Unsplash, gestellte Szenen.</p>
+  <!-- 2 · Programm — drei Zusagen links, die Oberfläche als Beweis rechts -->
+  <section class="f1-section f1-pool" id="v1-programm" aria-label="Programm">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">02 &middot; Programm</p>
+      <h2 class="f1-display">Die Oberfläche ist der <em>Beweis</em>.</h2>
+      <p class="f1-lede">Kein Marketing-Screenshot — die Ansicht, die Mitarbeitende jeden Morgen öffnen. Beispieldaten.</p>
+    </header>
+    <div class="f1-split">
+      <ul class="f1-claims f1-reveal" style="--f1-d:0">
+        <li><svg class="f1-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M18.7088 3.49534C16.8165 2.55382 14.5009 2 12 2C9.4991 2 7.1835 2.55382 5.29116 3.49534C4.36318 3.95706 3.89919 4.18792 3.4496 4.91378C3 5.63965 3 6.34248 3 7.74814V11.2371C3 16.9205 7.54236 20.0804 10.173 21.4338C10.9067 21.8113 11.2735 22 12 22C12.7265 22 13.0933 21.8113 13.8269 21.4338C16.4576 20.0804 21 16.9205 21 11.2371L21 7.74814C21 6.34249 21 5.63966 20.5504 4.91378C20.1008 4.18791 19.6368 3.95706 18.7088 3.49534Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M9 11.5C9 11.5 10.4079 11.7519 11 13.5C11 13.5 12.5 10.5 15 9.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Einzelwerte nur für die Person sichtbar</span></li>
+        <li><svg class="f1-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M13.0014 2C14.1053 2 15.0003 2.93126 15.0003 4.08003C15.0003 5.02915 15.0362 5.87375 14.2692 6.57196C11.7587 8.85732 10.5034 10 9.00027 10C7.49714 10 6.24187 8.85732 3.73133 6.57196C2.96426 5.87369 3.00027 5.029 3.00027 4.07981C3.00027 2.93116 3.8951 2 4.99893 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M9 14V17.4998C9 19.9852 11.0149 22.0001 13.5003 22.0001C15.9858 22.0001 18.0007 19.9852 18.0007 17.4998V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M14 7L12.6978 10.2556C12.3516 11.121 12.1785 11.5537 11.8887 11.9092C11.5988 12.2648 11.2098 12.5215 10.4319 13.0349L8.9696 14L7.53283 13.0323C6.77221 12.5201 6.39189 12.2639 6.10821 11.9126C5.82452 11.5613 5.65423 11.1356 5.31365 10.2841L4 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M21 13C21 14.6569 19.6569 16 18 16C16.3431 16 15 14.6569 15 13C15 11.3431 16.3431 10 18 10C19.6569 10 21 11.3431 21 13Z" stroke="currentColor" stroke-width="1.5" /> <path d="M18.125 13H18M18.25 13C18.25 13.1381 18.1381 13.25 18 13.25C17.8619 13.25 17.75 13.1381 17.75 13C17.75 12.8619 17.8619 12.75 18 12.75C18.1381 12.75 18.25 12.8619 18.25 13Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Ärztliche Einordnung, keine Rohdaten-Flut</span></li>
+        <li><svg class="f1-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15.5 14.5C18.8137 14.5 21.5 11.8137 21.5 8.5C21.5 5.18629 18.8137 2.5 15.5 2.5C12.1863 2.5 9.5 5.18629 9.5 8.5C9.5 9.38041 9.68962 10.2165 10.0303 10.9697L2.5 18.5V21.5H5.5V19.5H7.5V17.5H9.5L13.0303 13.9697C13.7835 14.3104 14.6196 14.5 15.5 14.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M17.5 6.5L16.5 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Konto bleibt — auch nach dem Jobwechsel</span></li>
+      </ul>
+      <div class="f1-stage f1-reveal" style="--f1-d:1">
+        <div class="appwin f1-print" role="img" aria-label="Lumen Web-App — Beispieldaten">
+          <div class="artifact-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="url-pill">app.lumen.health</span>
+            <span class="bar-meta">Beispieldaten</span>
+          </div>
+          <div class="appwin-body">
+            <div class="module module-bioage">
+              <div class="module-label">
+                <svg class="ic" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+                Biologisches Alter
+                <span class="module-meta">12 Monate</span>
+              </div>
+              <div class="bioage-row">
+                <span class="bioage-value">41,2</span>
+                <span class="bioage-unit">Jahre</span>
+                <span class="delta-chip">−3,4 Jahre</span>
+              </div>
+              <p class="bioage-ref">kalendarisch 44,6</p>
+              <svg class="sparkline spark-tall" viewBox="0 0 220 44" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="0,10 20,12 40,11 60,15 80,18 100,17 120,22 140,25 160,27 180,30 200,32 220,35" style="stroke: var(--data-bioage)"/>
+              </svg>
+            </div>
+            <div class="module">
+              <div class="module-label">
+                <svg class="ic" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+                Schlaf
+                <span class="module-meta">7 Tage</span>
+              </div>
+              <div class="sleep-bars sleep-bars-tall" aria-hidden="true">
+                <i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:70%"></i><i style="--h:88%"></i><i style="--h:74%"></i><i style="--h:96%"></i><i style="--h:82%"></i>
+              </div>
+              <p class="module-value">&Oslash; 7,1&nbsp;h</p>
+            </div>
+            <div class="module">
+              <div class="module-label">
+                <svg class="ic" viewBox="0 0 24 24"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg>
+                Aktivität
+                <span class="module-meta">7 Tage</span>
+              </div>
+              <svg class="sparkline spark-tall" viewBox="0 0 220 44" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="0,32 18,26 36,30 54,20 72,25 90,15 108,22 126,13 144,18 162,9 180,15 198,8 220,12"/>
+              </svg>
+              <p class="module-value">&Oslash; 8&nbsp;412 Schritte</p>
+            </div>
+            <div class="module module-labs appwin-labs">
+              <div class="module-label">
+                <svg class="ic" viewBox="0 0 24 24"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2"/><path d="M8.5 2h7"/><path d="M14.5 16h-5"/></svg>
+                Blutwerte
+                <span class="module-meta">6 von 38</span>
+              </div>
+              <div class="lab-cols">
+                <div>
+                  <div class="lab-row"><span class="lab-name">LDL</span><span class="lab-track"><i style="--x:38%"></i></span><span class="lab-val">104 mg/dl</span></div>
+                  <div class="lab-row"><span class="lab-name">HDL</span><span class="lab-track"><i style="--x:56%"></i></span><span class="lab-val">62 mg/dl</span></div>
+                  <div class="lab-row"><span class="lab-name">HbA1c</span><span class="lab-track"><i style="--x:31%"></i></span><span class="lab-val">5,2&nbsp;%</span></div>
+                </div>
+                <div>
+                  <div class="lab-row"><span class="lab-name">hs-CRP</span><span class="lab-track"><i style="--x:24%"></i></span><span class="lab-val">0,8 mg/l</span></div>
+                  <div class="lab-row"><span class="lab-name">Ferritin</span><span class="lab-track"><i style="--x:47%"></i></span><span class="lab-val">96 µg/l</span></div>
+                  <div class="lab-row"><span class="lab-name">Vitamin D</span><span class="lab-track"><i style="--x:52%"></i></span><span class="lab-val">34 ng/ml</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="artifact-privacy appwin-privacy">
+              <svg class="ic" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Einzelwerte: nur für Sie sichtbar</span>
+              <span class="switch on" role="img" aria-label="aktiviert"><i></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- 5 · Marktumfeld — Serienstreifen aus App-Store-Referenzen (kein Lumen-Material) -->
-  <section class="sect sect-lift" id="v1-umfeld">
-    <header class="sect-head">
-      <p class="eyebrow">Marktumfeld</p>
-      <h2 class="display">Woran wir uns messen.</h2>
-      <p class="sect-sub">Schlaf, Recovery, biologisches Alter — eine App-Store-Serie als Dichte-Referenz. Bevel, nicht Lumen.</p>
+  <!-- 3 · Alltag — Kontaktbogen, drei Felder, das mittlere abgesetzt -->
+  <section class="f1-section f1-band" id="v1-strecke" aria-label="Alltag">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">03 &middot; Alltag</p>
+    </header>
+    <div class="f1-sheet">
+      <figure class="f1-cell f1-reveal" style="--f1-d:0">
+        <img src="assets/warmth_hands_cup.jpg" alt="Hand mit Espressotasse an einem Holztisch" loading="lazy">
+        <figcaption><span class="f1-cell-no">01</span><span class="f1-cell-label">Morgen</span> beginnt ohne Bildschirm.</figcaption>
+      </figure>
+      <figure class="f1-cell f1-reveal" style="--f1-d:1">
+        <img src="assets/activity_morning_run.jpg" alt="Läufer im Morgenlicht auf einem Weg" loading="lazy">
+        <figcaption><span class="f1-cell-no">02</span><span class="f1-cell-label">Aktivität</span> draußen, nicht im Dashboard.</figcaption>
+      </figure>
+      <figure class="f1-cell f1-reveal" style="--f1-d:2">
+        <img src="assets/labs_pipette_researcher.jpg" alt="Forscherin pipettiert im Labor" loading="lazy">
+        <figcaption><span class="f1-cell-no">03</span><span class="f1-cell-label">Labor</span> zweimal im Jahr, 38 Werte.</figcaption>
+      </figure>
+      <p class="f1-credit f1-cap">Symbolbilder — Unsplash, gestellte Szenen.</p>
+    </div>
+  </section>
+
+  <!-- 4 · Marktumfeld — Serienstreifen aus App-Store-Referenzen (kein Lumen-Material) -->
+  <section class="f1-section f1-band" id="v1-umfeld" aria-label="Marktumfeld">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">04 &middot; Marktumfeld</p>
+      <h2 class="f1-display">Woran wir uns messen.</h2>
+      <p class="f1-lede">Schlaf, Recovery, biologisches Alter — eine App-Store-Serie als Dichte-Referenz. Bevel, nicht Lumen.</p>
     </header>
     <div class="slides no-js" data-slides>
       <div class="slides-viewport">
@@ -375,117 +344,125 @@
     </div>
   </section>
 
-  <!-- 6 · Datenschutz — eigener Abschnitt, nicht Footer -->
-  <section class="sect" id="v1-datenschutz">
-    <header class="sect-head">
-      <p class="eyebrow">Datenschutz</p>
-      <h2 class="display">Wer was sieht — und wer nicht.</h2>
-      <p class="sect-sub">Die Trennung ist Architektur, nicht Versprechen: Einzeldaten liegen im privaten Konto, einen Arbeitgeber-Zugriff gibt es nicht.</p>
+  <!-- 5 · Beweisstück — das Blatt zum Weiterleiten -->
+  <section class="f1-section f1-pool f1-pool-right" id="v1-beweis" aria-label="Beweisstück">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">05 &middot; Beweisstück</p>
+      <h2 class="f1-display">Zum Weiterleiten gedacht.</h2>
     </header>
-    <!-- Sichtbarkeit als Instrument, nicht als Häkchen-Spalten:
-         rechts fehlt der Schalter — Einzelwerte sind technisch abwesend. -->
-    <div class="privacy-win">
-      <div class="artifact-bar">
-        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="url-pill">app.lumen.health</span>
-        <span class="bar-meta">Sichtbarkeit</span>
+    <div class="f1-split">
+      <div class="f1-proof-copy f1-reveal" style="--f1-d:0">
+        <p class="f1-lede">Eine Seite für die Person, die Sie intern überzeugen müssen: was gemessen wird, wie das Jahr läuft, was Arbeitgeber sehen — und was nicht.</p>
+        <a class="btn btn-cream" href="#">Programmübersicht laden<svg class="f1-ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M2.99969 17.0002C2.99969 17.9302 2.99969 18.3952 3.10192 18.7767C3.37932 19.8119 4.18796 20.6206 5.22324 20.898C5.60474 21.0002 6.06972 21.0002 6.99969 21.0002L16.9997 21.0002C17.9297 21.0002 18.3947 21.0002 18.7762 20.898C19.8114 20.6206 20.6201 19.8119 20.8975 18.7767C20.9997 18.3952 20.9997 17.9302 20.9997 17.0002" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M16.4998 11.5002C16.4998 11.5002 13.1856 16.0002 11.9997 16.0002C10.8139 16.0002 7.49976 11.5002 7.49976 11.5002M11.9997 15.0002V3.00016" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
+        <p class="f1-cap">PDF, eine Seite — ohne Registrierung, ohne Formular.</p>
       </div>
-      <div class="privacy-win-body">
-        <div class="privacy-win-col">
-          <h3 class="privacy-win-title">Ihr privates Konto</h3>
-          <div class="privacy-win-row">
-            Einzelwerte &amp; Verlauf
-            <span class="switch on" role="img" aria-label="aktiviert"><i></i></span>
-          </div>
-          <div class="privacy-win-row">
-            Ärztliche Einordnung
-            <span class="switch on" role="img" aria-label="aktiviert"><i></i></span>
-          </div>
-          <div class="privacy-win-row">
-            Konto bleibt nach Jobwechsel
-            <span class="switch on" role="img" aria-label="aktiviert"><i></i></span>
-          </div>
+      <figure class="onepager f1-print f1-reveal" style="--f1-d:1" role="img" aria-label="Programmübersicht — Einseiter (Mock)">
+        <div class="onepager-head">
+          <svg viewBox="0 0 167 55" width="49" height="16" aria-hidden="true" focusable="false">
+            <text x="0" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">Lu</text>
+            <path d="M52 34c0-9 4-15 9-15 4 0 6 4 7 8 1-4 3-8 7-8 5 0 9 6 9 15 0 8-5 14-9 18 1-6 4-11 4-17 0-5-2-9-4-9s-4 3-5 8h-4c-1-5-3-8-5-8s-4 4-4 9c0 6 3 11 4 17-4-4-9-10-9-18z" fill="#FCBA30"/>
+            <text x="86" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">en</text>
+          </svg>
+          <span>Programmübersicht · 1 Seite</span>
         </div>
-        <div class="privacy-win-col">
-          <h3 class="privacy-win-title">Arbeitgeber-Ansicht</h3>
-          <div class="privacy-win-row">
-            Aktive Lizenzen
-            <span class="privacy-win-num">128</span>
-          </div>
-          <div class="privacy-win-row">
-            Team-Trends
-            <span class="privacy-win-chip">anonymisiert</span>
-          </div>
-          <div class="privacy-win-row privacy-win-row-off">
-            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Einzelwerte
-            <span class="privacy-win-chip privacy-win-chip-off">kein Zugriff</span>
-          </div>
+        <p class="onepager-title">Vorsorge für Teams — was Lumen misst, und was nicht.</p>
+        <div class="onepager-sec">
+          <h4>Was gemessen wird</h4>
+          <p>38 Blutwerte (2× jährlich), Schlaf und Aktivität vom eigenen Wearable, biologisches Alter als Verlaufswert.</p>
         </div>
+        <div class="onepager-sec">
+          <h4>Wie das Jahr läuft</h4>
+          <p>Blutabnahme vor Ort, Ergebnisse im ärztlichen Gespräch, dazwischen die App — freiwillig, im privaten Konto.</p>
+        </div>
+        <div class="onepager-sec">
+          <h4>Was Arbeitgeber sehen</h4>
+          <p>Anzahl aktiver Lizenzen und anonyme Trends, sobald die Gruppengröße Anonymität trägt. Keine Namen, keine Einzelwerte — technisch ausgeschlossen.</p>
+        </div>
+        <div class="onepager-foot">
+          <span>lumen.health</span>
+          <span>Stand 08/2026 · DSGVO · EU AI Act</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 6 · Datenschutz — der Abzug für die Person, die Tinte für die Firma -->
+  <section class="f1-section" id="v1-datenschutz" aria-label="Datenschutz">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">06 &middot; Datenschutz</p>
+      <h2 class="f1-display">Wer was sieht — und wer nicht.</h2>
+      <p class="f1-lede">Die Trennung ist Architektur, nicht Versprechen: Einzeldaten liegen im privaten Konto, einen Arbeitgeber-Zugriff gibt es nicht.</p>
+    </header>
+    <div class="f1-pair">
+      <div class="f1-panel f1-print f1-reveal" style="--f1-d:0">
+        <p class="f1-panel-title">Sie sehen</p>
+        <div class="f1-prow">Einzelwerte &amp; Verlauf<span class="switch on" role="img" aria-label="aktiviert"><i></i></span></div>
+        <div class="f1-prow">Ärztliche Einordnung<span class="switch on" role="img" aria-label="aktiviert"><i></i></span></div>
+        <div class="f1-prow">Konto bleibt nach Jobwechsel<span class="switch on" role="img" aria-label="aktiviert"><i></i></span></div>
+      </div>
+      <div class="f1-panel f1-panel-dark f1-reveal" style="--f1-d:1">
+        <p class="f1-panel-title">Ihr Arbeitgeber sieht</p>
+        <div class="f1-prow">Aktive Lizenzen<span class="f1-prow-num">128</span></div>
+        <div class="f1-prow">Team-Trends<span class="f1-prow-chip">anonymisiert</span></div>
+        <div class="f1-prow f1-prow-off"><svg class="f1-ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12 14V17.0023" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51472 2 7.5 4.01472 7.5 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M4.26781 18.8447C4.49269 20.515 5.87613 21.8235 7.55966 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.879 17.7547 20 16.6376 20 15.5C20 14.3624 19.879 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55966 9.09909C5.87613 9.17649 4.49269 10.485 4.26781 12.1553C4.12104 13.2453 4 14.3624 4 15.5C4 16.6376 4.12104 17.7547 4.26781 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>Einzelwerte<span class="f1-prow-chip">kein Zugriff</span></div>
       </div>
     </div>
-    <div class="privacy-foot">
+    <div class="f1-privacy-foot f1-reveal" style="--f1-d:2">
       <span class="chip chip-glass">
-        <svg class="ic" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <svg class="f1-ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12 14V17.0023" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51472 2 7.5 4.01472 7.5 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M4.26781 18.8447C4.49269 20.515 5.87613 21.8235 7.55966 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.879 17.7547 20 16.6376 20 15.5C20 14.3624 19.879 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55966 9.09909C5.87613 9.17649 4.49269 10.485 4.26781 12.1553C4.12104 13.2453 4 14.3624 4 15.5C4 16.6376 4.12104 17.7547 4.26781 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
         Daten bleiben in der EU
       </span>
-      <p class="privacy-note">Infrastruktur erfüllt DSGVO und EU AI Act (Stand 08/2026) — prüfbar im Gespräch, kein Gütesiegel.</p>
+      <p class="f1-note">Infrastruktur erfüllt DSGVO und EU AI Act (Stand 08/2026) — prüfbar im Gespräch, kein Gütesiegel.</p>
     </div>
   </section>
 
-  <!-- 7 · Zwei Pfade -->
-  <section class="sect sect-lift" id="v1-pfade">
-    <header class="sect-head">
-      <p class="eyebrow">Zwei Pfade</p>
-      <h2 class="display">Sie geben den Rahmen. Ihr Team behält die Daten.</h2>
+  <!-- 7 · Zwei Pfade — ein Körper, zwei Hälften -->
+  <section class="f1-section" id="v1-pfade" aria-label="Zwei Pfade">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">07 &middot; Zwei Pfade</p>
+      <h2 class="f1-display">Sie geben den Rahmen. Ihr Team behält die Daten.</h2>
     </header>
-    <div class="path-grid">
-      <div class="path-card">
-        <p class="path-label">
-          <svg class="ic" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
-          Für Arbeitgeber
-        </p>
-        <h3 class="path-title">Sie führen Lumen ein.</h3>
-        <p class="path-line">Budget, Lizenzen, ein Ansprechpartner — mehr braucht es von Ihrer Seite nicht.</p>
-        <a class="btn btn-cream btn-s" href="#v1-kontakt">Gespräch vereinbaren
-          <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+    <div class="f1-paths f1-reveal">
+      <div class="f1-path">
+        <p class="f1-path-label"><svg class="f1-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 22H20" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" /> <path d="M17 9H14M18 13H14M18 17H14" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" /> <path d="M6 22V3.2C6 2.42385 6.47098 2 7.2 2C8.87221 2 9.70832 2 10.4079 2.1108C14.2589 2.72075 17.2793 5.74106 17.8892 9.59209C18 10.2917 18 11.1278 18 12.8V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>Für Arbeitgeber</p>
+        <h3 class="f1-path-title">Sie führen Lumen ein.</h3>
+        <p class="f1-body">Budget, Lizenzen, ein Ansprechpartner — mehr braucht es von Ihrer Seite nicht.</p>
+        <a class="btn btn-cream btn-s" href="#v1-kontakt">Gespräch vereinbaren<svg class="f1-ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
       </div>
-      <div class="path-card">
-        <p class="path-label">
-          <svg class="ic" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Für Mitarbeitende
-        </p>
-        <h3 class="path-title">Ihr Unternehmen ist dabei?</h3>
-        <p class="path-line">Die Teilnahme ist freiwillig — Ihr Konto gehört Ihnen, nicht der Firma.</p>
-        <a class="btn btn-ghost btn-s" href="#">Konto aktivieren
-          <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+      <div class="f1-path">
+        <p class="f1-path-label"><svg class="f1-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 21.0001C19.713 17.269 16.7289 14.3151 12.995 14.0662L12 13.9999C11.6446 14.0096 11.3134 14.0225 11.0008 14.0378C7.3 14.2192 4.28417 17.3057 4 21.0001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <circle cx="12" cy="6.99988" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>Für Mitarbeitende</p>
+        <h3 class="f1-path-title">Ihr Unternehmen ist dabei?</h3>
+        <p class="f1-body">Die Teilnahme ist freiwillig — Ihr Konto gehört Ihnen, nicht der Firma.</p>
+        <a class="btn btn-ghost btn-s" href="#">Konto aktivieren<svg class="f1-ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
       </div>
     </div>
   </section>
 
-  <!-- 8 · Unparteilichkeit -->
-  <section class="sect sect-tight" id="v1-grenzen">
-    <header class="sect-head">
-      <p class="eyebrow">Grenzen</p>
-      <h2 class="display">Was wir nicht versprechen.</h2>
+  <!-- 8 · Grenzen — was wir nicht versprechen -->
+  <section class="f1-section" id="v1-grenzen" aria-label="Grenzen">
+    <header class="f1-head f1-reveal">
+      <p class="f1-overline">08 &middot; Grenzen</p>
+      <h2 class="f1-display">Was wir nicht versprechen.</h2>
     </header>
-    <ul class="limits-list">
-      <li>Lumen stellt keine Diagnosen — Befunde gehören in ärztliche Hände.</li>
-      <li>Wir versprechen keine Heilung und keine Produktivität in Prozent.</li>
-      <li>Wenn ein Wearable-Wert unsicher ist, steht das dabei.</li>
-      <li>Kein Countdown, kein knappes Kontingent — Vorsorge braucht keinen Druck.</li>
+    <ul class="f1-limits">
+      <li class="f1-reveal" style="--f1-d:0"><b>01</b><span>Lumen stellt keine Diagnosen — Befunde gehören in ärztliche Hände.</span></li>
+      <li class="f1-reveal" style="--f1-d:1"><b>02</b><span>Wir versprechen keine Heilung und keine Produktivität in Prozent.</span></li>
+      <li class="f1-reveal" style="--f1-d:2"><b>03</b><span>Wenn ein Wearable-Wert unsicher ist, steht das dabei.</span></li>
+      <li class="f1-reveal" style="--f1-d:3"><b>04</b><span>Kein Countdown, kein knappes Kontingent — Vorsorge braucht keinen Druck.</span></li>
     </ul>
   </section>
 
-  <!-- 9 · Close -->
-  <section class="close" id="v1-kontakt">
-    <h2 class="display">Ein Gespräch, kein Funnel.</h2>
-    <p class="close-sub">30 Minuten mit uns — danach wissen Sie, ob Lumen zu Ihrem Unternehmen passt.</p>
-    <a class="btn btn-cream" href="#">Gespräch vereinbaren
-      <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </a>
+  <!-- 9 · Close — ein Bild über die volle Breite, der Fuß auf Tinte -->
+  <section class="f1-close" id="v1-kontakt" aria-label="Kontakt">
+    <div class="f1-close-panel f1-reveal">
+      <img src="assets/ridge_above_clouds.jpg" alt="Wanderer auf einem Bergkamm über dem Nebelmeer" loading="lazy">
+      <div class="f1-close-scrim" aria-hidden="true"></div>
+      <div class="f1-close-inner">
+        <h2 class="f1-display">Ein Gespräch, kein <em>Funnel</em>.</h2>
+        <p class="f1-close-sub">30 Minuten mit uns — danach wissen Sie, ob Lumen zu Ihrem Unternehmen passt.</p>
+        <a class="btn btn-cream" href="#">Gespräch vereinbaren<svg class="f1-ic-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
+      </div>
+    </div>
     <footer class="site-foot">
       <a class="wordmark" href="#variant-1" aria-label="Lumen">
         <svg viewBox="0 0 167 55" width="55" height="18" aria-hidden="true" focusable="false">
@@ -2419,6 +2396,7 @@
 
 <script src="hero-dither.js?v=2026-08-26-v5"></script>
 <script src="slides.js?v=2026-08-26-v5"></script>
+<script src="feld.js?v=2026-08-26-v6"></script>
 <script src="licht.js?v=2026-08-26-v5"></script>
 </body>
 </html>
