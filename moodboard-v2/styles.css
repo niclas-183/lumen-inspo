@@ -898,6 +898,13 @@ ul { list-style: none; }
   box-shadow: 0 8px 28px rgba(10, 9, 6, 0.3);
 }
 
+.mood-dock-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .mood-dock-kicker {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -906,6 +913,63 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: rgba(248, 243, 233, 0.5);
   padding: 2px 12px 6px;
+}
+
+/* tiny reviewer chrome collapse / expand — not product UI */
+.chrome-toggle {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 243, 233, 0.16);
+  background: rgba(248, 243, 233, 0.08);
+  color: rgba(248, 243, 233, 0.75);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex: none;
+  margin: 0 4px 4px 0;
+}
+.chrome-toggle .ic {
+  width: 12px;
+  height: 12px;
+}
+.chrome-toggle:hover {
+  background: rgba(248, 243, 233, 0.16);
+  color: rgba(248, 243, 233, 0.95);
+}
+.chrome-toggle:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.chrome-toggle-expand {
+  position: fixed;
+  top: 136px;
+  right: max(24px, calc((100% - var(--rail-w)) / 2));
+  z-index: 61;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  background: rgba(24, 21, 16, 0.55);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(10, 9, 6, 0.3);
+  display: none;
+}
+.chrome-toggle-expand .ic {
+  width: 14px;
+  height: 14px;
+}
+
+html[data-chrome="collapsed"] .mood-dock,
+html[data-chrome="collapsed"] .switcher-bottom {
+  display: none !important;
+}
+html[data-chrome="collapsed"] .chrome-toggle-expand {
+  display: inline-flex;
 }
 
 .switcher-dock {
@@ -943,6 +1007,12 @@ ul { list-style: none; }
   .mood-dock-card { width: 100%; }
   .switcher-dock { flex-wrap: wrap; justify-content: center; }
   .switcher-dock-filters { max-width: none; }
+  .chrome-toggle-expand {
+    top: auto;
+    right: 12px;
+    bottom: 18px;
+    left: auto;
+  }
 }
 
 /* ============================================================
