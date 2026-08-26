@@ -898,6 +898,13 @@ ul { list-style: none; }
   box-shadow: 0 8px 28px rgba(10, 9, 6, 0.3);
 }
 
+.mood-dock-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .mood-dock-kicker {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -906,6 +913,63 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: rgba(248, 243, 233, 0.5);
   padding: 2px 12px 6px;
+}
+
+/* tiny reviewer chrome collapse / expand — not product UI */
+.chrome-toggle {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 243, 233, 0.16);
+  background: rgba(248, 243, 233, 0.08);
+  color: rgba(248, 243, 233, 0.75);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex: none;
+  margin: 0 4px 4px 0;
+}
+.chrome-toggle .ic {
+  width: 12px;
+  height: 12px;
+}
+.chrome-toggle:hover {
+  background: rgba(248, 243, 233, 0.16);
+  color: rgba(248, 243, 233, 0.95);
+}
+.chrome-toggle:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.chrome-toggle-expand {
+  position: fixed;
+  top: 136px;
+  right: max(24px, calc((100% - var(--rail-w)) / 2));
+  z-index: 61;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  background: rgba(24, 21, 16, 0.55);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(10, 9, 6, 0.3);
+  display: none;
+}
+.chrome-toggle-expand .ic {
+  width: 14px;
+  height: 14px;
+}
+
+html[data-chrome="collapsed"] .mood-dock,
+html[data-chrome="collapsed"] .switcher-bottom {
+  display: none !important;
+}
+html[data-chrome="collapsed"] .chrome-toggle-expand {
+  display: inline-flex;
 }
 
 .switcher-dock {
@@ -943,6 +1007,12 @@ ul { list-style: none; }
   .mood-dock-card { width: 100%; }
   .switcher-dock { flex-wrap: wrap; justify-content: center; }
   .switcher-dock-filters { max-width: none; }
+  .chrome-toggle-expand {
+    top: auto;
+    right: 12px;
+    bottom: 18px;
+    left: auto;
+  }
 }
 
 /* ============================================================
@@ -1986,11 +2056,26 @@ ul { list-style: none; }
   font-size: 16px;
   line-height: 1.55;
   font-variation-settings: "YTLC" 500, "wdth" 100;
+  /* Luft über der Pille als Padding am Page-Shell — nicht als Nav-Margin:
+     Margin kollabiert aus dem Page raus (dunkler Body-Streifen) und der
+     Hash #variant-3 scrollt genau diesen Streifen weg, die Pille klebt
+     dann an der Hero-Kante. Padding bleibt innen, Hero-Hintergrund. */
+  --sys-nav-inset: 40px;
+  padding-top: var(--sys-nav-inset);
 }
 
-/* Nav sitzt im Fluss; der Hero zieht sich dahinter (Muster V2). */
-.page-system .nav { margin-top: 20px; }
-.page-system .sys-hero { margin-top: calc(-20px - var(--nav-h)); }
+/* Nav sitzt im Fluss; der Hero zieht sich hinter Nav+Inset (Muster V2).
+   sticky top = Inset, sonst schnappt die Leiste beim Scrollen an die Kante. */
+.page-system .nav {
+  margin-top: 0;
+  top: var(--sys-nav-inset);
+}
+.page-system .sys-hero {
+  margin-top: calc(-1 * var(--sys-nav-inset) - var(--nav-h));
+}
+.page-system section[id] {
+  scroll-margin-top: calc(var(--nav-h) + var(--sys-nav-inset) + 32px);
+}
 
 .sys-wrap {
   width: min(100% - var(--sys-gutter) * 2, var(--sys-content));
@@ -2196,7 +2281,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   min-height: 88vh;
-  padding: 120px 0 88px;
+  padding: calc(var(--sys-nav-inset) + var(--nav-h) + 32px) 0 88px;
 }
 
 .sys-hero-grid {
@@ -2555,7 +2640,7 @@ ul { list-style: none; }
   .sys-title { font-size: 32px; }
   .sys-lead, .sys-sub { font-size: 18px; }
 
-  .sys-hero { min-height: 0; padding: 108px 0 64px; }
+  .sys-hero { min-height: 0; padding: calc(var(--sys-nav-inset) + var(--nav-h) + 20px) 0 64px; }
   .sys-hero-grid { grid-template-columns: 1fr; gap: 56px; }
   .sys-hero-stage { align-items: flex-start; }
   .sys-phone-pair { justify-content: flex-start; margin-left: 96px; transform: none; }
@@ -2590,7 +2675,7 @@ ul { list-style: none; }
 
   .sys-nav-links { display: none; }
 
-  .sys-hero { padding: 96px 0 48px; }
+  .sys-hero { padding: calc(var(--sys-nav-inset) + var(--nav-h) + 8px) 0 48px; }
   .sys-phone-pair { margin-left: 72px; }
   .sys-phone-front { width: 200px; }
   .sys-phone-back { width: 172px; }
@@ -2668,6 +2753,13 @@ ul { list-style: none; }
   /* der Hero-Fächer läuft bewusst über das Inhaltsmaß hinaus —
      clip statt hidden, damit die sticky Nav ihr Bezugssystem behält */
   overflow-x: clip;
+  /* Luft über der Pille als Padding am Page-Shell — nicht als Nav-Margin:
+     Margin kollabiert aus dem Page raus (dunkler Body-Streifen) und der
+     Hash #variant-4 scrollt genau diesen Streifen weg, die Pille klebt
+     dann an der Hero-Kante. Padding bleibt innen, Hero-Hintergrund.
+     30px, nicht die 40px von V3. */
+  --w4-nav-inset: 30px;
+  padding-top: var(--w4-nav-inset);
 }
 
 .page-licht :focus-visible {
@@ -2675,9 +2767,18 @@ ul { list-style: none; }
   outline-offset: 2px;
 }
 
-/* Nav sitzt im Fluss; der Hero zieht sich dahinter (Muster V2/V3). */
-.page-licht .nav { margin-top: 20px; }
-.page-licht .w4-hero { margin-top: calc(-20px - var(--nav-h)); }
+/* Nav sitzt im Fluss; der Hero zieht sich hinter Nav+Inset (Muster V3).
+   sticky top = Inset, sonst schnappt die Leiste beim Scrollen an die Kante. */
+.page-licht .nav {
+  margin-top: 0;
+  top: var(--w4-nav-inset);
+}
+.page-licht .w4-hero {
+  margin-top: calc(-1 * var(--w4-nav-inset) - var(--nav-h));
+}
+.page-licht section[id] {
+  scroll-margin-top: calc(var(--nav-h) + var(--w4-nav-inset) + 32px);
+}
 
 .w4-wrap {
   width: 100%;
@@ -2814,9 +2915,9 @@ ul { list-style: none; }
 /* ---------------------------------------------------------- */
 
 .nav-licht {
-  background: linear-gradient(rgba(255, 253, 248, .72), rgba(255, 244, 232, .55));
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
-  backdrop-filter: blur(18px) saturate(1.2);
+  background: linear-gradient(rgba(255, 253, 248, .58), rgba(255, 244, 232, .42));
+  -webkit-backdrop-filter: blur(22px) saturate(1.22);
+  backdrop-filter: blur(22px) saturate(1.22);
   border: 1px solid rgba(122, 78, 0, .16);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), 0 8px 28px rgba(122, 78, 0, .10);
   color: var(--w4-ink);

@@ -39,6 +39,8 @@ button:disabled{opacity:.6;cursor:wait}
 <script>
 const USER = "lumen";
 const SKEY = "lumen-inspo-session";
+const ASSET_V = "2026-08-26-v4nav";
+const CHROME_KEY = "lumen-inspo-moodboard-v2-chrome";
 const enc = new TextEncoder();
 const dec = new TextDecoder();
 
@@ -107,6 +109,88 @@ async function shrinkScreenshots(){
   }
 }
 
+function diskHref(href){
+  if (!href) return href;
+  if (href.indexOf("styles.css") >= 0) return "styles.css?v=" + ASSET_V;
+  if (href.indexOf("hero-dither.js") >= 0) return "hero-dither.js?v=" + ASSET_V;
+  return href;
+}
+
+function svgIcon(d){
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "ic");
+  svg.setAttribute("viewBox", "0 0 16 16");
+  svg.setAttribute("aria-hidden", "true");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", d);
+  svg.appendChild(path);
+  return svg;
+}
+
+function makeChromeButton(id, className, label, expanded, pathD){
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.id = id;
+  btn.className = className;
+  btn.setAttribute("aria-label", label);
+  btn.setAttribute("aria-expanded", expanded);
+  btn.appendChild(svgIcon(pathD));
+  return btn;
+}
+
+// Same idea as the root gallery ratings overlay: live Pages decrypts a
+// stale payload.bin, so reviewer chrome that lives in app.html never
+// arrives. Inject plus/minus if missing and point CSS/JS at disk.
+function injectReviewerChrome(){
+  try {
+    if (localStorage.getItem(CHROME_KEY) === "collapsed") {
+      document.documentElement.setAttribute("data-chrome", "collapsed");
+    }
+  } catch (e) {}
+
+  const dock = document.querySelector(".mood-dock");
+  if (!dock) return;
+
+  if (!document.getElementById("chrome-expand")) {
+    dock.parentNode.insertBefore(
+      makeChromeButton(
+        "chrome-expand",
+        "chrome-toggle chrome-toggle-expand",
+        "Steuerung aufklappen",
+        "false",
+        "M8 3.5v9M3.5 8h9"
+      ),
+      dock
+    );
+  }
+
+  if (!document.getElementById("chrome-collapse")) {
+    const firstCard = dock.querySelector(".mood-dock-card");
+    if (!firstCard) return;
+    let head = firstCard.querySelector(".mood-dock-head");
+    const kicker = firstCard.querySelector(".mood-dock-kicker");
+    if (!head) {
+      head = document.createElement("div");
+      head.className = "mood-dock-head";
+      if (kicker) {
+        firstCard.insertBefore(head, kicker);
+        head.appendChild(kicker);
+      } else {
+        firstCard.insertBefore(head, firstCard.firstChild);
+      }
+    }
+    head.appendChild(
+      makeChromeButton(
+        "chrome-collapse",
+        "chrome-toggle chrome-toggle-collapse",
+        "Steuerung einklappen",
+        "true",
+        "M3.5 8h9"
+      )
+    );
+  }
+}
+
 function adopt(parsed){
   parsed.querySelectorAll("img").forEach(img => {
     const src = img.getAttribute("src");
@@ -120,17 +204,23 @@ function adopt(parsed){
   document.title = parsed.title || "Lumen · Moodboard";
   document.head.querySelectorAll("style, link[rel=stylesheet]").forEach(n => n.remove());
   parsed.head.querySelectorAll("style, link, meta[name], title").forEach(n => {
-    document.head.appendChild(document.importNode(n, true));
+    const node = document.importNode(n, true);
+    if (node.tagName === "LINK") {
+      const href = node.getAttribute("href");
+      if (href) node.setAttribute("href", diskHref(href));
+    }
+    document.head.appendChild(node);
   });
   const scripts = [...parsed.body.querySelectorAll("script")];
   scripts.forEach(s => s.remove());
   const nextBody = document.importNode(parsed.body, true);
   document.body.replaceWith(nextBody);
+  injectReviewerChrome();
   scripts.forEach(old => {
     const s = document.createElement("script");
     const src = old.getAttribute("src");
     s.async = false;
-    if (src) s.src = src;
+    if (src) s.src = diskHref(src);
     else s.textContent = old.textContent;
     document.body.appendChild(s);
   });
@@ -156,6 +246,7 @@ async function unlock(makeKey, session){
   html = null;
   adopt(parsed);
   parsed = null;
+  injectReviewerChrome();
 }
 
 const form = document.getElementById("f");
