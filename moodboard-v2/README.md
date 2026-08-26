@@ -1,9 +1,10 @@
 # Moodboard v2 — Function-density combined hero
 
-Zwei volle Landingpages, gebaut als echte Homepage, nicht als Slide. Zwei
-Varianten derselben kombinierten Richtung, umschaltbar über das schmale Pill
-unten **und** die sticky Glass-Karte oben rechts (Tasten `1` / `2`). Die
-sticky Steuerung bleibt beim Scrollen im Blick; beide Umschalter bleiben im
+Vier volle Landingpages, gebaut als echte Homepage, nicht als Slide —
+Variante 1/2 als kombinierte Richtung, Variante 3 „System“ nah am
+Designsystem-MVP, Variante 4 „Licht“ als deren Neubau. Umschaltbar über das
+schmale Pill unten **und** die sticky Glass-Karte oben rechts (Tasten `1`–`4`).
+Die sticky Steuerung bleibt beim Scrollen im Blick; beide Umschalter bleiben im
 Takt. Desktop-first, Ziel 1440. Seit Issue #9 läuft die Design-Language jeder
 Variante unter die Falz weiter — Fotofeld bleibt dunkles Feld, Editorial
 bleibt Papier.
@@ -61,6 +62,33 @@ und leicht unterschiedlicher Reihenfolge:
 Die Nav ist jetzt sticky (Glass-Pill bleibt beim Scrollen) und die
 Nav-Punkte verlinken auf die Sektionen der aktiven Variante
 (`#v1-…` / `#v2-…`); der Announce-Link springt zum Beweisstück.
+
+## Variante 4 · Licht
+
+Die vierte Variante (`#variant-4`, Taste `4`, Hash `#variant-4` / `#v4-…`)
+stellt die These auf, dass Vorsorge hell sein darf: Amber-Grund `#FFF4E8`,
+Lora 600 über Nunito Sans, und genau zwei dunkle Bänder, in denen die
+Produktdichte sitzt. Der Hero trägt einen **Fächer aus drei Bevel-Screens**
+(Schlaf · Recovery vorn · Energie) über einem weichen Amber-Hauch; darunter
+läuft die **ganze Zehnerserie als Marquee** durchs Ink-Band — 70 Sekunden,
+linear, Pause bei Zeiger oder Fokus. Danach wird es wieder hell: Bento-Raster
+der vier Messgrößen neben einer hohen Foto-Rail, ein Diptychon auf gemeinsamer
+Grundlinie, drei native `<details>`-Fragen mit PDF-Karte, die
+Datenschutz-Gegenüberstellung als Papier-gegen-Tinte-Paar, vier Grenzen in
+einer schmalen Spalte und ein Amber-Panel als Abschluss.
+
+Bewegung liegt vollständig hinter `prefers-reduced-motion: no-preference`:
+`.w4-reveal` (IntersectionObserver, 600ms, 80ms Stagger), Count-up der drei
+Kennzahlen (900ms), Marquee und eine winzige Scroll-Parallax auf den
+Hero-Phones (nur über 1100px). Ohne JS bleibt alles sichtbar — ausgeblendet
+wird erst, wenn `licht.js` die Root-Klasse `.w4-js` gesetzt hat. Bei
+angemeldeter Ruhe steht der Marquee still und wird frei scrollbar.
+
+Illustration sind hier die **Original-Doodles** aus
+`assets/doodles-original/` — als `<img>`, unverändert, in ihrer eigenen
+Farbwelt (V3 färbt dagegen die Accent-Ebene inline um). Icons sind dieselben
+zwölf Hugeicons-Pfade wie in V3, nur mit `.w4-`-Klassen. Der Grund-Ton-Schalter
+(Papier / Satter / Cover-Hauch) gehört weiterhin allein zu V3.
 
 ## Ansehen
 
@@ -149,6 +177,8 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 - `slides.js` — Serienstreifen „Marktumfeld" (setTimeout-Kette,
   IntersectionObserver, kein npm); rührt Variantenumschaltung und
   Tastenkürzel nicht an.
+- `licht.js` — Bewegung der Variante 4 (Reveal, Count-up, Hero-Parallax;
+  Vanilla, kein npm); rührt Variantenumschaltung und Tastenkürzel nicht an.
 - `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
 - `token.html` — Share-Link-Generator für `index.html#k=…`.
 - `styles.css` — Tokens + Layout, ein File.
@@ -157,6 +187,12 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 - `assets/rondell/` — zehn Bevel-App-Store-Screenshots (720×1560, eine Serie)
   für den Serienstreifen. Interne Referenz, nicht Lumen; Herkunft und die bewusste
   Ausnahme von der Marken-Regel stehen in `ASSETS.md`.
+- `assets/bevel/` — dieselbe Serie frisch gezogen (Version 3.1.7,
+  1284×2778, unbeschnitten) für Hero-Fächer und Marquee der Variante 4. Die
+  Kategorie-Reihenfolge der API weicht von `rondell/` ab — maßgeblich ist die
+  Tabelle in `ASSETS.md`.
+- `assets/doodles-original/` — die acht Open-Doodles-Originale (CC0),
+  komplett unverändert; nur Variante 4 nutzt sie, als `<img>`.
 
 Nach dem Unlock lösen relative URLs (`styles.css`, `assets/…`) wie gewohnt auf.
 Einzige externe Abhängigkeit: Google Fonts.

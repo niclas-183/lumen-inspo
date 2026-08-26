@@ -11,7 +11,7 @@
 <!-- Versions-Query gegen Cache-Skew: GH Pages cacht 10 min pro Datei; ohne
      Marker kann ein frisches app.html auf ein altes styles.css treffen.
      Bei jeder Änderung an styles.css/JS mitdrehen. -->
-<link rel="stylesheet" href="styles.css?v=2026-08-25-v4">
+<link rel="stylesheet" href="styles.css?v=2026-08-26-v5">
 </head>
 <body>
 
@@ -1990,6 +1990,393 @@
 </div>
 
 
+<!-- ================================================================
+     VARIANTE 4 — Licht
+     Heller Amber-Grund, dunkle Ink-Produktbühne. Der Bevel-Fächer
+     steht im Hero, die ganze Serie läuft als Marquee durchs Ink-Band.
+     Doodles sind Originaldateien (CC0) als <img>, unverändert;
+     Icons sind dieselben Hugeicons-Pfade wie in Variante 3.
+     ================================================================ -->
+<div class="page page-licht" id="variant-4" hidden>
+
+  <header class="nav nav-licht">
+    <a class="wordmark" href="#variant-4" aria-label="Lumen">
+      <svg viewBox="0 0 167 55" width="73" height="24" aria-hidden="true" focusable="false">
+      <text x="0" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">Lu</text>
+      <path d="M52 34c0-9 4-15 9-15 4 0 6 4 7 8 1-4 3-8 7-8 5 0 9 6 9 15 0 8-5 14-9 18 1-6 4-11 4-17 0-5-2-9-4-9s-4 3-5 8h-4c-1-5-3-8-5-8s-4 4-4 9c0 6 3 11 4 17-4-4-9-10-9-18z" fill="#FCBA30"/>
+      <text x="86" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">en</text>
+      </svg>
+    </a>
+    <nav class="w4-nav-links" aria-label="Hauptnavigation">
+      <a href="#v4-programm">Programm</a>
+      <a href="#v4-methode">Methode</a>
+      <a href="#v4-datenschutz">Datenschutz</a>
+      <a href="#v4-kontakt">Kontakt</a>
+    </nav>
+    <div class="w4-nav-side">
+      <a class="w4-btn w4-btn-ghost" href="#v4-pfade">Login</a>
+      <a class="w4-btn w4-btn-amber" href="#v4-kontakt">Gespräch vereinbaren<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
+    </div>
+  </header>
+
+  <!-- Hero — Copy links, Phone-Fächer rechts; die rechte obere Ecke
+       bleibt für das sticky Reviewer-Dock frei. -->
+  <section class="w4-hero" aria-label="Einstieg">
+    <div class="w4-wrap">
+      <div class="w4-hero-grid">
+        <div class="w4-hero-copy">
+          <p class="w4-overline w4-reveal" style="--w4-d:0">Vorsorge für Teams &middot; ärztlich begleitet</p>
+          <h1 class="w4-display w4-reveal" style="--w4-d:1">Gesundheit, die man gern misst.</h1>
+          <p class="w4-lead w4-reveal" style="--w4-d:2">Blutwerte, Schlaf, Aktivität und biologisches Alter — ein Programm, das Ihr Team wirklich benutzt.</p>
+          <div class="w4-cta-row w4-reveal" style="--w4-d:3">
+            <a class="w4-btn w4-btn-amber" href="#v4-kontakt">Gespräch vereinbaren<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
+            <a class="w4-btn w4-btn-ghost" href="#v4-programm">Programm ansehen</a>
+          </div>
+          <p class="w4-trust w4-reveal" style="--w4-d:4"><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M18.7088 3.49534C16.8165 2.55382 14.5009 2 12 2C9.4991 2 7.1835 2.55382 5.29116 3.49534C4.36318 3.95706 3.89919 4.18792 3.4496 4.91378C3 5.63965 3 6.34248 3 7.74814V11.2371C3 16.9205 7.54236 20.0804 10.173 21.4338C10.9067 21.8113 11.2735 22 12 22C12.7265 22 13.0933 21.8113 13.8269 21.4338C16.4576 20.0804 21 16.9205 21 11.2371L21 7.74814C21 6.34249 21 5.63966 20.5504 4.91378C20.1008 4.18791 19.6368 3.95706 18.7088 3.49534Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M9 11.5C9 11.5 10.4079 11.7519 11 13.5C11 13.5 12.5 10.5 15 9.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Arbeitgeber sehen nur anonymisierte Team-Trends.</span></p>
+          <img class="w4-doodle w4-doodle-hero w4-reveal" style="--w4-d:5" src="assets/doodles-original/meditating.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="w4-hero-stage">
+          <div class="w4-fan">
+            <span class="w4-phone w4-phone-a"><img src="assets/bevel/bevel-04.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Schlafauswertung"></span>
+            <span class="w4-phone w4-phone-b"><img src="assets/bevel/bevel-05.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Erholungswerte nach dem Training"></span>
+            <span class="w4-phone w4-phone-c"><img src="assets/bevel/bevel-10.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Energieverlauf über den Tag"></span>
+          </div>
+          <p class="w4-cap w4-fan-credit">App-Store-Serie als Dichte-Referenz — Bevel, nicht Lumen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zahlenband — vier Größen auf Tinte, Hairlines dazwischen -->
+  <section class="w4-band-ink" id="v4-zahlen" aria-label="Zahlen">
+    <div class="w4-wrap">
+      <div class="w4-stats">
+        <div class="w4-stat w4-reveal" style="--w4-d:0">
+          <p class="w4-overline">Blutbild</p>
+          <p class="w4-stat-num"><span data-count="38">38</span></p>
+          <p class="w4-cap">Werte je Laborrunde — ärztlich ausgewertet</p>
+        </div>
+        <div class="w4-stat w4-reveal" style="--w4-d:1">
+          <p class="w4-overline">Rhythmus</p>
+          <p class="w4-stat-num"><span data-count="2">2</span>&times;</p>
+          <p class="w4-cap">Laborrunden im Jahr, vor Ort abgenommen</p>
+        </div>
+        <div class="w4-stat w4-reveal" style="--w4-d:2">
+          <p class="w4-overline">Messgrößen</p>
+          <p class="w4-stat-num"><span data-count="4">4</span></p>
+          <p class="w4-cap">Blutbild, Schlaf, Aktivität, Bio-Alter</p>
+        </div>
+        <div class="w4-stat w4-reveal" style="--w4-d:3">
+          <p class="w4-overline">Ranglisten</p>
+          <p class="w4-stat-num">0</p>
+          <p class="w4-cap">keine Vergleiche zwischen Kolleg:innen</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programm — dasselbe Ink-Band, nahtlos: die ganze Bevel-Serie -->
+  <section class="w4-band-ink w4-band-ink-flush" id="v4-programm" aria-label="Programm">
+    <div class="w4-wrap">
+      <div class="w4-head w4-reveal">
+        <h2 class="w4-title">So dicht soll sich Lumen anfühlen.</h2>
+        <p class="w4-lead">Zehn Screens einer App-Store-Serie als Maßstab für Dichte und Ton — bevor wir selbst zeichnen, zeigen wir, wohin die Reise geht.</p>
+      </div>
+    </div>
+    <div class="w4-marquee" data-w4-marquee>
+      <ul class="w4-marquee-track">
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-05.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Erholungswerte nach dem Training" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Recovery</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-04.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Schlafauswertung" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Schlaf</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-10.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Energieverlauf über den Tag" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Energie</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-07.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Ansicht zum biologischen Alter" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Biologisches Alter</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-08.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Ernährungsübersicht" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Ernährung</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-06.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Fragen zu den eigenen Daten" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Datenfragen</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-09.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Zyklusübersicht" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Zyklus</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-02.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Zielübersicht" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Ziele</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-03.jpg" alt="App-Store-Screenshot einer Gesundheits-App: verbundene Wearables" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Wearables</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-01.jpg" alt="App-Store-Screenshot einer Gesundheits-App: Überblick über die Tageswerte" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Überblick</span>
+        </li>
+      </ul>
+      <ul class="w4-marquee-track" aria-hidden="true">
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-05.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Recovery</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-04.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Schlaf</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-10.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Energie</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-07.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Biologisches Alter</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-08.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Ernährung</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-06.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Datenfragen</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-09.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Zyklus</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-02.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Ziele</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-03.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Wearables</span>
+        </li>
+        <li class="w4-marquee-item">
+          <span class="w4-frame"><img src="assets/bevel/bevel-01.jpg" alt="" loading="lazy"></span>
+          <span class="w4-cap">Bevel &middot; Überblick</span>
+        </li>
+      </ul>
+    </div>
+    <div class="w4-wrap">
+      <p class="w4-cap w4-credit">App-Store-Screenshots — interne Referenz, nicht Lumen.</p>
+    </div>
+  </section>
+
+  <!-- Methode — Bento 2×2 neben einer hohen Foto-Rail -->
+  <section class="w4-section" id="v4-methode" aria-label="Methode">
+    <div class="w4-wrap">
+      <div class="w4-head w4-reveal">
+        <p class="w4-overline">Methode</p>
+        <h2 class="w4-title">Vier Messgrößen. Kein Nebel.</h2>
+      </div>
+      <div class="w4-split">
+        <div class="w4-bento">
+          <article class="w4-card w4-reveal" style="--w4-d:0">
+            <svg class="w4-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8 2H16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M16.2187 13.0044L15.9921 13.6151C15.5219 14.65 14.1115 15.7439 11.7609 14.3182C10.2471 13.4001 8.93663 12.6631 7.9997 13.16L7.21891 13.5412" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M14.5323 2V8.56602C14.5323 9.27829 14.5323 9.63442 14.6304 9.97222C14.7285 10.31 14.9197 10.612 15.3021 11.216L17.2861 14.35C19.4275 17.7326 20.4982 19.4238 19.7751 20.7119C19.0519 22 17.0317 22 12.9914 22H11.0086C6.96825 22 4.94807 22 4.22495 20.7119C3.50182 19.4238 4.57251 17.7326 6.71389 14.35L8.69792 11.216C9.08029 10.612 9.27148 10.31 9.36961 9.97222C9.46773 9.63442 9.46773 9.27829 9.46773 8.56602V2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M15.125 19H15M15.25 19C15.25 19.1381 15.1381 19.25 15 19.25C14.8619 19.25 14.75 19.1381 14.75 19C14.75 18.8619 14.8619 18.75 15 18.75C15.1381 18.75 15.25 18.8619 15.25 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M10.125 17H10M10.25 17C10.25 17.1381 10.1381 17.25 10 17.25C9.86193 17.25 9.75 17.1381 9.75 17C9.75 16.8619 9.86193 16.75 10 16.75C10.1381 16.75 10.25 16.8619 10.25 17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+            <h3 class="w4-subhead">Blutbild</h3>
+            <p class="w4-body">38 Werte, zweimal im Jahr — ärztlich ausgewertet, vor Ort abgenommen.</p>
+          </article>
+          <article class="w4-card w4-reveal" style="--w4-d:1">
+            <svg class="w4-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M21.0985 7.84477C20.458 8.55417 19.5311 9 18.5 9C16.567 9 15 7.433 15 5.5C15 4.46895 15.4458 3.54203 16.1552 2.90149M16.1552 2.90149C18.3384 3.90018 20.0998 5.66155 21.0985 7.84477C21.6774 9.11025 22 10.5174 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C13.4826 2 14.8898 2.32262 16.1552 2.90149Z" stroke="currentColor" stroke-width="1.5" /> <path d="M16 16C16 17.1046 15.1046 18 14 18C12.8954 18 12 17.1046 12 16C12 14.8954 12.8954 14 14 14C15.1046 14 16 14.8954 16 16Z" stroke="currentColor" stroke-width="1.5" /> <path d="M7.13086 14H7.00586M7.25586 14C7.25586 14.1381 7.14393 14.25 7.00586 14.25C6.86779 14.25 6.75586 14.1381 6.75586 14C6.75586 13.8619 6.86779 13.75 7.00586 13.75C7.14393 13.75 7.25586 13.8619 7.25586 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M10.1309 8H10.0059M10.2559 8C10.2559 8.13807 10.1439 8.25 10.0059 8.25C9.86779 8.25 9.75586 8.13807 9.75586 8C9.75586 7.86193 9.86779 7.75 10.0059 7.75C10.1439 7.75 10.2559 7.86193 10.2559 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+            <h3 class="w4-subhead">Schlaf</h3>
+            <p class="w4-body">Jede Nacht, vom eigenen Wearable — Dauer, Regelmäßigkeit, Erholung.</p>
+          </article>
+          <article class="w4-card w4-reveal" style="--w4-d:2">
+            <svg class="w4-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12.4059 18.9923C13.4443 19.7399 13.9635 20.1137 14.5623 20.3069C15.1611 20.5 15.8008 20.5 17.0804 20.5H19C20.4142 20.5 21.1213 20.5 21.5607 20.0607C22 19.6213 22 18.9142 22 17.5H16.7902C16.1504 17.5 15.8305 17.5 15.5311 17.4034C15.2318 17.3069 14.9722 17.12 14.453 16.7461L3 8.5L2.30911 9.53634C2.10755 9.83867 2 10.1939 2 10.5572C2 11.1492 2.2847 11.705 2.76507 12.0509L12.4059 18.9923Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M3 8.5L6 3.5L6.30704 5.34226C6.42827 6.06965 6.89023 6.69511 7.5498 7.0249C8.64393 7.57197 9.97486 7.16899 10.5818 6.10689L11.1396 5.13069C11.3625 4.74069 11.7772 4.5 12.2264 4.5C12.7005 4.5 13.1339 4.76787 13.346 5.19193L17.2764 13.0528C17.4134 13.3269 17.6936 13.5 18 13.5C20.2091 13.5 22 15.2909 22 17.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M12.5 9.5L14.5 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M14 12L16 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M6 20.5H18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M2 17.5H5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+            <h3 class="w4-subhead">Aktivität</h3>
+            <p class="w4-body">Schritte, Training, Alltag — fortlaufend, ohne Wettbewerb.</p>
+          </article>
+          <article class="w4-card w4-reveal" style="--w4-d:3">
+            <svg class="w4-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M20.001 13.0001H16.0288C15.8168 13.0001 15.7107 13.0001 15.619 12.9639C15.5691 12.9442 15.5229 12.9169 15.4821 12.8831C15.4072 12.8209 15.3598 12.7303 15.2649 12.5491C14.9921 12.0278 14.8557 11.7672 14.6597 11.7045C14.5567 11.6716 14.4453 11.6716 14.3422 11.7045C14.1462 11.7672 14.0098 12.0278 13.737 12.5491L13.1172 13.7335C12.6442 14.6372 12.4078 15.089 12.0706 15.0624C11.7335 15.0357 11.578 14.5529 11.267 13.5872L10.8024 12.1447C10.4668 11.1027 10.299 10.5817 9.95039 10.5639C9.60176 10.5462 9.377 11.0472 8.92748 12.0493L8.76073 12.4211C8.63475 12.7019 8.57176 12.8423 8.44652 12.9212C8.32129 13.0001 8.16139 13.0001 7.84158 13.0001H4.00098" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+            <h3 class="w4-subhead">Biologisches Alter</h3>
+            <p class="w4-body">Ein Wert, der alles zusammenfasst — und sich bewegen lässt.</p>
+          </article>
+        </div>
+        <figure class="w4-rail w4-reveal" style="--w4-d:2">
+          <img src="assets/cup_window_sill.jpg" alt="Tasse Kaffee auf einer sonnigen Fensterbank" loading="lazy">
+          <figcaption class="w4-cap">Gestellte Szene — Symbolbild.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alltag — Diptychon auf gemeinsamer Grundlinie -->
+  <section class="w4-section" id="v4-alltag" aria-label="Alltag">
+    <div class="w4-wrap">
+      <div class="w4-head w4-reveal">
+        <h2 class="w4-title">Gesundheit passiert nicht im Dashboard.</h2>
+        <p class="w4-lead">Sie passiert morgens, draußen, am Tisch — Lumen misst mit, ohne sich vorzudrängen.</p>
+      </div>
+      <div class="w4-dip">
+        <figure class="w4-reveal" style="--w4-d:0">
+          <img src="assets/morning_walk_sun.jpg" alt="Person geht bei tiefer Morgensonne einen Weg entlang" loading="lazy">
+          <figcaption class="w4-cap">Draußen, nicht im Gym — Symbolbild.</figcaption>
+        </figure>
+        <figure class="w4-reveal" style="--w4-d:1">
+          <img src="assets/kitchen_window_sun.jpg" alt="Sonnenlicht fällt in eine Küche mit Fensterplatz" loading="lazy">
+          <figcaption class="w4-cap">Morgens am Fenster — Symbolbild.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beweisstück — interne Fragen, ehrlich beantwortet, plus PDF -->
+  <section class="w4-section w4-band-paper" id="v4-beweis" aria-label="Beweisstück">
+    <div class="w4-wrap">
+      <div class="w4-head-row w4-reveal">
+        <div class="w4-head">
+          <h2 class="w4-title">Die Fragen, die intern kommen.</h2>
+        </div>
+        <img class="w4-doodle w4-doodle-proof" src="assets/doodles-original/sitting-reading.svg" alt="" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="w4-split">
+        <div class="w4-faqs">
+          <details class="w4-faq w4-reveal" style="--w4-d:0">
+            <summary>Ist die Teilnahme freiwillig?<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></summary>
+            <p class="w4-body">Ja — jedes Konto ist privat, und niemand erfährt, wer mitmacht.</p>
+          </details>
+          <details class="w4-faq w4-reveal" style="--w4-d:1">
+            <summary>Sieht mein Arbeitgeber meine Werte?<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></summary>
+            <p class="w4-body">Nein — die Trennung ist technisch, nicht nur vertraglich.</p>
+          </details>
+          <details class="w4-faq w4-reveal" style="--w4-d:2">
+            <summary>Wo liegen die Daten?<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></summary>
+            <p class="w4-body">In der EU — die Infrastruktur erfüllt DSGVO und EU AI Act (Stand 08/2026).</p>
+          </details>
+        </div>
+        <aside class="w4-pdf w4-reveal" style="--w4-d:1">
+          <svg class="w4-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M2.99969 17.0002C2.99969 17.9302 2.99969 18.3952 3.10192 18.7767C3.37932 19.8119 4.18796 20.6206 5.22324 20.898C5.60474 21.0002 6.06972 21.0002 6.99969 21.0002L16.9997 21.0002C17.9297 21.0002 18.3947 21.0002 18.7762 20.898C19.8114 20.6206 20.6201 19.8119 20.8975 18.7767C20.9997 18.3952 20.9997 17.9302 20.9997 17.0002" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M16.4998 11.5002C16.4998 11.5002 13.1856 16.0002 11.9997 16.0002C10.8139 16.0002 7.49976 11.5002 7.49976 11.5002M11.9997 15.0002V3.00016" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+          <h3 class="w4-subhead">Programmübersicht als PDF</h3>
+          <p class="w4-body">Eine Seite, ohne Registrierung — für die Person, die entscheidet.</p>
+          <a class="w4-btn w4-btn-amber" href="#v4-kontakt">Als PDF ansehen<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Datenschutz — wer was sieht, als zwei Karten -->
+  <section class="w4-section" id="v4-datenschutz" aria-label="Datenschutz">
+    <div class="w4-wrap">
+      <div class="w4-head-row w4-reveal">
+        <div class="w4-head">
+          <p class="w4-overline">Datenschutz</p>
+          <h2 class="w4-title">Wer was sieht — und wer nicht.</h2>
+        </div>
+        <img class="w4-doodle w4-doodle-privacy" src="assets/doodles-original/loving.svg" alt="" aria-hidden="true" loading="lazy">
+      </div>
+      <div class="w4-two">
+        <article class="w4-panelcard w4-panelcard-paper w4-reveal" style="--w4-d:0">
+          <h3 class="w4-subhead">Sie sehen</h3>
+          <ul class="w4-list w4-list-tick">
+            <li><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 14.5C5 14.5 6.5 14.5 8.5 18C8.5 18 14.0588 8.83333 19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Alle Einzelwerte und ihren Verlauf</span></li>
+            <li><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 14.5C5 14.5 6.5 14.5 8.5 18C8.5 18 14.0588 8.83333 19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Die ärztliche Einordnung dazu</span></li>
+            <li><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 14.5C5 14.5 6.5 14.5 8.5 18C8.5 18 14.0588 8.83333 19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Ihr Konto — privat, auch nach dem Jobwechsel</span></li>
+          </ul>
+        </article>
+        <article class="w4-panelcard w4-panelcard-ink w4-reveal" style="--w4-d:1">
+          <h3 class="w4-subhead">Ihr Arbeitgeber sieht</h3>
+          <ul class="w4-list w4-list-cross">
+            <li><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 14.5C5 14.5 6.5 14.5 8.5 18C8.5 18 14.0588 8.83333 19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Die Anzahl aktiver Lizenzen</span></li>
+            <li><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5 14.5C5 14.5 6.5 14.5 8.5 18C8.5 18 14.0588 8.83333 19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Anonyme Trends — erst, wenn die Gruppengröße Anonymität trägt</span></li>
+            <li><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><span>Keine Namen, keine Einzelwerte — technisch ausgeschlossen</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="w4-chip w4-reveal"><svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12 14V17.0023" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M16.5 9V6.5C16.5 4.01472 14.4853 2 12 2C9.51472 2 7.5 4.01472 7.5 6.5V9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <path d="M4.26781 18.8447C4.49269 20.515 5.87613 21.8235 7.55966 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.879 17.7547 20 16.6376 20 15.5C20 14.3624 19.879 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55966 9.09909C5.87613 9.17649 4.49269 10.485 4.26781 12.1553C4.12104 13.2453 4 14.3624 4 15.5C4 16.6376 4.12104 17.7547 4.26781 18.8447Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg><i></i><span>Daten bleiben in der EU — DSGVO &amp; EU AI Act (Stand 08/2026).</span></p>
+    </div>
+  </section>
+
+  <!-- Zwei Pfade — Rahmen hier, Daten dort -->
+  <section class="w4-section" id="v4-pfade" aria-label="Zwei Pfade">
+    <div class="w4-wrap">
+      <div class="w4-head w4-reveal">
+        <h2 class="w4-title">Sie geben den Rahmen. Ihr Team behält die Daten.</h2>
+      </div>
+      <img class="w4-doodle w4-doodle-paths w4-paths-doodle w4-reveal" src="assets/doodles-original/plant.svg" alt="" aria-hidden="true" loading="lazy">
+      <div class="w4-two">
+        <article class="w4-panelcard w4-panelcard-amber w4-reveal" style="--w4-d:0">
+          <svg class="w4-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 22H20" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" /> <path d="M17 9H14M18 13H14M18 17H14" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" /> <path d="M6 22V3.2C6 2.42385 6.47098 2 7.2 2C8.87221 2 9.70832 2 10.4079 2.1108C14.2589 2.72075 17.2793 5.74106 17.8892 9.59209C18 10.2917 18 11.1278 18 12.8V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+          <h3 class="w4-subhead">Sie führen Lumen ein</h3>
+          <p class="w4-body">Budget, Lizenzen, ein Ansprechpartner — mehr braucht es von Ihrer Seite nicht.</p>
+          <a class="w4-btn w4-btn-amber" href="#v4-kontakt">Gespräch vereinbaren<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
+        </article>
+        <article class="w4-panelcard w4-panelcard-paper w4-reveal" style="--w4-d:1">
+          <svg class="w4-ic-lg" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20 21.0001C19.713 17.269 16.7289 14.3151 12.995 14.0662L12 13.9999C11.6446 14.0096 11.3134 14.0225 11.0008 14.0378C7.3 14.2192 4.28417 17.3057 4 21.0001" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> <circle cx="12" cy="6.99988" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg>
+          <h3 class="w4-subhead">Ihr Unternehmen ist dabei?</h3>
+          <p class="w4-body">Die Teilnahme ist freiwillig — Ihr Konto gehört Ihnen, nicht der Firma.</p>
+          <a class="w4-btn w4-btn-ghost" href="#v4-kontakt">Konto aktivieren</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grenzen — was wir nicht versprechen -->
+  <section class="w4-section" id="v4-grenzen" aria-label="Grenzen">
+    <div class="w4-wrap">
+      <div class="w4-narrow">
+        <div class="w4-head w4-reveal">
+          <p class="w4-overline">Grenzen</p>
+          <h2 class="w4-title">Was wir nicht versprechen.</h2>
+        </div>
+        <ul class="w4-limits">
+          <li class="w4-reveal" style="--w4-d:0"><b>01</b><span>Lumen stellt keine Diagnosen — Befunde gehören in ärztliche Hände.</span></li>
+          <li class="w4-reveal" style="--w4-d:1"><b>02</b><span>Wir versprechen keine Heilung und keine Produktivität in Prozent.</span></li>
+          <li class="w4-reveal" style="--w4-d:2"><b>03</b><span>Wenn ein Wearable-Wert unsicher ist, steht das dabei.</span></li>
+          <li class="w4-reveal" style="--w4-d:3"><b>04</b><span>Kein Countdown, kein knappes Kontingent — Vorsorge braucht keinen Druck.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Close — ein Gespräch, kein Funnel -->
+  <section class="w4-section" id="v4-kontakt" aria-label="Kontakt">
+    <div class="w4-wrap">
+      <div class="w4-close w4-reveal">
+        <div class="w4-close-copy">
+          <h2 class="w4-title">Ein Gespräch, kein Funnel.</h2>
+          <p class="w4-lead">30 Minuten mit uns — danach wissen Sie, ob Lumen zu Ihrem Unternehmen passt.</p>
+          <a class="w4-btn w4-btn-ink" href="#v4-kontakt">Gespräch vereinbaren<svg class="w4-ic" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /> </svg></a>
+        </div>
+        <img class="w4-doodle w4-doodle-close" src="assets/doodles-original/jumping.svg" alt="" aria-hidden="true" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <footer class="w4-foot">
+    <div class="w4-wrap">
+      <div class="w4-foot-inner">
+        <a class="wordmark" href="#variant-4" aria-label="Lumen">
+          <svg viewBox="0 0 167 55" width="73" height="24" aria-hidden="true" focusable="false">
+          <text x="0" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">Lu</text>
+          <path d="M52 34c0-9 4-15 9-15 4 0 6 4 7 8 1-4 3-8 7-8 5 0 9 6 9 15 0 8-5 14-9 18 1-6 4-11 4-17 0-5-2-9-4-9s-4 3-5 8h-4c-1-5-3-8-5-8s-4 4-4 9c0 6 3 11 4 17-4-4-9-10-9-18z" fill="#FCBA30"/>
+          <text x="86" y="42" font-family="Lora, Georgia, serif" font-size="46" font-weight="600" fill="currentColor">en</text>
+          </svg>
+        </a>
+        <p class="w4-cap">Interne Moodboard-Seite — kein öffentliches Angebot.</p>
+        <nav class="w4-foot-links" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#v4-datenschutz">Datenschutz</a>
+          <a href="#v4-kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+
 <!-- Reviewer-Chrome: Variantenwechsel + Dither (nicht Produkt-UI) -->
 <aside class="mood-dock" aria-label="Moodboard-Steuerung">
   <div class="mood-dock-card">
@@ -1998,6 +2385,7 @@
       <button type="button" role="tab" aria-selected="true" data-target="variant-1">Fotofeld</button>
       <button type="button" role="tab" aria-selected="false" data-target="variant-2">Editorial</button>
       <button type="button" role="tab" aria-selected="false" data-target="variant-3">System</button>
+      <button type="button" role="tab" aria-selected="false" data-target="variant-4">Licht</button>
     </div>
   </div>
   <div class="mood-dock-card" id="tone-dock" hidden>
@@ -2026,9 +2414,11 @@
   <button type="button" role="tab" aria-selected="true" data-target="variant-1">Variante 1 · Fotofeld</button>
   <button type="button" role="tab" aria-selected="false" data-target="variant-2">Variante 2 · Editorial</button>
   <button type="button" role="tab" aria-selected="false" data-target="variant-3">Variante 3 · System</button>
+  <button type="button" role="tab" aria-selected="false" data-target="variant-4">Variante 4 &middot; Licht</button>
 </div>
 
-<script src="hero-dither.js?v=2026-08-25-v4"></script>
-<script src="slides.js?v=2026-08-25-v4"></script>
+<script src="hero-dither.js?v=2026-08-26-v5"></script>
+<script src="slides.js?v=2026-08-26-v5"></script>
+<script src="licht.js?v=2026-08-26-v5"></script>
 </body>
 </html>
