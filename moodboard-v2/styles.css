@@ -1111,76 +1111,6 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
   max-width: 620px;
 }
 
-/* method — vier benannte Messgrößen, knapp */
-.measure-list {
-  list-style: none;
-  margin-top: 72px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 48px;
-}
-
-.measure-no {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--cream-faint);
-}
-
-.measure-list li {
-  border-top: 1px solid var(--hairline-dark);
-  padding-top: 24px;
-}
-
-.measure-name {
-  margin-top: 14px;
-  font-family: var(--font-serif);
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-size: 27px;
-  letter-spacing: -0.005em;
-  color: var(--cream);
-}
-
-.measure-line {
-  margin-top: 10px;
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: var(--cream-dim);
-}
-
-/* Datenkörper je Messgröße — helles Instrument auf dem dunklen Feld.
-   Baut auf denselben Bausteinen wie das App-Fenster (.lab-row, .sleep-bars,
-   .sparkline, .bioage-row); die Serif-Messgröße darüber ist das Label. */
-.measure-card {
-  margin-top: auto;
-  padding: 12px 14px;
-  min-height: 118px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 12px;
-  background: var(--surface);
-  color: var(--ink);
-  border: 1px solid rgba(38, 33, 26, 0.1);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-}
-
-/* Karten an gemeinsamer Unterkante: li wird Spalte, Karte rutscht ans Ende */
-.measure-list li {
-  display: flex;
-  flex-direction: column;
-}
-.measure-list .measure-line { margin-bottom: 18px; }
-
-/* ohne Label-Zeile darüber startet der erste Baustein bündig */
-.measure-card > :first-child { margin-top: 0; }
-
-/* Basis-Spalten (58/1fr/74) statt der breiten .appwin-Variante */
-.measure-card .lab-row { grid-template-columns: 58px 1fr 74px; }
-
-.measure-card .sparkline { height: 34px; }
-
 /* product — a wide instrument, lifted off the dark field */
 .appwin {
   margin: 72px auto 0;
@@ -1225,20 +1155,6 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
 .appwin-privacy { grid-column: 1 / -1; }
 
 /* proof — the forward artifact */
-.proof-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 88px;
-  align-items: center;
-}
-
-.proof-copy .cta-row {
-  margin-top: 36px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
 .onepager {
   justify-self: end;
   width: min(430px, 100%);
@@ -1310,36 +1226,7 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
   color: var(--ink-3);
 }
 
-/* Fotostrecke — gerahmtes Triptychon im Inhaltsmaß, kein Vollbild-Band */
-.strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 104px var(--pad-x) 110px;
-  border-top: 1px solid rgba(248, 243, 233, 0.12);
-  background: radial-gradient(68% 420px at 50% 0%, rgba(248, 243, 233, 0.038), transparent 74%);
-  background-repeat: no-repeat;
-}
-
-.strip-cell { margin: 0; }
-
-.strip-cell img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  height: auto;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid rgba(248, 243, 233, 0.14);
-  filter: saturate(0.85);
-}
-
-.strip-cell figcaption {
-  padding: 14px 4px 0;
-  font-size: 13.5px;
-  color: var(--cream-dim);
-}
-
+/* Mono-Label und Credit der Bildstrecken — V2 nutzt beide im Triptychon */
 .strip-label {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -1397,87 +1284,6 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
 .privacy-list .ic { position: relative; top: 2px; }
 .privacy-list .ic.ok { color: var(--cream); }
 .privacy-list .ic.no { color: var(--cream-faint); }
-
-/* Sichtbarkeit als Fenster-Artefakt (V1) — Familie .appwin.
-   Rechts fehlt der Schalter bewusst: kein Zugriff heißt abwesend,
-   nicht ausgeschaltet. */
-.privacy-win {
-  max-width: 840px;
-  margin: 64px auto 0;
-  border-radius: 22px;
-  background: var(--surface);
-  color: var(--ink);
-  border: 1px solid rgba(38, 33, 26, 0.1);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.3),
-    0 18px 44px rgba(0, 0, 0, 0.42),
-    0 56px 120px rgba(0, 0, 0, 0.5);
-}
-
-.privacy-win-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.privacy-win-col { padding: 20px 24px 8px; }
-.privacy-win-col:first-child { border-right: 1px solid var(--line); }
-
-.privacy-win-title {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
-.privacy-win-row {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 13px 0;
-  font-size: 14px;
-  color: var(--ink-2);
-}
-
-.privacy-win-row + .privacy-win-row { border-top: 1px solid var(--line); }
-
-.privacy-win-row .ic { width: 15px; height: 15px; color: var(--ink-3); }
-.privacy-win-row-off { color: var(--ink-3); }
-
-.privacy-win-num {
-  margin-left: auto;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-}
-
-.privacy-win-chip {
-  margin-left: auto;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--ink-2);
-  background: rgba(38, 33, 26, 0.06);
-  padding: 3px 8px;
-  border-radius: 6px;
-}
-
-.privacy-win-chip-off { color: var(--ink-3); }
-
-.privacy-foot {
-  margin-top: 44px;
-  display: flex;
-  align-items: center;
-  gap: 26px;
-  flex-wrap: wrap;
-}
-
-.privacy-note {
-  font-size: 13.5px;
-  color: var(--cream-faint);
-  max-width: 560px;
-}
 
 /* two paths */
 .path-grid {
@@ -2065,21 +1871,16 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
 @media (max-width: 1280px) {
   .sect-head .display { font-size: 44px; }
   .psect-head .display { font-size: 40px; }
-  .measure-list { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-  .proof-grid { gap: 56px; }
   .stage { grid-template-columns: 300px minmax(0, 1fr); gap: 40px; }
 }
 
 @media (max-width: 1024px) {
-  .proof-grid { grid-template-columns: 1fr; }
   .onepager { justify-self: start; }
   .privacy-cols, .path-grid { grid-template-columns: 1fr; }
   .faq-row { grid-template-columns: 1fr; gap: 10px; }
   .ed-row { grid-template-columns: 56px 1fr; }
   .ed-row .ed-line { grid-column: 2; }
   .stage { grid-template-columns: 1fr; justify-items: center; }
-  .strip { grid-template-columns: 1fr; }
-  .strip-cell img { aspect-ratio: 3 / 2; height: auto; }
   .appwin-body { grid-template-columns: 1fr 1fr; }
   .appwin-body .module-bioage { grid-column: 1 / -1; }
   .ptrio { grid-template-columns: 1fr; }
@@ -2146,8 +1947,6 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
   .sect-head .display { font-size: 33px; }
   .psect-head .display { font-size: 30px; }
 
-  .measure-list { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
-
   .appwin-body { grid-template-columns: 1fr; }
   .lab-cols { grid-template-columns: 1fr; }
   .appwin .lab-row, .report .lab-row { grid-template-columns: 78px 1fr 80px; }
@@ -2170,8 +1969,6 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
   .report { padding: 20px 18px 18px; }
   .phone { width: min(320px, 100%); }
   .stage { margin-top: 48px; gap: 32px; }
-
-  .strip-cell img { aspect-ratio: 3 / 4; }
 }
 
 /* ============================================================
@@ -3659,4 +3456,738 @@ html[data-chrome="collapsed"] .chrome-toggle-expand {
   .w4-close-doodle { align-self: center; }
   .w4-foot-links { margin-left: 0; }
   .w4-head-row { flex-direction: column; align-items: flex-start; gap: 24px; }
+}
+
+/* ============================================================
+   VARIANTE 1 — Lichtkammer (alles unter dem Fotofeld)
+   Der Hero bleibt Foto; darunter läuft ein eigenes System:
+   Tintenfeld mit Lichtinseln, Creme-„Abzüge" mit Dreistufen-
+   Schatten, Hugeicons Stroke Rounded 1.5, Reveal über feld.js.
+   Eigener Namensraum .f1-*; keine bestehende Regel wird
+   verändert — der Seitengrund bleibt der der Variante.
+   ============================================================ */
+
+#variant-1 {
+  /* Gehobene Tinte — die Karte steht über dem Grund, nicht darin */
+  --f1-raise: #2E2822;
+  --f1-raise-2: #37302A;
+
+  /* Linien: die harte für Kanten, die weiche für Nähte */
+  --f1-hairline: rgba(248, 243, 233, .12);
+  --f1-hairline-soft: rgba(248, 243, 233, .07);
+
+  /* Licht-Pool — die Signatur der Richtung. Nie flächig, nie satter. */
+  --f1-pool: radial-gradient(ellipse 720px 420px at 22% 6%, rgba(252, 186, 48, .07), transparent 70%);
+  --f1-pool-stage: radial-gradient(ellipse 720px 420px at 50% 50%, rgba(252, 186, 48, .07), transparent 70%);
+
+  /* Der Abzug: Creme auf Tinte, Schatten in drei Stufen */
+  --f1-print-shadow:
+    0 1px 0 rgba(0, 0, 0, .25),
+    0 12px 32px rgba(0, 0, 0, .35),
+    0 36px 90px rgba(0, 0, 0, .40);
+
+  /* Radien — nur diese drei */
+  --f1-r: 22px;
+  --f1-r-in: 12px;
+
+  --f1-ease: cubic-bezier(.22, .61, .21, 1);
+}
+
+/* ---------------------------------------------------------- */
+/* V1 · Rhythmus — Sektionen, Nähte, Lichtinseln                */
+/* ---------------------------------------------------------- */
+
+.f1-section {
+  position: relative;
+  padding: 120px var(--pad-x);
+  border-top: 1px solid var(--f1-hairline-soft);
+  /* Die Lichtinseln greifen seitlich über den Inhalt hinaus — clip statt
+     hidden, damit die sticky Nav ihr Bezugssystem behält (Muster V4). */
+  overflow-x: clip;
+}
+
+/* Bänder tragen weniger Luft: Kontaktbogen und Serienstreifen */
+.f1-band { padding-block: 96px; }
+
+/* Eine Lichtinsel je Sektion — der Teller liegt hinter dem Inhalt */
+.f1-pool::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--f1-pool);
+}
+.f1-pool > * { position: relative; z-index: 1; }
+
+/* Spiegelbild für die Sektionen, deren Artefakt rechts steht */
+.f1-pool-right::before {
+  background: radial-gradient(ellipse 720px 420px at 78% 6%, rgba(252, 186, 48, .07), transparent 70%);
+}
+
+/* ---------------------------------------------------------- */
+/* V1 · Typografie                                              */
+/* ---------------------------------------------------------- */
+
+.f1-overline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+
+/* Der Kapitelpunkt — eine der drei erlaubten Amber-Stellen */
+.f1-overline::before {
+  content: "";
+  width: 6px; height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--amber);
+}
+
+.f1-display {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: clamp(40px, 4.6vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  text-wrap: balance;
+}
+
+/* Ein kursives Akzentwort je Display, nie zwei */
+.f1-display em { font-style: italic; font-weight: 500; }
+
+.f1-lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  max-width: 560px;
+}
+
+.f1-card-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--cream);
+}
+
+.f1-body {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+}
+
+.f1-cap {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--cream-faint);
+}
+
+/* Auf Creme kippt die ganze Skala in die Tinte */
+.f1-print .f1-body { color: var(--ink-2); }
+.f1-print .f1-cap { color: var(--ink-3); }
+
+.f1-head { margin-bottom: 56px; display: flex; flex-direction: column; gap: 18px; }
+
+/* ---------------------------------------------------------- */
+/* V1 · Ikonografie (Hugeicons Stroke Rounded 1.5)              */
+/* ---------------------------------------------------------- */
+
+.f1-ic-lg { width: 28px; height: 28px; flex: none; color: var(--cream); }
+.f1-ic { width: 20px; height: 20px; flex: none; }
+.f1-ic-sm { width: 16px; height: 16px; flex: none; }
+
+/* Ein Amber-Detail je Messgrößen-Icon, nie der Hauptstrich:
+   der Punkt im Kolben, der Punkt im Mond, ein Schnürsenkel,
+   der Puls im Herzen. Als CSS, damit die Pfade unangetastet
+   aus dem Bestand kommen. */
+.f1-card-blut .f1-ic-lg path:nth-of-type(4),
+.f1-card-schlaf .f1-ic-lg path:nth-of-type(4),
+.f1-card-akt .f1-ic-lg path:nth-of-type(3),
+.f1-card-bio .f1-ic-lg path:nth-of-type(2) { stroke: var(--amber); }
+
+/* ---------------------------------------------------------- */
+/* V1 · Der Abzug — Creme auf Tinte                             */
+/* ---------------------------------------------------------- */
+
+.f1-print {
+  background: var(--surface);
+  border: 1px solid rgba(38, 33, 26, .08);
+  box-shadow: var(--f1-print-shadow);
+}
+
+/* Bühne: das Artefakt bekommt Licht von hinten, nicht von vorn */
+.f1-stage { position: relative; }
+.f1-stage::before {
+  content: "";
+  position: absolute;
+  inset: -14% -10%;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--f1-pool-stage);
+}
+.f1-stage > * { position: relative; z-index: 1; }
+.f1-stage .appwin { margin: 0; max-width: none; }
+
+/* ---------------------------------------------------------- */
+/* V1 · Methode — Bento 2×2 neben einer hohen Foto-Rail         */
+/* ---------------------------------------------------------- */
+
+.f1-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.f1-card {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border-radius: var(--f1-r);
+  background: var(--f1-raise);
+  border: 1px solid var(--f1-hairline-soft);
+}
+
+/* Die Datenkörper stehen an einer gemeinsamen Unterkante */
+.f1-card .f1-mod { margin-top: auto; }
+
+.f1-rail {
+  grid-column: 9 / -1;
+  grid-row: 1 / span 2;
+  margin: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 14px;
+}
+.f1-rail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--f1-r);
+}
+
+/* Mikro-Daten-Modul — dieselben Bausteine wie im App-Fenster,
+   nur eine Stufe heller als die Karte, die sie trägt. */
+.f1-mod {
+  padding: 14px 16px;
+  border-radius: var(--f1-r-in);
+  background: var(--f1-raise-2);
+  border: 1px solid var(--f1-hairline-soft);
+}
+
+.f1-lab {
+  display: grid;
+  grid-template-columns: 58px 1fr 74px;
+  align-items: center;
+  gap: 12px;
+}
+.f1-lab + .f1-lab { margin-top: 12px; }
+
+.f1-lab-name {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--cream-dim);
+}
+
+.f1-lab-track {
+  position: relative;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(248, 243, 233, .14);
+}
+.f1-lab-track i {
+  position: absolute;
+  top: 50%;
+  left: var(--x);
+  width: 9px; height: 9px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: var(--data-labs);
+  border: 2px solid var(--f1-raise-2);
+  box-shadow: 0 0 0 1px rgba(122, 139, 150, .55);
+}
+
+.f1-lab-val {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--cream-faint);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Balken statt Polyline: dieselbe Kurve, dasselbe Material */
+.f1-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 34px;
+}
+.f1-bars i {
+  flex: none;
+  width: 11px;
+  height: var(--h);
+  border-radius: 2px 2px 0 0;
+  background: var(--data-sleep);
+  opacity: .9;
+}
+.f1-bars-act i { background: var(--data-activity); }
+
+.f1-mod-value {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+
+.f1-bio { display: flex; align-items: baseline; gap: 10px; }
+.f1-bio-val {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+.f1-bio-unit { font-size: 14px; color: var(--cream-faint); }
+.f1-bio-delta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--data-bioage);
+  background: rgba(168, 123, 59, .18);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------- */
+/* V1 · Zweispalter 5/7 (Programm, Beweisstück)                 */
+/* ---------------------------------------------------------- */
+
+.f1-split {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+/* Die Copy-Spalte läuft neben dem hohen Artefakt mit, statt in der
+   Mitte zu schweben — unter 1024 (eine Spalte) wieder statisch. */
+.f1-split > :first-child {
+  grid-column: span 5;
+  position: sticky;
+  top: calc(var(--nav-h) + 56px);
+}
+.f1-split > :last-child { grid-column: span 7; }
+
+.f1-claims li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 0;
+  border-top: 1px solid var(--f1-hairline);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+}
+.f1-claims li:last-child { border-bottom: 1px solid var(--f1-hairline); }
+.f1-claims .f1-ic { margin-top: 2px; color: var(--cream); }
+
+.f1-proof-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.f1-proof-copy .btn { margin-top: 10px; }
+.f1-proof-copy .f1-cap { max-width: 40ch; }
+
+/* Das Blatt steht mittig in seiner Spalte — sonst reißt die Lücke auf */
+.f1-split .onepager { justify-self: center; }
+
+/* ---------------------------------------------------------- */
+/* V1 · Kontaktbogen — drei Felder, das mittlere abgesetzt      */
+/* ---------------------------------------------------------- */
+
+.f1-sheet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Die Rahmung macht den Bogen, keine Grafik: Hairline plus Luft */
+.f1-cell {
+  margin: 0;
+  padding: 8px 8px 2px;
+  border: 1px solid var(--f1-hairline);
+  border-radius: var(--f1-r);
+}
+.f1-cell:nth-of-type(2) { margin-top: 32px; }
+
+.f1-cell img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--f1-r-in);
+}
+
+.f1-cell figcaption {
+  padding: 13px 6px 11px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--cream-dim);
+}
+
+.f1-cell-no {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--cream-faint);
+  margin-right: 12px;
+}
+
+.f1-cell-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-right: 10px;
+}
+
+.f1-credit { grid-column: 1 / -1; margin-top: 4px; }
+
+/* ---------------------------------------------------------- */
+/* V1 · Marktumfeld — der Serienstreifen im neuen Material      */
+/* Nachgelagert, damit slides.js seinen Vertrag behält.         */
+/* ---------------------------------------------------------- */
+
+#v1-umfeld .slides { margin-top: 8px; }
+
+#v1-umfeld .slide-card {
+  background: var(--f1-raise);
+  border: 1px solid var(--f1-hairline);
+  border-radius: var(--f1-r);
+  box-shadow: var(--f1-print-shadow);
+}
+
+/* ---------------------------------------------------------- */
+/* V1 · Datenschutz — Abzug gegen Tinte                         */
+/* ---------------------------------------------------------- */
+
+.f1-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.f1-panel {
+  border-radius: var(--f1-r);
+  padding: 30px 32px 22px;
+}
+.f1-panel-dark {
+  background: var(--f1-raise);
+  border: 1px solid var(--f1-hairline);
+}
+
+.f1-panel-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.f1-print .f1-panel-title { color: var(--ink-3); }
+.f1-panel-dark .f1-panel-title { color: var(--cream-faint); }
+
+.f1-prow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  font-size: 15px;
+}
+.f1-print .f1-prow { color: var(--ink-2); }
+.f1-panel-dark .f1-prow { color: var(--cream-dim); }
+.f1-print .f1-prow + .f1-prow { border-top: 1px solid var(--line); }
+.f1-panel-dark .f1-prow + .f1-prow { border-top: 1px solid var(--f1-hairline-soft); }
+
+/* Kein Zugriff heißt abwesend, nicht ausgeschaltet: die Zeile
+   tritt zurück, der Schalter fehlt ihr ganz. */
+.f1-prow-off { opacity: .55; }
+.f1-prow .f1-ic-sm { color: var(--cream-faint); }
+
+.f1-prow-num {
+  margin-left: auto;
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+
+.f1-prow-chip {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--cream-dim);
+  background: rgba(248, 243, 233, .08);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.f1-privacy-foot {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.f1-note {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--cream-faint);
+  max-width: 560px;
+}
+
+/* ---------------------------------------------------------- */
+/* V1 · Zwei Pfade — ein Körper, zwei Hälften                   */
+/* ---------------------------------------------------------- */
+
+.f1-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: var(--f1-r);
+  background: var(--f1-raise);
+  border: 1px solid var(--f1-hairline);
+}
+
+.f1-path {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 44px 48px 48px;
+}
+.f1-path + .f1-path { border-left: 1px solid var(--f1-hairline); }
+
+.f1-path-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+.f1-path-label .f1-ic { color: var(--cream); }
+
+.f1-path-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--cream);
+}
+
+.f1-path .f1-body { max-width: 34ch; }
+.f1-path .btn { margin-top: 14px; }
+
+/* ---------------------------------------------------------- */
+/* V1 · Grenzen — schmale Spalte, vier Hairline-Zeilen          */
+/* ---------------------------------------------------------- */
+
+.f1-limits { max-width: 640px; }
+
+.f1-limits li {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--f1-hairline);
+}
+.f1-limits li:last-child { border-bottom: 1px solid var(--f1-hairline); }
+
+.f1-limits b {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--cream-faint);
+}
+
+.f1-limits span {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--cream);
+}
+
+/* ---------------------------------------------------------- */
+/* V1 · Close — ein Bild über die volle Breite, Fuß auf Tinte   */
+/* ---------------------------------------------------------- */
+
+.f1-close {
+  padding: 0;
+  border-top: 1px solid var(--f1-hairline-soft);
+}
+
+.f1-close-panel {
+  position: relative;
+  height: 72vh;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.f1-close-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* Muster des Hero-Scrims, nur mittig statt seitlich: die Copy
+   steht in der Mitte, also sammelt sich das Dunkel dort. */
+.f1-close-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(16, 13, 9, 0.42) 0%, rgba(16, 13, 9, 0.05) 26%, rgba(16, 13, 9, 0) 45%),
+    linear-gradient(0deg, rgba(16, 13, 9, 0.62) 0%, rgba(16, 13, 9, 0.18) 30%, rgba(16, 13, 9, 0) 52%),
+    radial-gradient(ellipse 900px 520px at 50% 50%, rgba(16, 13, 9, 0.58), rgba(16, 13, 9, 0.10) 72%);
+}
+
+.f1-close-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 var(--pad-x);
+  text-align: center;
+}
+
+/* Die dritte Lichtinsel — hinter dem Abschluss-CTA */
+.f1-close-inner::before {
+  content: "";
+  position: absolute;
+  inset: -36% -14%;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--f1-pool-stage);
+}
+
+.f1-close-inner .btn { margin-top: 10px; }
+
+.f1-close-sub {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(248, 243, 233, 0.9);
+  max-width: 520px;
+}
+
+/* Der Fuß kommt aus dem Bestand und steht auf dem Seitengrund */
+.f1-close > .site-foot { margin: 96px var(--pad-x) 0; padding-bottom: 72px; }
+
+/* ---------------------------------------------------------- */
+/* V1 · Bewegung — Reveal und „Entwickeln"                      */
+/* Ausgeblendet wird erst, wenn feld.js die Root-Klasse .f1-js  */
+/* gesetzt hat: ohne JS steht alles.                            */
+/* ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .f1-js .f1-reveal {
+    opacity: 0;
+    translate: 0 18px;
+    transition: opacity 600ms var(--f1-ease), translate 600ms var(--f1-ease);
+    transition-delay: calc(var(--f1-d, 0) * 80ms);
+  }
+  .f1-js .f1-reveal.is-in { opacity: 1; translate: 0 0; }
+
+  /* Entwickeln: das Bild kommt aus dem Bad, nicht aus dem Nichts */
+  .f1-js .f1-cell img,
+  .f1-js .f1-close-panel img {
+    filter: brightness(.72) contrast(.92);
+    transition: filter 900ms var(--f1-ease);
+    transition-delay: calc(var(--f1-d, 0) * 80ms);
+  }
+  .f1-js .f1-cell.is-in img,
+  .f1-js .f1-close-panel.is-in img { filter: none; }
+}
+
+/* ---------------------------------------------------------- */
+/* V1 · Responsive — stapeln, nie schieben                      */
+/* ---------------------------------------------------------- */
+
+@media (max-width: 1280px) {
+  .f1-section { padding: 104px var(--pad-x); }
+  .f1-band { padding-block: 88px; }
+  .f1-split { gap: 40px; }
+  .f1-path { padding: 36px 36px 40px; }
+}
+
+@media (max-width: 1024px) {
+  .f1-card { grid-column: span 6; }
+  .f1-rail { grid-column: 1 / -1; grid-row: auto; }
+  .f1-rail img { height: auto; aspect-ratio: 16 / 10; }
+
+  .f1-split { grid-template-columns: 1fr; gap: 44px; align-items: start; }
+  .f1-split > :first-child,
+  .f1-split > :last-child { grid-column: 1 / -1; }
+  .f1-split > :first-child { position: static; }
+
+  .f1-pair { grid-template-columns: 1fr; }
+  .f1-paths { grid-template-columns: 1fr; }
+  .f1-path + .f1-path { border-left: 0; border-top: 1px solid var(--f1-hairline); }
+
+  .f1-close-panel { height: auto; min-height: 0; padding: 128px 0; }
+  .f1-close > .site-foot { margin-top: 72px; }
+}
+
+@media (max-width: 720px) {
+  .f1-section { padding: 84px var(--pad-x); }
+  .f1-band { padding-block: 72px; }
+  .f1-head { margin-bottom: 40px; }
+
+  .f1-card { grid-column: 1 / -1; }
+  .f1-sheet { grid-template-columns: 1fr; }
+  .f1-cell:nth-of-type(2) { margin-top: 0; }
+  .f1-cell img { aspect-ratio: 3 / 4; }
+
+  .f1-path { padding: 30px 26px 34px; }
+  .f1-prow-num { font-size: 26px; }
+  .f1-limits span { font-size: 18px; }
+  .f1-close-panel { padding: 96px 0; }
 }

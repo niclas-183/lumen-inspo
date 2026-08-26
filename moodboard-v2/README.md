@@ -21,10 +21,13 @@ Modus aktiv ist. Auf Variante 2 ist das Werkzeug ausgeblendet.
 ## Unter der Falz (Issue #9)
 
 Beide Varianten tragen dieselben neun Blöcke, in variantengerechter Sprache
-und leicht unterschiedlicher Reihenfolge:
+und leicht unterschiedlicher Reihenfolge. Für Variante 1 ist dieser Bereich
+inzwischen neu gebaut — Blockfolge und Anker bleiben, Material und Rhythmus
+nicht (siehe „Variante 1 · Lichtkammer"):
 
-1. **Methode** — vier benannte Messgrößen, Levels-Kürze (V1 als dunkles
-   Vier-Spalten-Raster, V2 als editoriale Hairline-Liste mit Lora-Zitat).
+1. **Methode** — vier benannte Messgrößen, Levels-Kürze (V1 als Bento
+   neben einer hohen Foto-Rail, V2 als editoriale Hairline-Liste mit
+   Lora-Zitat).
 2. **Programm / Produkt tiefer** — Oberfläche als Beweis: V1 ein breites
    App-Fenster (Bio-Age-Trend, Schlaf, Aktivität, 6 Blutwerte, Privacy-
    Schalter), V2 Phone + Laborbericht. Beide Sektionen zeigen ausschließlich
@@ -32,8 +35,9 @@ und leicht unterschiedlicher Reihenfolge:
    dort als solches ausgewiesen.
 3. **Beweisstück (Forward-Artifact, ELM)** — V1 ein Einseiter-Mock mit
    PDF-CTA („ohne Registrierung"), V2 vier interne FAQ + derselbe CTA.
-4. **Fotostrecke** — je drei bislang ungenutzte Fotos aus der Bibliothek,
-   mit Mono-Caption und „Symbolbilder"-Credit.
+4. **Fotostrecke** — je drei Fotos aus der Bibliothek mit Mono-Caption und
+   „Symbolbilder"-Credit (V2 bislang ungenutzte Frames; V1 seit dem
+   Lichtkammer-Neubau bewusst aus V2/V3 re-kuratiert).
 5. **Marktumfeld — Serienstreifen** — zehn App-Store-Screenshots **einer
    einzigen App** (Bevel: AI Health Coach) als flacher, editorialer
    Streifen: drei Karten im Blick, alle 4,2 Sekunden rückt er um eine
@@ -62,6 +66,33 @@ und leicht unterschiedlicher Reihenfolge:
 Die Nav ist jetzt sticky (Glass-Pill bleibt beim Scrollen) und die
 Nav-Punkte verlinken auf die Sektionen der aktiven Variante
 (`#v1-…` / `#v2-…`); der Announce-Link springt zum Beweisstück.
+
+## Variante 1 · Lichtkammer (unter der Falz)
+
+Der Hero bleibt das Fotofeld; alles darunter ist neu und läuft im eigenen
+Namensraum `.f1-*`. Die Richtung heißt Lichtkammer: ein Tintenfeld, in das
+nur an drei Stellen ein Amber-Licht fällt (Programm, Beweisstück, Abschluss —
+nie flächig, nie über 7 % Alpha), und auf dem die Creme-Flächen als **Abzüge**
+liegen: `--surface`, feine Kante, Schatten in drei Stufen. Jeder Sektionskopf
+trägt dieselbe Marke — ein 6px-Amber-Punkt, `01 · Methode`, dann die
+Newsreader-Zeile.
+
+Neun Blöcke, Anker unverändert (`#v1-methode` … `#v1-kontakt`, der
+Announce-Link trifft weiter `#v1-beweis`): Bento aus vier Messgrößen mit
+Mikro-Daten-Modulen neben einer hohen Foto-Rail · drei Zusagen gegen das
+originale App-Fenster auf einer Lichtbühne · ein **Kontaktbogen** aus drei
+Alltagsfotos, das mittlere abgesetzt, Hairline-Rahmen statt Grafik · der
+Serienstreifen im neuen Material (`slides.js` unverändert) · der Einseiter als
+Abzug · Datenschutz als Abzug gegen Tinte, rechts fehlt der Schalter · zwei
+Pfade in einem Körper mit vertikaler Hairline · vier Grenzen in einer schmalen
+Spalte · ein Close über die volle Breite, darunter der bestehende Fuß.
+
+Bewegung macht `feld.js`, nach demselben Muster wie `licht.js`: `.f1-reveal`
+(IntersectionObserver, 600ms, 80ms-Staffel) und das **Entwickeln** — Fotos im
+Kontaktbogen und im Close-Panel starten abgedunkelt und klaren in 900ms auf.
+Ausgeblendet wird erst, wenn die Root-Klasse `.f1-js` steht; ohne JS und bei
+angemeldeter Ruhe steht alles sofort da. Icons sind ausschließlich Hugeicons
+(Herkunft in `ASSETS.md`), kein einziger selbst gezeichneter Pfad.
 
 ## Variante 4 · Licht
 
@@ -177,6 +208,8 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 - `slides.js` — Serienstreifen „Marktumfeld" (setTimeout-Kette,
   IntersectionObserver, kein npm); rührt Variantenumschaltung und
   Tastenkürzel nicht an.
+- `feld.js` — Bewegung der Lichtkammer (Variante 1: Reveal + Entwickeln;
+  Vanilla, kein npm); rührt Variantenumschaltung und Tastenkürzel nicht an.
 - `licht.js` — Bewegung der Variante 4 (Reveal, Count-up, Hero-Parallax;
   Vanilla, kein npm); rührt Variantenumschaltung und Tastenkürzel nicht an.
 - `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
