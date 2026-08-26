@@ -2189,11 +2189,26 @@ ul { list-style: none; }
   font-size: 16px;
   line-height: 1.55;
   font-variation-settings: "YTLC" 500, "wdth" 100;
+  /* Luft über der Pille als Padding am Page-Shell — nicht als Nav-Margin:
+     Margin kollabiert aus dem Page raus (dunkler Body-Streifen) und der
+     Hash #variant-3 scrollt genau diesen Streifen weg, die Pille klebt
+     dann an der Hero-Kante. Padding bleibt innen, Hero-Hintergrund. */
+  --sys-nav-inset: 40px;
+  padding-top: var(--sys-nav-inset);
 }
 
-/* Nav sitzt im Fluss; der Hero zieht sich dahinter (Muster V2). */
-.page-system .nav { margin-top: 20px; }
-.page-system .sys-hero { margin-top: calc(-20px - var(--nav-h)); }
+/* Nav sitzt im Fluss; der Hero zieht sich hinter Nav+Inset (Muster V2).
+   sticky top = Inset, sonst schnappt die Leiste beim Scrollen an die Kante. */
+.page-system .nav {
+  margin-top: 0;
+  top: var(--sys-nav-inset);
+}
+.page-system .sys-hero {
+  margin-top: calc(-1 * var(--sys-nav-inset) - var(--nav-h));
+}
+.page-system section[id] {
+  scroll-margin-top: calc(var(--nav-h) + var(--sys-nav-inset) + 32px);
+}
 
 .sys-wrap {
   width: min(100% - var(--sys-gutter) * 2, var(--sys-content));
@@ -2399,7 +2414,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   min-height: 88vh;
-  padding: 120px 0 88px;
+  padding: calc(var(--sys-nav-inset) + var(--nav-h) + 32px) 0 88px;
 }
 
 .sys-hero-grid {
@@ -2758,7 +2773,7 @@ ul { list-style: none; }
   .sys-title { font-size: 32px; }
   .sys-lead, .sys-sub { font-size: 18px; }
 
-  .sys-hero { min-height: 0; padding: 108px 0 64px; }
+  .sys-hero { min-height: 0; padding: calc(var(--sys-nav-inset) + var(--nav-h) + 20px) 0 64px; }
   .sys-hero-grid { grid-template-columns: 1fr; gap: 56px; }
   .sys-hero-stage { align-items: flex-start; }
   .sys-phone-pair { justify-content: flex-start; margin-left: 96px; transform: none; }
@@ -2793,7 +2808,7 @@ ul { list-style: none; }
 
   .sys-nav-links { display: none; }
 
-  .sys-hero { padding: 96px 0 48px; }
+  .sys-hero { padding: calc(var(--sys-nav-inset) + var(--nav-h) + 8px) 0 48px; }
   .sys-phone-pair { margin-left: 72px; }
   .sys-phone-front { width: 200px; }
   .sys-phone-back { width: 172px; }
