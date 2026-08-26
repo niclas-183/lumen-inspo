@@ -11,9 +11,9 @@ Attribution erforderlich — wir attribuieren trotzdem.
 |---|---|---|---|---|
 | `office_window_quiet.jpg` | V1 Hero, Vollbild-Fotofeld (Dither + Paper-Filter zur Laufzeit, keine Extra-JPEGs) | https://unsplash.com/photos/person-works-on-laptop-near-large-window-with-plants-gkzP5awCZAQ | Oksana Demenko | Unsplash |
 | `person_window_daylight.jpg` | V2 Hero, Fotospalte rechts | https://www.pexels.com/photo/woman-in-gray-long-sleeves-shirt-standing-beside-glass-window-8297155/ | Mikhail Nilov | Pexels |
-| `sleep_morning_bed.jpg` | V1 Fotostrecke | https://unsplash.com/photos/white-bed-linen-near-white-window-curtain-dYgG6lSWlBY | Egor Myznik | Unsplash |
-| `activity_ridge_walk.jpg` | V1 Fotostrecke | https://unsplash.com/photos/a-person-walking-on-a-path-in-a-foggy-landscape-fX7SogLi7Tg | Renāte Šnore | Unsplash |
-| `labs_sample_tubes.jpg` | V1 Fotostrecke | https://unsplash.com/photos/blood-collection-tubes-in-laboratory-rack-0jE8ynV4mis | Testalize.me | Unsplash |
+| `sleep_morning_bed.jpg` | Bibliothek — seit dem Lichtkammer-Neubau ungenutzt (bis dahin V1 Fotostrecke) | https://unsplash.com/photos/white-bed-linen-near-white-window-curtain-dYgG6lSWlBY | Egor Myznik | Unsplash |
+| `activity_ridge_walk.jpg` | Bibliothek — seit dem Lichtkammer-Neubau ungenutzt (bis dahin V1 Fotostrecke) | https://unsplash.com/photos/a-person-walking-on-a-path-in-a-foggy-landscape-fX7SogLi7Tg | Renāte Šnore | Unsplash |
+| `labs_sample_tubes.jpg` | Bibliothek — seit dem Lichtkammer-Neubau ungenutzt (bis dahin V1 Fotostrecke) | https://unsplash.com/photos/blood-collection-tubes-in-laboratory-rack-0jE8ynV4mis | Testalize.me | Unsplash |
 | `labs_pipette_researcher.jpg` | V2 Fotostrecke · V1 (Lichtkammer) Alltag 03 | https://unsplash.com/photos/woman-in-white-shirt-holding-white-ceramic-mug-lTlB51-XGP4 | National Cancer Institute | Unsplash |
 | `warmth_hands_cup.jpg` | V2 Fotostrecke · V1 (Lichtkammer) Alltag 01 | https://unsplash.com/photos/person-holding-white-ceramic-cup-with-liquid-g6e641CiHFQ | SnapbyThree MY | Unsplash |
 | `activity_park_pair.jpg` | V2 Fotostrecke | https://unsplash.com/photos/two-people-walk-on-a-foggy-path-through-bare-trees-sjZ4pNskdtc | T (@tanyabarrow) | Unsplash |

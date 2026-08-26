@@ -3540,18 +3540,6 @@ ul { list-style: none; }
 .f1-stage .appwin { margin: 0; max-width: none; }
 
 /* ---------------------------------------------------------- */
-/* V1 · Buttons — Grün nur auf Creme                            */
-/* ---------------------------------------------------------- */
-
-.f1-btn-green {
-  background: var(--accent);
-  color: var(--paper-hauch);
-  border-radius: 999px;
-  box-shadow: 0 1px 2px rgba(46, 94, 78, .25);
-}
-.f1-btn-green:hover { background: var(--accent-deep); }
-
-/* ---------------------------------------------------------- */
 /* V1 · Methode — Bento 2×2 neben einer hohen Foto-Rail         */
 /* ---------------------------------------------------------- */
 
@@ -3697,9 +3685,15 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
-.f1-split > :first-child { grid-column: span 5; }
+/* Die Copy-Spalte läuft neben dem hohen Artefakt mit, statt in der
+   Mitte zu schweben — unter 1024 (eine Spalte) wieder statisch. */
+.f1-split > :first-child {
+  grid-column: span 5;
+  position: sticky;
+  top: calc(var(--nav-h) + 56px);
+}
 .f1-split > :last-child { grid-column: span 7; }
 
 .f1-claims li {
@@ -4071,6 +4065,7 @@ ul { list-style: none; }
   .f1-split { grid-template-columns: 1fr; gap: 44px; align-items: start; }
   .f1-split > :first-child,
   .f1-split > :last-child { grid-column: 1 / -1; }
+  .f1-split > :first-child { position: static; }
 
   .f1-pair { grid-template-columns: 1fr; }
   .f1-paths { grid-template-columns: 1fr; }
