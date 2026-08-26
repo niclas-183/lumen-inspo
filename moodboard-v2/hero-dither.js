@@ -608,6 +608,38 @@
     }, 30);
   }
 
+  var CHROME_KEY = "lumen-inspo-moodboard-v2-chrome";
+  var collapseBtn = document.getElementById("chrome-collapse");
+  var expandBtn = document.getElementById("chrome-expand");
+
+  function setChrome(collapsed) {
+    if (collapsed) document.documentElement.setAttribute("data-chrome", "collapsed");
+    else document.documentElement.removeAttribute("data-chrome");
+    try {
+      localStorage.setItem(CHROME_KEY, collapsed ? "collapsed" : "expanded");
+    } catch (err) {}
+    if (collapseBtn) collapseBtn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    if (expandBtn) expandBtn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+  }
+
+  if (collapseBtn) {
+    collapseBtn.addEventListener("click", function () {
+      setChrome(true);
+      if (expandBtn) expandBtn.focus();
+    });
+  }
+  if (expandBtn) {
+    expandBtn.addEventListener("click", function () {
+      setChrome(false);
+      if (collapseBtn) collapseBtn.focus();
+    });
+  }
+  try {
+    setChrome(localStorage.getItem(CHROME_KEY) === "collapsed");
+  } catch (err) {
+    setChrome(false);
+  }
+
   tabs.forEach(function (t) {
     t.addEventListener("click", function () { showVariant(t.dataset.target); });
   });

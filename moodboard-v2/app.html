@@ -11,7 +11,14 @@
 <!-- Versions-Query gegen Cache-Skew: GH Pages cacht 10 min pro Datei; ohne
      Marker kann ein frisches app.html auf ein altes styles.css treffen.
      Bei jeder Änderung an styles.css/JS mitdrehen. -->
-<link rel="stylesheet" href="styles.css?v=2026-08-26-v3nav">
+<link rel="stylesheet" href="styles.css?v=2026-08-26-v3nav-chrome">
+<script>
+try {
+  if (localStorage.getItem("lumen-inspo-moodboard-v2-chrome") === "collapsed") {
+    document.documentElement.setAttribute("data-chrome", "collapsed");
+  }
+} catch (e) {}
+</script>
 </head>
 <body>
 
@@ -2378,9 +2385,17 @@
 
 
 <!-- Reviewer-Chrome: Variantenwechsel + Dither (nicht Produkt-UI) -->
+<button type="button" class="chrome-toggle chrome-toggle-expand" id="chrome-expand" aria-label="Steuerung aufklappen" aria-expanded="false">
+  <svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.5v9M3.5 8h9"/></svg>
+</button>
 <aside class="mood-dock" aria-label="Moodboard-Steuerung">
   <div class="mood-dock-card">
-    <p class="mood-dock-kicker">Variante</p>
+    <div class="mood-dock-head">
+      <p class="mood-dock-kicker">Variante</p>
+      <button type="button" class="chrome-toggle chrome-toggle-collapse" id="chrome-collapse" aria-label="Steuerung einklappen" aria-expanded="true">
+        <svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg>
+      </button>
+    </div>
     <div class="switcher switcher-dock" role="tablist" aria-label="Variante wählen">
       <button type="button" role="tab" aria-selected="true" data-target="variant-1">Fotofeld</button>
       <button type="button" role="tab" aria-selected="false" data-target="variant-2">Editorial</button>
@@ -2417,7 +2432,7 @@
   <button type="button" role="tab" aria-selected="false" data-target="variant-4">Variante 4 &middot; Licht</button>
 </div>
 
-<script src="hero-dither.js?v=2026-08-26-v5"></script>
+<script src="hero-dither.js?v=2026-08-26-v3nav-chrome"></script>
 <script src="slides.js?v=2026-08-26-v5"></script>
 <script src="licht.js?v=2026-08-26-v5"></script>
 </body>
