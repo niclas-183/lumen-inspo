@@ -124,8 +124,8 @@ zwölf Hugeicons-Pfade wie in V3, nur mit `.w4-`-Klassen. Der Grund-Ton-Schalter
 ## Ansehen
 
 - **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard-v2/](https://niclas-183.github.io/lumen-inspo/moodboard-v2/) — gleiches Token-Gate wie Galerie und v1 (`lumen` / Session `lumen-inspo-session`). Ein Login entsperrt alle drei.
-- **Share-Link:** `token.html` → `index.html#k=…` (Fragment, nie an den Server).
-- **Review / von Disk:** `app.html` ist die unverschlüsselte Seite (kein Login). Nicht der Pages-Einstieg.
+- **Share-Link:** `token.html` (nur mit Login-Session im selben Tab) → `index.html#k=…` (Fragment, nie an den Server).
+- **Review / von Disk:** `_app.html` ist die unverschlüsselte Seite (kein Login). Jekyll veröffentlicht sie nicht; `app.html` auf Pages leitet nur zum Login.
 
 v1 in `../moodboard/` bleibt unberührt (kein Rewrite von `payload.bin` dort).
 
@@ -202,7 +202,8 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
 ## Dateien
 
 - `index.html` — Login-Wall (AES-GCM, gleiches Session-Schema wie v1/Galerie).
-- `app.html` — beide Varianten + Umschalter (klare Review-Kopie).
+- `_app.html` — alle vier Varianten + Umschalter (Klartext-Quelle; Jekyll veröffentlicht sie nicht).
+- `app.html` — Redirect nach `index.html`, kein Moodboard-Markup.
 - `hero-dither.js` — sticky Variantenwechsel + Hero-Filter (Canvas-Dither + Paper-WebGL).
 - `vendor/paper-shaders/` — Apache-2.0 Vanilla-Subset von `@paper-design/shaders` 0.0.80 (Fluted Glass, Halftone CMYK, Paper Texture).
 - `slides.js` — Serienstreifen „Marktumfeld" (setTimeout-Kette,
@@ -212,8 +213,9 @@ Deutsch, Kompetenz-Präzision, ein Satz pro Slot:
   Vanilla, kein npm); rührt Variantenumschaltung und Tastenkürzel nicht an.
 - `licht.js` — Bewegung der Variante 4 (Reveal, Count-up, Hero-Parallax;
   Vanilla, kein npm); rührt Variantenumschaltung und Tastenkürzel nicht an.
-- `payload.bin` — verschlüsseltes `app.html` (LIN1 + Salt + Nonce + Ciphertext).
-- `token.html` — Share-Link-Generator für `index.html#k=…`.
+- `payload.bin` — verschlüsseltes `_app.html` (LIN1 + Salt + Nonce + Ciphertext);
+  nach jeder Änderung an `_app.html` neu versiegeln, Salt bleibt.
+- `token.html` — Share-Link-Generator für `index.html#k=…` (nur mit Login-Session).
 - `styles.css` — Tokens + Layout, ein File.
 - `assets/` — Wordmark-SVG + acht Fotos aus `../moodboard/assets/photos/`
   (Credits und Regeln: `ASSETS.md`). Fotos bleiben Dateien, keine data-URIs.
