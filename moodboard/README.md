@@ -18,7 +18,7 @@
 
 ## Ansehen
 
-- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard/](https://niclas-183.github.io/lumen-inspo/moodboard/) — `index.html` ist das gleiche Token-Gate wie die Galerie (User `lumen`, Session `lumen-inspo-session`). Share-Links über `moodboard/token.html` → `index.html#k=…`.
-- **Review / von Disk:** `moodboard/app.html` ist die unverschlüsselte Scroll-Seite (kein Login). Nicht der Pages-Einstieg.
+- **GitHub Pages (Login):** [https://niclas-183.github.io/lumen-inspo/moodboard/](https://niclas-183.github.io/lumen-inspo/moodboard/) — `index.html` ist das gleiche Token-Gate wie die Galerie (User `lumen`, Session `lumen-inspo-session`). Share-Links über `moodboard/token.html` (nur mit Login-Session im selben Tab) → `index.html#k=…`.
+- **Review / von Disk:** `moodboard/_app.html` ist die unverschlüsselte Scroll-Seite (kein Login). Jekyll veröffentlicht sie nicht; `app.html` auf Pages leitet nur zum Login. Nach jeder Änderung `payload.bin` aus `_app.html` neu versiegeln (gleiches Salt), siehe Root-README.
 
 Die verschlüsselte Galerie, Login und `stack.csv` dieses Repos bleiben unberührt.

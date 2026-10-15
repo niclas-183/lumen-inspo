@@ -5,7 +5,8 @@ Internal password-gated moodboard. Ask Niclas for the login.
 The design moodboard is a sibling path with the same login:
 [https://niclas-183.github.io/lumen-inspo/moodboard/](https://niclas-183.github.io/lumen-inspo/moodboard/).
 Moodboard v2 (combined hero): [https://niclas-183.github.io/lumen-inspo/moodboard-v2/](https://niclas-183.github.io/lumen-inspo/moodboard-v2/).
-A gallery session on this origin unlocks it. Share links: `moodboard/token.html`.
+A gallery session on this origin unlocks it (same browser tab). Share links:
+`token.html` in each folder, after logging in.
 
 After unlock, every site card has two look-and-feel rating panes
 (Niclas | Dominik) and an **Abgleich** view for overlap. See below.
@@ -42,10 +43,12 @@ not an ungated copy of the archive.
 
 ## Share links
 
-`token.html` turns the password into a link that opens the moodboard without a
-login: `index.html#k=<key>`. Open it, enter the password, copy the link. It runs
-entirely in the browser — nothing is uploaded, and the site stays a static
-GitHub Pages site with no hosting cost.
+`token.html` turns the current login session into a link that opens the
+moodboard without a login: `index.html#k=<key>`. Log in via `index.html`, then
+open `token.html` in the same tab (the session lives in `sessionStorage`) and
+copy the link; without a session it redirects to the login. It runs entirely in
+the browser — nothing is uploaded, and the site stays a static GitHub Pages
+site with no hosting cost.
 
 The key sits in the URL fragment, which browsers never send to the server and
 never put in a `Referer` header, so it stays out of access logs.
@@ -62,3 +65,23 @@ Worth knowing before sharing one:
 - This repo is public, so `payload.bin` is downloadable by anyone. The key is
   the only thing protecting the content — treat a share link like the archive
   itself.
+
+## What Pages publishes
+
+Pages builds this repo with Jekyll (legacy build from `main`, `/`). Jekyll
+skips every file and folder whose name starts with `_`, which is what keeps the
+plaintext moodboard sources `moodboard/_app.html` and `moodboard-v2/_app.html`
+off the site. **Do not add `.nojekyll`** — it would publish them again.
+`_config.yml` keeps everything else as before (`.md` stays a raw file).
+
+- `app.html` in both moodboard folders is only a redirect to the login.
+- Edit `_app.html`, then re-seal `payload.bin` from it with the share-link key
+  and the existing salt (fresh nonce). Rotating the salt kills every share link.
+- `node --test tests/*.test.mjs` checks that no published HTML contains
+  moodboard text, that `.nojekyll` is absent, and that each `payload.bin`
+  matches its `_app.html` in size and keeps the salt.
+
+This only gates Pages. The repo itself is public: `_app.html` is readable on
+GitHub, and the Git history holds every earlier plaintext `app.html`. Only a
+private repo (or a history rewrite plus moving the sources out of the public
+tree) closes that.

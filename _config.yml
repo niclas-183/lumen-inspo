@@ -1,0 +1,11 @@
+# GitHub Pages baut dieses Repo mit Jekyll (legacy build, Branch main, /).
+# Kein .nojekyll anlegen: Jekyll veröffentlicht nichts, dessen Name mit "_"
+# beginnt. Nur so bleiben die Klartext-Quellen moodboard/_app.html und
+# moodboard-v2/_app.html von Pages fern; ausgeliefert wird das Login über
+# index.html + payload.bin.
+#
+# Alles andere soll wie bisher unverändert kopiert werden: .md bleibt
+# Rohdatei (v1 verlinkt spec/*.md) und wird nicht zu HTML gerendert.
+require_front_matter: true
+readme_index:
+  enabled: false
